@@ -1,0 +1,11 @@
+var version = ('1.0.0')
+alert('Welcome to Flight Plan Optimizer v'+version)
+var air1 = prompt('What airport are you departing?','ICAO, ex. KSFO')
+var dep = prompt('What is your departure?','RNAV, ex. ICONS4')
+var dep1 = prompt('What does '+dep+' consist of?', 'ex. ICONS GILBER NOOKS')
+var route = prompt('What is the middle of your route?', 'ex. CLASN MURDY GLRNO MXIMO HITOP PZUKY')
+var arr = prompt('What is your arrival?','RNAV, ex. ICONS4')
+var arr1 = prompt('What does '+arr+' consist of?', 'ex. ICONS GILBER NOOKS')
+var air2 = prompt('What airport are you arriving at?','ICAO, ex. KSFO')
+var all = air1+' '+dep1+' '+route+' '+arr1+' '+air2
+alert('Your optimized flight plan is:\n'+all)
