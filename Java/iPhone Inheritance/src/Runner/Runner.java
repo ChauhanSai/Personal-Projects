@@ -6,21 +6,22 @@ import java.awt.*;
 
 
 class DrawPanel extends JPanel {
-
+	
+	int frame = (int)(Math.random()*121);
+	int red = (int)(Math.random()*256);
+    int green = (int)(Math.random()*256);
+    int blue = (int)(Math.random()*256);
+	String batteryInt = ((int)(Math.random()*11)+45)+"%";
+	
     private void draw(Graphics g) {
-
         //Create objects in this method
-        int frame = (int)(Math.random()*121);
+        
         if(frame == 72 || frame == 71 || frame == 73 || frame == 74 || frame == 70)
             frame = 255; //White if matching background
         Color frameColor = new Color(frame,frame,frame); //Random Frame
-        
-        int red = (int)(Math.random()*256);
-	    int green = (int)(Math.random()*256);
-	    int blue = (int)(Math.random()*256);
 	    Color wallpaperColor = new Color(red,green,blue); //Random Wallpaper
 	    
-        IPhone iphone = new IPhone(g, frameColor, wallpaperColor); //Passing frame color and wallpaper color
+        IPhone iphone = new IPhone(g, frameColor, wallpaperColor, batteryInt); //Passing frame color and wallpaper color
         
     }
 
@@ -112,7 +113,7 @@ class IPhone extends Phone {
     //IPhone has Apps
     Apps a;
     
-    public IPhone(Graphics g, Color frameColor, Color wallpaperColor){
+    public IPhone(Graphics g, Color frameColor, Color wallpaperColor, String batteryInt){
         super(g, frameColor, wallpaperColor); //Passing frame color and wallpaper color
         
         //Change UI color based on background color for visibility
@@ -184,7 +185,7 @@ class IPhone extends Phone {
         g.drawRect(195,20,30,10);
         Font battery = new Font("Comic Sans",Font.BOLD,7); 
         g.setFont(battery);
-        g.drawString(((int)(Math.random()*11)+45)+"%",201,28);
+        g.drawString(batteryInt,201,28);
         
         //Apps
         a = new Apps(g);

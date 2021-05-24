@@ -1,4 +1,4 @@
-package Games;
+package games;
 
 import java.util.*;
 
@@ -8,7 +8,7 @@ public class Runner {
 		
 		boolean run = true;
 		while(run) {
-			System.out.println("Select game- blackjack: ");
+			System.out.println("Select game- blackjack, roulette: ");
 			Scanner key = new Scanner(System.in);
 			String choice = key.nextLine();
 			
@@ -16,6 +16,12 @@ public class Runner {
 				System.out.println("Beginning Blackjack: \n");
 				Blackjack game = new Blackjack();
 				game.playBlackjack();
+			}
+			
+			if(choice.equalsIgnoreCase("roulette")) {
+				System.out.println("Beginning Roulette: \n");
+				Roulette game = new Roulette();
+				game.playRoulette();
 			}
 			System.out.println(); System.out.println();
 		}
