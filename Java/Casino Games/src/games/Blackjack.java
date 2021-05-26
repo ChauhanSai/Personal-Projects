@@ -14,6 +14,7 @@ public class Blackjack {
 	String temp = "";
 	
 	public void playBlackjack() {
+		@SuppressWarnings("resource")
 		Scanner key = new Scanner(System.in);
 		startGame();
 		if(getPlaySum()<=21) System.out.print("Player turn: ");

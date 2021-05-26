@@ -51,6 +51,7 @@ public class Roulette {
 	}
 	
 	public void askBet() {
+		@SuppressWarnings("resource")
 		Scanner key = new Scanner(System.in);
 		System.out.println("Bet- #, 1st 12, 2nd 12, 3rd 12, 1-18, 19-36, Even, Odd, Red, Black, 0, 00:");
 		String playChoice = key.nextLine();

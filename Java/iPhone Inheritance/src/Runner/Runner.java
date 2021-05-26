@@ -6,6 +6,7 @@ import java.awt.*;
 
 
 class DrawPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 	
 	int frame = (int)(Math.random()*121);
 	int red = (int)(Math.random()*256);
@@ -21,7 +22,8 @@ class DrawPanel extends JPanel {
         Color frameColor = new Color(frame,frame,frame); //Random Frame
 	    Color wallpaperColor = new Color(red,green,blue); //Random Wallpaper
 	    
-        IPhone iphone = new IPhone(g, frameColor, wallpaperColor, batteryInt); //Passing frame color and wallpaper color
+        @SuppressWarnings("unused")
+		IPhone iphone = new IPhone(g, frameColor, wallpaperColor, batteryInt); //Passing frame color and wallpaper color
         
     }
 
@@ -75,7 +77,7 @@ class Device {
             }
         }
         g.setColor(new Color(backgroundR,backgroundG,backgroundB));
-        g.fillRect(0,0,250,400);
+        g.fillRect(0,0,(int)Double.POSITIVE_INFINITY,(int)Double.POSITIVE_INFINITY);
         
         //Frame parts
         g.setColor(frameColor);
@@ -394,8 +396,9 @@ class Apps {
 
 //DO NOT CHANGE ANYTHING DOWN HERE!
 public class Runner extends JFrame {
+	private static final long serialVersionUID = 1L;
 
-    public Runner() {
+	public Runner() {
 
         initUI();
     }
@@ -406,7 +409,7 @@ public class Runner extends JFrame {
         add(drawPanel);
 
         setSize(250, 400);
-        setTitle("Graphics");
+        setTitle("iPhone");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
