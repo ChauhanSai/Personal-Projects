@@ -16,3 +16,10 @@ print((10/num)*10)
 #Boolean
 print(True)
 print(True and False)
+#If Statements
+if num>20:
+    print("Greater than 20")
+elif num>10:
+    print("Greater than 10")
+else:
+    print("Less than 10")
