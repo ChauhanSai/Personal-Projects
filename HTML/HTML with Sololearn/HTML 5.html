@@ -87,7 +87,7 @@
 			<svg width="200" height="100">
 				<line x1="10" y1="10" x2="190" y2="90" style="stroke:#0078d4; stroke-width:10; stroke-linecap:round" />
 			</svg>
-			
+			<br/> <br/>
 			<svg width="160" height="150">
 				<polyline style="stroke:#0078d4; stroke-width:10; stroke-linejoin:round; stroke-linecap:round; fill:none" points="10 100, 50 140, 150 20"/>
 			</svg>
@@ -99,7 +99,7 @@
 			<svg width="200" height="200">
 				<polygon points="10 100, 100 190, 190 100, 100 10" style="fill:#0078d4; stroke:#eeeeee; stroke-width:2" />
 			</svg>
-			<br/> <br/>
+			
 			<svg width="100" height="100">
 				<path d="M 10 10 L 50 50 H 90 V 90" style="stroke:#0078d4; fill:none; stroke-width:10; stroke-linecap:round" />
 			</svg>
@@ -113,12 +113,64 @@
 		
 		<br/> <br/>
 		
+		<article align="left" style="color:black; background-color:#c3c3c5; padding:5px; padding-left:25px; padding-bottom:20px">
+			<h2>Forms in HTML 5</h2>
+			<form>
+				<label for="user">Username: </label>
+				<input id="user" name="username" type="text" placeholder="ExampleUser" list="names" autofocus required />
+				<datalist id="names">
+					<option value=" BananaBoy"/>
+					<option value=" FamousFox"/>
+					<option value=" RedRabbit"/>
+					<option value=" EnragedElephant"/>
+					<option value=" AmazingAlphabet"/>
+				</datalist>
+				<br/>
+				<label for="email">Email: </label>
+				<input id="email" name="email" type="email" placeholder="email@example.com" required />
+				<br/>
+				<label for="tel">Number: </label>
+				<input id="tel" name="tel" type="tel" placeholder="123-456-7890" required />
+				<br/>
+				<label for="number">Unique Number: </label>
+				<input id="number" name="number" type="number" placeholder="1234" required />
+				<br/>
+				<label for="date">Date: </label>
+				<input id="date" name="date" type="date" placeholder="" required />
+				<br/>
+				<label for="time">Time: </label>
+				<input id="time" name="time" type="time" placeholder="" />
+				<br/>
+				<label for="color">Account Color: </label>
+				<input id="color" name="color" type="color" placeholder="#FFFFFF" />
+				<br/>
+				<label for="url">Social Link: </label>
+				<input id="url" name="url" type="url" placeholder="www.example.com" />
+				<br/>
+				<input type="submit" value="Submit" />
+			</form>
+			
+			<br/><br/>
+			
+			<form>
+				<label for="url">Search: </label>
+				<input id="search" name="search" type="search" />
+				<input type="submit" value="Search" />
+			</form>
+		</article>
+		
+		<br/> <br/>
+		
 		<footer style="color:white; background-color:#a0d55e; padding:30px">
-			<progress min="0" max="44" value="38"> </progress><br/><br/>
+			<progress min="0" max="44" value="44"> </progress><br/><br/>
 			<a href="https://github.com/ChauhanSai/Script-Projects" target="_blank">GitHub</a> | <a href="https://www.sololearn.com" target="_blank">Sololearn</a>
 			<br/>HTML 5 Logo provided by <a href="https://simpleicons.org/" target="_blank">SimpleIcons</a>
 			<br/>SFX provided by <a href="https://sfxr.me/#7BMHBGB9sBNwf4VHYotHt7WuL1qNb7FaeBqYGzUGrHo8Zb9BGzbfsLfKqw9fKPjbaG53TcdgS83Fvet6iqtez3K1ggJV1wGr2QwYDnKG1LZ2nSmqQ9MM2GwLs" target="_blank">jsfxr</a>
 			<br/>Video by <a href="https://www.pexels.com/@inforexplore?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels" target="_blank">Joseph Redfield</a> from <a href="https://www.pexels.com/photo/computer-monitor-display-2278095/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels" target="_blank">Pexels</a>
 		</footer>
+		
+		<br/> <br/>
+		
+		<img src="certificate.JPG" padding="30px" width="100%"/>
 	</body>
 </html>
