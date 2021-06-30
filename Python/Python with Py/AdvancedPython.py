@@ -17,3 +17,35 @@ print(operators_dict)
 
 print(int(4.6))
 print(round(4.6))
+
+indexing = "hello"
+print(indexing[0])
+print(indexing[-1]+indexing[-2])
+print(indexing[1:-1])
+print(indexing[1:])
+print(indexing[:2])
+
+strings = ["hello", "hi"]
+print(strings[0][2])
+
+def sys():
+    print("Apples")
+    print("Bananas")
+sys()
+
+def nothing():
+    pass
+nothing()
+
+hot = True
+print(hot)
+def cold():
+    hot = False
+    print(hot)
+cold()
+print(str(hot)+"(Doesn't change out of function")
+
+def value():
+    value = 1+2
+    return value
+print(value())
