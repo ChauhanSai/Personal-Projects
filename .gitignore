@@ -2,3 +2,7 @@
 *.lnk
 *.url
 */.metadata/
+*/Hidden/
+Hidden/*
+*/__pycache__
+*.pyc
