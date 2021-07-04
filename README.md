@@ -39,6 +39,13 @@
 
 <hr/>
 
+### Releases
+Title | Language | Title | Language
+----- | -------- | ----- | --------
+[git-release-api](https://github.com/ChauhanSai/Script-Projects/releases/tag/r1) | Python | N/A | N/A
+
+<hr/>
+
 <p align="center">
   <br>
   <b>This Repo</b>
