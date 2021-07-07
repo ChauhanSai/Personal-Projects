@@ -1,0 +1,106 @@
+#stripeA {
+	stroke:#f2e326; 
+	stroke-width:115.25
+}
+
+#stripeB {
+	stroke:#f2e326; 
+	stroke-width:115.25
+}
+
+#stripeC {
+	stroke:#88db27; 
+	stroke-width:115.25
+}
+
+#stripeD {
+	stroke:#88db27; 
+	stroke-width:115.25
+}
+
+#stripeE {
+	stroke:#06a032; 
+	stroke-width:115.25
+}
+
+#stripeF {
+	stroke:#06a032; 
+	stroke-width:115.25
+}
+
+#stripeG {
+	stroke:#1ba5b0; 
+	stroke-width:115.25
+}
+
+#stripeH {
+	stroke:#1ba5b0; 
+	stroke-width:115.25
+}
+
+#stripeI {
+	stroke:#06e3d2; 
+	stroke-width:115.25
+}
+
+#foot {
+	color:white; 
+	background-color:#555555; 
+	padding:10px
+}
+
+body {
+	padding:20px;
+	font-family: Veranda, Helvetica, sans-serif; 
+	color:white; 
+	background-color:#000000
+}
+
+header {
+	color:white; 
+	background-color:#555555; 
+	padding:10px;
+}
+
+#svg {
+	color:black; 
+	background-color:#555555; 
+	padding:15px; 
+	padding-bottom:0px;
+	height:740px;
+}
+
+#wallpaper {
+	color:black; 
+	background-color:#555555; 
+	width:576px;
+	height:725px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: silver;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: silver;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: silver;
+  background-color: transparent;
+  text-decoration: underline;
+}

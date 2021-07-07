@@ -7,27 +7,129 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Stripes Generator</title>
+		<link rel="stylesheet" href="stripesGenerator.css"/>
+		
 	</head>
-	<body align="center" style="padding:20px;font-family:Veranda, Helvetica, sans-serif; color:white; background-color:#000000; ">
-		<header style="color:white; background-color:#555555; padding:10px">
+	<body align="center">
+		<header>
 			<h1>Your Stripes</h1>
+			<section>
+				<label for="colorPickerA">Stripes: </label> <input type="color" id="colorPickerA" value="#f2e326"/> <input type="color" id="colorPickerB" value="#f2e326"/> <input type="color" id="colorPickerC" value="#88db27"/> <input type="color" id="colorPickerD" value="#88db27"/> <input type="color" id="colorPickerE" value="#06a032"/> <input type="color" id="colorPickerF" value="#06a032"/> <input type="color" id="colorPickerG" value="#1ba5b0"/> <input type="color" id="colorPickerH" value="#1ba5b0"/> <input type="color" id="colorPickerI" value="#06e3d2"/>
+			</section>
 		</header>
 		
 		<br/> <br/>
 		
-		<article>
-			<section width="576" height="720" style="color:black; background-color:#555555; padding:5px; padding-bottom:0px">
+		<article id="svg" >
+			<section id="wallpaper" align="center">
 				<svg width="576" height="720" transform="scale(-1,1)">
-					<!-- Edit 'stroke:#' -->
-					<line x1="496" y1="-100" x2="676" y2="125" style="stroke:#f2e326; stroke-width:115.25" />
-					<line x1="352" y1="-100" x2="676" y2="305" style="stroke:#f2e326; stroke-width:115.25" />
-					<line x1="208" y1="-100" x2="676" y2="485" style="stroke:#88db27; stroke-width:115.25" />
-					<line x1="64" y1="-100" x2="676" y2="665" style="stroke:#88db27; stroke-width:115.25" />
-					<line x1="-80" y1="-100" x2="656" y2="820" style="stroke:#06a032; stroke-width:115.25" />
-					<line x1="-100" y1="55" x2="512" y2="820" style="stroke:#06a032; stroke-width:115.25" />
-					<line x1="-100" y1="235" x2="368" y2="820" style="stroke:#1ba5b0; stroke-width:115.25" />
-					<line x1="-100" y1="415" x2="224" y2="820" style="stroke:#1ba5b0; stroke-width:115.25" />
-					<line x1="-100" y1="595" x2="80" y2="820" style="stroke:#06e3d2; stroke-width:115.25" />
+					<line x1="496" y1="-100" x2="676" y2="125" id="stripeA" />
+					<script>
+						let colorPickerA = document.getElementById("colorPickerA");
+						let stripeA = document.getElementById("stripeA");
+						
+						stripeA.style.stroke = colorPickerA.value;
+						
+						colorPickerA.addEventListener("input", function(event) {
+						  stripeA.style.stroke = colorPickerA.value;
+						}, false);
+					</script>
+					
+					<line x1="352" y1="-100" x2="676" y2="305" id="stripeB" />
+					<script>
+						let colorPickerB = document.getElementById("colorPickerB");
+						let stripeB = document.getElementById("stripeB");
+						
+						stripeB.style.stroke = colorPickerB.value;
+						
+						colorPickerB.addEventListener("input", function(event) {
+						  stripeB.style.stroke = colorPickerB.value;
+						}, false);
+					</script>
+					
+					<line x1="208" y1="-100" x2="676" y2="485" id="stripeC" />
+					<script>
+						let colorPickerC = document.getElementById("colorPickerC");
+						let stripeC = document.getElementById("stripeC");
+						
+						stripeC.style.stroke = colorPickerC.value;
+						
+						colorPickerC.addEventListener("input", function(event) {
+						  stripeC.style.stroke = colorPickerC.value;
+						}, false);
+					</script>
+					
+					<line x1="64" y1="-100" x2="676" y2="665" id="stripeD" />
+					<script>
+						let colorPickerD = document.getElementById("colorPickerD");
+						let stripeD = document.getElementById("stripeD");
+						
+						stripeD.style.stroke = colorPickerD.value;
+						
+						colorPickerD.addEventListener("input", function(event) {
+						  stripeD.style.stroke = colorPickerD.value;
+						}, false);
+					</script>
+					
+					<line x1="-80" y1="-100" x2="656" y2="820" id="stripeE" />
+					<script>
+						let colorPickerE = document.getElementById("colorPickerE");
+						let stripeE = document.getElementById("stripeE");
+						
+						stripeE.style.stroke = colorPickerE.value;
+						
+						colorPickerE.addEventListener("input", function(event) {
+						  stripeE.style.stroke = colorPickerE.value;
+						}, false);
+					</script>
+					
+					<line x1="-100" y1="55" x2="512" y2="820" id="stripeF" />
+					<script>
+						let colorPickerF = document.getElementById("colorPickerF");
+						let stripeF = document.getElementById("stripeF");
+						
+						stripeF.style.stroke = colorPickerF.value;
+						
+						colorPickerF.addEventListener("input", function(event) {
+						  stripeF.style.stroke = colorPickerF.value;
+						}, false);
+					</script>
+					
+					<line x1="-100" y1="235" x2="368" y2="820" id="stripeG" />
+					<script>
+						let colorPickerG = document.getElementById("colorPickerG");
+						let stripeG = document.getElementById("stripeG");
+						
+						stripeG.style.stroke = colorPickerG.value;
+						
+						colorPickerG.addEventListener("input", function(event) {
+						  stripeG.style.stroke = colorPickerG.value;
+						}, false);
+					</script>
+					
+					<line x1="-100" y1="415" x2="224" y2="820" id="stripeH" />
+					<script>
+						let colorPickerH = document.getElementById("colorPickerH");
+						let stripeH = document.getElementById("stripeH");
+						
+						stripeH.style.stroke = colorPickerH.value;
+						
+						colorPickerH.addEventListener("input", function(event) {
+						  stripeH.style.stroke = colorPickerH.value;
+						}, false);
+					</script>
+					
+					<line x1="-100" y1="595" x2="80" y2="820" id="stripeI" />
+					<script>
+						let colorPickerI = document.getElementById("colorPickerI");
+						let stripeI = document.getElementById("stripeI");
+						
+						stripeI.style.stroke = colorPickerI.value;
+						
+						colorPickerI.addEventListener("input", function(event) {
+						  stripeI.style.stroke = colorPickerI.value;
+						}, false);
+					</script>
 					
 					<rect width="626" height="770" x="-25" y="-25" fill="none" stroke="#000000" stroke-width="50" rx="100"/>
 				</svg>
@@ -36,9 +138,9 @@
 		
 		<br/> <br/>
 		
-		<footer style="color:white; background-color:#555555; padding:10px">
+		<footer id="foot" >
 			<p>Built for Apple Watch Series 3 and older (5:4 Aspect Ratio)</p>
-			<p>Edit <a href="https://github.com/ChauhanSai/Script-Projects/blob/main/HTML/Stripes%20Generator/stripesGenerator.html">HTML</a> to edit stripe colors</p>
+			<a href="https://github.com/ChauhanSai/Script-Projects/blob/main/HTML/Stripes%20Generator/" target="_blank">GitHub</a> | <a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2" target="_blank">Download</a>
 		</footer>
 	</body>
 </html>
