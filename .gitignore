@@ -6,3 +6,4 @@
 Hidden/*
 */__pycache__
 *.pyc
+*.ffs_db
