@@ -1,84 +1,103 @@
 #stripeA {
 	stroke:#f2e326; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #stripeB {
 	stroke:#f2e326; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #stripeC {
 	stroke:#88db27; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #stripeD {
 	stroke:#88db27; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #stripeE {
 	stroke:#06a032; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #stripeF {
 	stroke:#06a032; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #stripeG {
 	stroke:#1ba5b0; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #stripeH {
 	stroke:#1ba5b0; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #stripeI {
 	stroke:#06e3d2; 
-	stroke-width:115.25
+	stroke-width:105;
 }
 
 #foot {
 	color:white; 
-	background-color:#555555; 
-	padding:10px
+	background-color:#303030; 
+	padding:10px;
 }
 
-body {
+#body {
 	padding:20px;
 	font-family: Veranda, Helvetica, sans-serif; 
 	color:white; 
-	background-color:#000000
+	background-color:#000000;
 }
 
-header {
+#noscript {
+	color:red;
+}
+
+#header {
 	color:white; 
-	background-color:#555555; 
-	padding:10px;
+	background-color:#303030; 
+	padding:5px;
+	padding-bottom:20px;
 }
 
 #svg {
 	color:black; 
-	background-color:#555555; 
+	background-color:#303030; 
 	padding:15px; 
 	padding-bottom:0px;
 	height:740px;
+	
 }
 
 #wallpaper {
 	color:black; 
-	background-color:#555555; 
+	background-color:#303030; 
 	width:576px;
 	height:725px;
 	position: absolute;
 	margin: auto;
 	left: 0;
 	right: 0;
+}
+
+#toRotate {
+	transform: rotate(0deg) translate(100px,100px);
+}
+
+#github {
+	height:45px;
+	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
+}
+#download {
+	height:45px;
+	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
 }
 
 a:link {
@@ -103,4 +122,9 @@ a:active {
   color: silver;
   background-color: transparent;
   text-decoration: underline;
+}
+
+#theme {
+	text-decoration: underline;
+	cursor: pointer;
 }

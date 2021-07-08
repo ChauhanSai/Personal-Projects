@@ -8,13 +8,17 @@
 		<meta charset="UTF-8">
 		<title>Stripes Generator</title>
 		<link rel="stylesheet" href="stripesGenerator.css"/>
-		
+		<link rel="shortcut icon" type="image/jpg" href="favicon.jpg"/>
 	</head>
-	<body align="center">
-		<header>
-			<h1>Your Stripes</h1>
+	<body align="center" id="body" style="color:white">
+		<header id="header">
+			<h1>Stripes</h1>
+			<b>for Apple Watch S3 or older<super>*</super></b><br/><br/>
 			<section>
 				<label for="colorPickerA">Stripes: </label> <input type="color" id="colorPickerA" value="#f2e326"/> <input type="color" id="colorPickerB" value="#f2e326"/> <input type="color" id="colorPickerC" value="#88db27"/> <input type="color" id="colorPickerD" value="#88db27"/> <input type="color" id="colorPickerE" value="#06a032"/> <input type="color" id="colorPickerF" value="#06a032"/> <input type="color" id="colorPickerG" value="#1ba5b0"/> <input type="color" id="colorPickerH" value="#1ba5b0"/> <input type="color" id="colorPickerI" value="#06e3d2"/>
+				<br/><br/>
+				<label for="rotation">Rotation: </label> <input type="number" id="rotation" value="-45"/> <label for="offsetX">Offset: x</label> <input type="number" id="offsetX" value="-320"/> <label for="offsetY"> y</label> <input type="number" id="offsetY" value="60"/>
+				<noscript id="noscript"><br/><br/>Uh oh, it looks like your broswer doesn't support JavaScript</noscript>
 			</section>
 		</header>
 		
@@ -22,125 +26,199 @@
 		
 		<article id="svg" >
 			<section id="wallpaper" align="center">
-				<svg width="576" height="720" transform="scale(-1,1)">
-					<line x1="496" y1="-100" x2="676" y2="125" id="stripeA" />
+				<svg width="576" height="720">
+					<g id="toRotate">
+						<line x1="-179.5" y1="0" x2="755.5" y2="0" id="stripeA" />
+						<script>
+							let colorPickerA = document.getElementById("colorPickerA");
+							let stripeA = document.getElementById("stripeA");
+							
+							stripeA.style.stroke = colorPickerA.value;
+							
+							colorPickerA.addEventListener("input", function(event) {
+							  stripeA.style.stroke = colorPickerA.value;
+							}, false);
+						</script>
+						
+						<line x1="-179.5" y1="103" x2="755.5" y2="103" id="stripeB" />
+						<script>
+							let colorPickerB = document.getElementById("colorPickerB");
+							let stripeB = document.getElementById("stripeB");
+							
+							stripeB.style.stroke = colorPickerB.value;
+							
+							colorPickerB.addEventListener("input", function(event) {
+							  stripeB.style.stroke = colorPickerB.value;
+							}, false);
+						</script>
+						
+						<line x1="-179.5" y1="206" x2="755.5" y2="206" id="stripeC" />
+						<script>
+							let colorPickerC = document.getElementById("colorPickerC");
+							let stripeC = document.getElementById("stripeC");
+							
+							stripeC.style.stroke = colorPickerC.value;
+							
+							colorPickerC.addEventListener("input", function(event) {
+							  stripeC.style.stroke = colorPickerC.value;
+							}, false);
+						</script>
+						
+						<line x1="-179.5" y1="309" x2="755.5" y2="309" id="stripeD" />
+						<script>
+							let colorPickerD = document.getElementById("colorPickerD");
+							let stripeD = document.getElementById("stripeD");
+							
+							stripeD.style.stroke = colorPickerD.value;
+							
+							colorPickerD.addEventListener("input", function(event) {
+							  stripeD.style.stroke = colorPickerD.value;
+							}, false);
+						</script>
+						
+						<line x1="-179.5" y1="412" x2="755.5" y2="412" id="stripeE" />
+						<script>
+							let colorPickerE = document.getElementById("colorPickerE");
+							let stripeE = document.getElementById("stripeE");
+							
+							stripeE.style.stroke = colorPickerE.value;
+							
+							colorPickerE.addEventListener("input", function(event) {
+							  stripeE.style.stroke = colorPickerE.value;
+							}, false);
+						</script>
+						
+						<line x1="-179.5" y1="515" x2="755.5" y2="515" id="stripeF" />
+						<script>
+							let colorPickerF = document.getElementById("colorPickerF");
+							let stripeF = document.getElementById("stripeF");
+							
+							stripeF.style.stroke = colorPickerF.value;
+							
+							colorPickerF.addEventListener("input", function(event) {
+							  stripeF.style.stroke = colorPickerF.value;
+							}, false);
+						</script>
+						
+						<line x1="-179.5" y1="618" x2="755.5" y2="618" id="stripeG" />
+						<script>
+							let colorPickerG = document.getElementById("colorPickerG");
+							let stripeG = document.getElementById("stripeG");
+							
+							stripeG.style.stroke = colorPickerG.value;
+							
+							colorPickerG.addEventListener("input", function(event) {
+							  stripeG.style.stroke = colorPickerG.value;
+							}, false);
+						</script>
+						
+						<line x1="-179.5" y1="721" x2="755.5" y2="721" id="stripeH" />
+						<script>
+							let colorPickerH = document.getElementById("colorPickerH");
+							let stripeH = document.getElementById("stripeH");
+							
+							stripeH.style.stroke = colorPickerH.value;
+							
+							colorPickerH.addEventListener("input", function(event) {
+							  stripeH.style.stroke = colorPickerH.value;
+							}, false);
+						</script>
+						
+						<line x1="-179.5" y1="824" x2="755.5" y2="824" id="stripeI" />
+						<script>
+							let colorPickerI = document.getElementById("colorPickerI");
+							let stripeI = document.getElementById("stripeI");
+							
+							stripeI.style.stroke = colorPickerI.value;
+							
+							colorPickerI.addEventListener("input", function(event) {
+							  stripeI.style.stroke = colorPickerI.value;
+							}, false);
+						</script>
+						
+					</g>
 					<script>
-						let colorPickerA = document.getElementById("colorPickerA");
-						let stripeA = document.getElementById("stripeA");
+						let rotation = document.getElementById("rotation");
+						let offsetX = document.getElementById("offsetX");
+						let offsetY = document.getElementById("offsetY");
+						let toRotate = document.getElementById("toRotate");
 						
-						stripeA.style.stroke = colorPickerA.value;
+						toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
 						
-						colorPickerA.addEventListener("input", function(event) {
-						  stripeA.style.stroke = colorPickerA.value;
-						}, false);
-					</script>
-					
-					<line x1="352" y1="-100" x2="676" y2="305" id="stripeB" />
-					<script>
-						let colorPickerB = document.getElementById("colorPickerB");
-						let stripeB = document.getElementById("stripeB");
+						rotation.addEventListener("input", function() {transform()}, false);
+						offsetX.addEventListener("input", function() {transform()}, false);
+						offsetY.addEventListener("input", function() {transform()}, false);
 						
-						stripeB.style.stroke = colorPickerB.value;
-						
-						colorPickerB.addEventListener("input", function(event) {
-						  stripeB.style.stroke = colorPickerB.value;
-						}, false);
-					</script>
-					
-					<line x1="208" y1="-100" x2="676" y2="485" id="stripeC" />
-					<script>
-						let colorPickerC = document.getElementById("colorPickerC");
-						let stripeC = document.getElementById("stripeC");
-						
-						stripeC.style.stroke = colorPickerC.value;
-						
-						colorPickerC.addEventListener("input", function(event) {
-						  stripeC.style.stroke = colorPickerC.value;
-						}, false);
-					</script>
-					
-					<line x1="64" y1="-100" x2="676" y2="665" id="stripeD" />
-					<script>
-						let colorPickerD = document.getElementById("colorPickerD");
-						let stripeD = document.getElementById("stripeD");
-						
-						stripeD.style.stroke = colorPickerD.value;
-						
-						colorPickerD.addEventListener("input", function(event) {
-						  stripeD.style.stroke = colorPickerD.value;
-						}, false);
-					</script>
-					
-					<line x1="-80" y1="-100" x2="656" y2="820" id="stripeE" />
-					<script>
-						let colorPickerE = document.getElementById("colorPickerE");
-						let stripeE = document.getElementById("stripeE");
-						
-						stripeE.style.stroke = colorPickerE.value;
-						
-						colorPickerE.addEventListener("input", function(event) {
-						  stripeE.style.stroke = colorPickerE.value;
-						}, false);
-					</script>
-					
-					<line x1="-100" y1="55" x2="512" y2="820" id="stripeF" />
-					<script>
-						let colorPickerF = document.getElementById("colorPickerF");
-						let stripeF = document.getElementById("stripeF");
-						
-						stripeF.style.stroke = colorPickerF.value;
-						
-						colorPickerF.addEventListener("input", function(event) {
-						  stripeF.style.stroke = colorPickerF.value;
-						}, false);
-					</script>
-					
-					<line x1="-100" y1="235" x2="368" y2="820" id="stripeG" />
-					<script>
-						let colorPickerG = document.getElementById("colorPickerG");
-						let stripeG = document.getElementById("stripeG");
-						
-						stripeG.style.stroke = colorPickerG.value;
-						
-						colorPickerG.addEventListener("input", function(event) {
-						  stripeG.style.stroke = colorPickerG.value;
-						}, false);
-					</script>
-					
-					<line x1="-100" y1="415" x2="224" y2="820" id="stripeH" />
-					<script>
-						let colorPickerH = document.getElementById("colorPickerH");
-						let stripeH = document.getElementById("stripeH");
-						
-						stripeH.style.stroke = colorPickerH.value;
-						
-						colorPickerH.addEventListener("input", function(event) {
-						  stripeH.style.stroke = colorPickerH.value;
-						}, false);
-					</script>
-					
-					<line x1="-100" y1="595" x2="80" y2="820" id="stripeI" />
-					<script>
-						let colorPickerI = document.getElementById("colorPickerI");
-						let stripeI = document.getElementById("stripeI");
-						
-						stripeI.style.stroke = colorPickerI.value;
-						
-						colorPickerI.addEventListener("input", function(event) {
-						  stripeI.style.stroke = colorPickerI.value;
-						}, false);
+						function transform() {
+							toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
+						}
 					</script>
 					
 					<rect width="626" height="770" x="-25" y="-25" fill="none" stroke="#000000" stroke-width="50" rx="100"/>
 				</svg>
 			</section>
+			<br/><p>Loading...</p>
+			<p>Please wait</p>
 		</article>
 		
 		<br/> <br/>
 		
-		<footer id="foot" >
-			<p>Built for Apple Watch Series 3 and older (5:4 Aspect Ratio)</p>
-			<a href="https://github.com/ChauhanSai/Script-Projects/blob/main/HTML/Stripes%20Generator/" target="_blank">GitHub</a> | <a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2" target="_blank">Download</a>
+		<footer id="foot">
+			<p><super>*</super>Works with 5:4 Aspect Ratio; Height: 720px, Width: 576px</p>
+			<a id="theme"><svg style="height:30px" viewBox="0 0 24 24">
+				<path fill="currentColor" d="M7.5,2C5.71,3.15 4.5,5.18 4.5,7.5C4.5,9.82 5.71,11.85 7.53,13C4.46,13 2,10.54 2,7.5A5.5,5.5 0 0,1 7.5,2M19.07,3.5L20.5,4.93L4.93,20.5L3.5,19.07L19.07,3.5M12.89,5.93L11.41,5L9.97,6L10.39,4.3L9,3.24L10.75,3.12L11.33,1.47L12,3.1L13.73,3.13L12.38,4.26L12.89,5.93M9.59,9.54L8.43,8.81L7.31,9.59L7.65,8.27L6.56,7.44L7.92,7.35L8.37,6.06L8.88,7.33L10.24,7.36L9.19,8.23L9.59,9.54M19,13.5A5.5,5.5 0 0,1 13.5,19C12.28,19 11.15,18.6 10.24,17.93L17.93,10.24C18.6,11.15 19,12.28 19,13.5M14.6,20.08L17.37,18.93L17.13,22.28L14.6,20.08M18.93,17.38L20.08,14.61L22.28,17.15L18.93,17.38M20.08,12.42L18.94,9.64L22.28,9.88L20.08,12.42M9.63,18.93L12.4,20.08L9.87,22.27L9.63,18.93Z" />
+			</svg></a>
+			
+			<script>
+			
+			
+			document.getElementById("theme").onclick = function() {theme()};
+			
+			function theme() {
+				if(document.getElementById("body").style.color === "white"){
+					light();
+				} else {
+					dark();
+				}
+			}
+			
+			function light() {
+				document.getElementById("body").style.color = "black";
+				document.getElementById("body").style.backgroundColor = "#FFFFFF";
+				document.getElementById("header").style.color = "black";
+				document.getElementById("header").style.backgroundColor = "#E4E4E4";
+				document.getElementById("svg").style.color = "black";
+				document.getElementById("svg").style.backgroundColor = "#E4E4E4";
+				document.getElementById("wallpaper").style.color = "black";
+				document.getElementById("wallpaper").style.backgroundColor = "#E4E4E4";
+				document.getElementById("foot").style.color = "black";
+				document.getElementById("foot").style.backgroundColor = "#E4E4E4";
+				document.getElementById("github").style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
+				document.getElementById("download").style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
+			}
+			document.getElementById("dark").onclick = function() {dark()};
+
+			function dark() {
+				document.getElementById("body").style.color = "white";
+				document.getElementById("body").style.backgroundColor = "#000000";
+				document.getElementById("header").style.color = "white";
+				document.getElementById("header").style.backgroundColor = "#303030";
+				document.getElementById("svg").style.color = "white";
+				document.getElementById("svg").style.backgroundColor = "#303030";
+				document.getElementById("wallpaper").style.color = "white";
+				document.getElementById("wallpaper").style.backgroundColor = "#303030";
+				document.getElementById("foot").style.color = "white";
+				document.getElementById("foot").style.backgroundColor = "#303030";
+				document.getElementById("github").style.filter = "invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%)";
+				document.getElementById("download").style.filter = "invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%)";
+			}
+			</script>
+			
+			<br/><br/><a href="https://github.com/ChauhanSai/Script-Projects/blob/main/HTML/Stripes%20Generator/" target="_blank"><img src="https://simpleicons.org/icons/github.svg" id="github"/></a>   <a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2" target="_blank">
+				<svg id="download" viewBox="0 0 24 24">
+                    <path fill="#000000" ng-attr-d="{{icon.data}}" d="M14,2H6C4.89,2 4,2.89 4,4V20C4,21.11 4.89,22 6,22H18C19.11,22 20,21.11 20,20V8L14,2M12,19L8,15H10.5V12H13.5V15H16L12,19M13,9V3.5L18.5,9H13Z"></path>
+                </svg></a>
+			
 		</footer>
 	</body>
 </html>
