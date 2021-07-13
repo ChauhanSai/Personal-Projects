@@ -18,6 +18,8 @@
 				<label for="colorPickerA">Stripes: </label> <input type="color" id="colorPickerA" value="#f2e326"/> <input type="color" id="colorPickerB" value="#f2e326"/> <input type="color" id="colorPickerC" value="#88db27"/> <input type="color" id="colorPickerD" value="#88db27"/> <input type="color" id="colorPickerE" value="#06a032"/> <input type="color" id="colorPickerF" value="#06a032"/> <input type="color" id="colorPickerG" value="#1ba5b0"/> <input type="color" id="colorPickerH" value="#1ba5b0"/> <input type="color" id="colorPickerI" value="#06e3d2"/>
 				<br/><br/>
 				<label for="rotation">Rotation: </label> <input type="number" id="rotation" value="-45"/> <label for="offsetX">Offset: x</label> <input type="number" id="offsetX" value="-320"/> <label for="offsetY"> y</label> <input type="number" id="offsetY" value="60"/>
+				<br/><br/>
+				<button type="button" id="gradientButton">Toggle Gradient</button>
 				<noscript id="noscript"><br/><br/>Uh oh, it looks like your broswer doesn't support JavaScript</noscript>
 			</section>
 		</header>
@@ -29,108 +31,75 @@
 				<svg width="576" height="720">
 					<g id="toRotate">
 						<line x1="-179.5" y1="0" x2="755.5" y2="0" id="stripeA" />
+						<line x1="-179.5" y1="103" x2="755.5" y2="103" id="stripeB" />
+						<line x1="-179.5" y1="206" x2="755.5" y2="206" id="stripeC" />
+						<line x1="-179.5" y1="309" x2="755.5" y2="309" id="stripeD" />
+						<line x1="-179.5" y1="412" x2="755.5" y2="412" id="stripeE" />
+						<line x1="-179.5" y1="515" x2="755.5" y2="515" id="stripeF" />
+						<line x1="-179.5" y1="618" x2="755.5" y2="618" id="stripeG" />
+						<line x1="-179.5" y1="721" x2="755.5" y2="721" id="stripeH" />
+						<line x1="-179.5" y1="824" x2="755.5" y2="824" id="stripeI" />
+						
 						<script>
 							let colorPickerA = document.getElementById("colorPickerA");
 							let stripeA = document.getElementById("stripeA");
-							
 							stripeA.style.stroke = colorPickerA.value;
-							
 							colorPickerA.addEventListener("input", function(event) {
 							  stripeA.style.stroke = colorPickerA.value;
 							}, false);
-						</script>
-						
-						<line x1="-179.5" y1="103" x2="755.5" y2="103" id="stripeB" />
-						<script>
+							
 							let colorPickerB = document.getElementById("colorPickerB");
 							let stripeB = document.getElementById("stripeB");
-							
 							stripeB.style.stroke = colorPickerB.value;
-							
 							colorPickerB.addEventListener("input", function(event) {
 							  stripeB.style.stroke = colorPickerB.value;
 							}, false);
-						</script>
-						
-						<line x1="-179.5" y1="206" x2="755.5" y2="206" id="stripeC" />
-						<script>
+							
 							let colorPickerC = document.getElementById("colorPickerC");
 							let stripeC = document.getElementById("stripeC");
-							
 							stripeC.style.stroke = colorPickerC.value;
-							
 							colorPickerC.addEventListener("input", function(event) {
 							  stripeC.style.stroke = colorPickerC.value;
 							}, false);
-						</script>
-						
-						<line x1="-179.5" y1="309" x2="755.5" y2="309" id="stripeD" />
-						<script>
+							
 							let colorPickerD = document.getElementById("colorPickerD");
 							let stripeD = document.getElementById("stripeD");
-							
 							stripeD.style.stroke = colorPickerD.value;
-							
 							colorPickerD.addEventListener("input", function(event) {
 							  stripeD.style.stroke = colorPickerD.value;
 							}, false);
-						</script>
-						
-						<line x1="-179.5" y1="412" x2="755.5" y2="412" id="stripeE" />
-						<script>
+							
 							let colorPickerE = document.getElementById("colorPickerE");
 							let stripeE = document.getElementById("stripeE");
-							
 							stripeE.style.stroke = colorPickerE.value;
-							
 							colorPickerE.addEventListener("input", function(event) {
 							  stripeE.style.stroke = colorPickerE.value;
 							}, false);
-						</script>
-						
-						<line x1="-179.5" y1="515" x2="755.5" y2="515" id="stripeF" />
-						<script>
+							
 							let colorPickerF = document.getElementById("colorPickerF");
 							let stripeF = document.getElementById("stripeF");
-							
 							stripeF.style.stroke = colorPickerF.value;
-							
 							colorPickerF.addEventListener("input", function(event) {
 							  stripeF.style.stroke = colorPickerF.value;
 							}, false);
-						</script>
-						
-						<line x1="-179.5" y1="618" x2="755.5" y2="618" id="stripeG" />
-						<script>
+							
 							let colorPickerG = document.getElementById("colorPickerG");
 							let stripeG = document.getElementById("stripeG");
-							
 							stripeG.style.stroke = colorPickerG.value;
-							
 							colorPickerG.addEventListener("input", function(event) {
 							  stripeG.style.stroke = colorPickerG.value;
 							}, false);
-						</script>
-						
-						<line x1="-179.5" y1="721" x2="755.5" y2="721" id="stripeH" />
-						<script>
+							
 							let colorPickerH = document.getElementById("colorPickerH");
 							let stripeH = document.getElementById("stripeH");
-							
 							stripeH.style.stroke = colorPickerH.value;
-							
 							colorPickerH.addEventListener("input", function(event) {
 							  stripeH.style.stroke = colorPickerH.value;
 							}, false);
-						</script>
-						
-						<line x1="-179.5" y1="824" x2="755.5" y2="824" id="stripeI" />
-						<script>
+							
 							let colorPickerI = document.getElementById("colorPickerI");
 							let stripeI = document.getElementById("stripeI");
-							
 							stripeI.style.stroke = colorPickerI.value;
-							
 							colorPickerI.addEventListener("input", function(event) {
 							  stripeI.style.stroke = colorPickerI.value;
 							}, false);
@@ -155,6 +124,25 @@
 					</script>
 					
 					<rect width="626" height="770" x="-25" y="-25" fill="none" stroke="#000000" stroke-width="50" rx="100"/>
+					
+					<defs>
+						<linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+							<stop offset="60%" style="stop-color:#000000;stop-opacity:0" />
+							<stop offset="125%" style="stop-color:#000000;stop-opacity:0.5" />
+						</linearGradient>
+					</defs>
+					<rect width="626" height="770" x="-25" y="-25" fill="url(#grad)" id="gradrect" style="display: none;"/>
+					<script>
+						document.getElementById("gradientButton").onclick = function() {gradient()};
+						
+						function gradient() {
+							if (document.getElementById("gradrect").style.display === "none") {
+								document.getElementById("gradrect").style.display = "block";
+							  } else {
+								document.getElementById("gradrect").style.display = "none";
+							  }
+						}
+					</script>
 				</svg>
 			</section>
 			<br/><p>Loading...</p>
@@ -164,815 +152,77 @@
 		<br/> <br/>
 		
 		<article id="templates">
-		<h2>Templates</h2>
-			<a title="Default">
-				<img src="templates\Default.png" width="215px" id="Default" alt="Default"/></a>
-			<script>
-				document.getElementById("Default").onclick = function() {TDefault()};
+		<h2>Templates <a> <svg id="dropdown" class="buttons" viewBox="0 0 24 24" onclick="hide()"><path fill="#000000" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M7,10L12,15L17,10H7Z" /></svg></a></h2>
+			<section id="tohide">
+				<img src="templates\Default.png" class="templateimg" title="Default" alt="Default" onclick="Template('#f2e326','#f2e326','#88db27','#88db27','#06a032','#06a032','#1ba5b0','#1ba5b0','#06e3d2','-45','-320','60')"/>
+				<img src="templates\Apple.png" class="templateimg" title="Apple" alt="Apple" onclick="Template('#b61120','#b61120','#b61120','#b61120','#fefefe','#fefefe','#fefefe','#fefefe','#fefefe','0','0','0')"/>
+				<img src="templates\Australia.png" class="templateimg" title="Australia" alt="Australia" onclick="Template('#f3a40b','#f3a40b','#f3a40b','#f3a40b','#048238','#048238','#048238','#048238','#048238','-45','-320','60')"/>
+				<img src="templates\Belgium.png" class="templateimg" title="Belgium" alt="Belgium" onclick="Template('#0a0a08','#0a0a08','#0a0a08','#f3a40b','#f3a40b','#f3a40b','#b61122','#b61122','#b61122','-45','-320','60')"/>
+				<img src="templates\Brazil.png" class="templateimg" title="Brazil" alt="Brazil" onclick="Template('#048238','#048238','#048238','#24425c','#24425c','#24425c','#fae929','#fae929','#fae929','-45','-320','60')"/>
+				<img src="templates\Canada.png" class="templateimg" title="Canada" alt="Canada" onclick="Template('#ab081d','#ab081d','#ab081d','#ffffff','#ffffff','#ffffff','#ab081d','#ab081d','#ab081d','-45','-320','60')"/>
+				<img src="templates\China.png" class="templateimg" title="China" alt="China" onclick="Template('#bb0f27','#f3a40b','#bb0f27','#bb0f27','#bb0f27','#bb0f27','#bb0f27','#bb0f27','#bb0f27','-45','-320','60')"/>
+				<img src="templates\Denmark.png" class="templateimg" title="Denmark" alt="Denmark" onclick="Template('#ab081d','#ab081d','#ab081d','#ab081d','#ffffff','#ffffff','#ab081d','#ab081d','#ab081d','-45','-320','60')"/>
+				<img src="templates\France.png" class="templateimg" title="France" alt="France" onclick="Template('#24425c','#24425c','#24425c','#ffffff','#ffffff','#ffffff','#b61121','#b61121','#b61121','-45','-320','60')"/>
+				<img src="templates\Germany.png" class="templateimg" title="Germany" alt="Germany" onclick="Template('#0a0a08','#0a0a08','#0a0a08','#b61122','#b61122','#b61122','#f3a40b','#f3a40b','#f3a40b','-45','-320','60')"/>
+				<img src="templates\Great Britain.png" class="templateimg" title="Great Britain" alt="Great Britain" onclick="Template('#24425c','#24425c','#ffffff','#ab081d','#ab081d','#ab081d','#ffffff','#24425c','#24425c','-45','-320','60')"/>
+				<img src="templates\Greece.png" class="templateimg" title="Greece" alt="Greece" onclick="Template('#2c3463','#ffffff','#2c3463','#ffffff','#2c3463','#ffffff','#2c3463','#ffffff','#2c3463','-45','-320','60')"/>
+				<img src="templates\Italy.png" class="templateimg" title="Italy" alt="Italy" onclick="Template('#2c327e','#2c327e','#2c327e','#00a434','#ffffff','#ab081d','#2c327e','#2c327e','#2c327e','-45','-320','60')"/>
+				<img src="templates\Jamaica.png" class="templateimg" title="Jamaica" alt="Jamaica" onclick="Template('#048238','#048238','#048238','#fae929','#fae929','#fae929','#0a0a08','#0a0a08','#0a0a08','-45','-320','60')"/>
+				<img src="templates\Japan.png" class="templateimg" title="Japan" alt="Japan" onclick="Template('#ffffff','#ffffff','#ffffff','#ffffff','#b61122','#ffffff','#ffffff','#ffffff','#ffffff','-45','-320','60')"/>
+				<img src="templates\Mexico.png" class="templateimg" title="Mexico" alt="Mexico" onclick="Template('#048238','#048238','#048238','#ffffff','#ffffff','#ffffff','#ab081d','#ab081d','#ab081d','-45','-320','60')"/>
+				<img src="templates\Netherlands.png" class="templateimg" title="Netherlands" alt="Netherlands" onclick="Template('#e04a01','#e04a01','#e04a01','#e04a01','#2c327e','#e04a01','#e04a01','#e04a01','#e04a01','-45','-320','60')"/>
+				<img src="templates\New Zealand.png" class="templateimg" title="New Zealand" alt="New Zealand" onclick="Template('#0a0a08','#0a0a08','#0a0a08','#0a0a08','#808080','#0a0a08','#0a0a08','#0a0a08','#0a0a08','-45','-320','60')"/>
+				<img src="templates\Russia.png" class="templateimg" title="Russia" alt="Russia" onclick="Template('#ffffff','#ffffff','#ffffff','#2c327e','#2c327e','#2c327e','#b61122','#b61122','#b61122','-45','-320','60')"/>
+				<img src="templates\South Africa.png" class="templateimg" title="South Africa" alt="South Africa" onclick="Template('#ab071f','#ffffff','#048238','#f3a40b','#0a0a08','#f3a40b','#048238','#ffffff','#2e347e','-45','-320','60')"/>
+				<img src="templates\South Korea.png" class="templateimg" title="South Korea" alt="South Korea" onclick="Template('#ffffff','#ffffff','#ffffff','#aa081d','#2c327e','#ffffff','#ffffff','#ffffff','#ffffff','-45','-320','60')"/>
+				<img src="templates\Spain.png" class="templateimg" title="Spain" alt="Spain" onclick="Template('#ab081d','#ab081d','#ab081d','#f3a40b','#f3a40b','#f3a40b','#ab081d','#ab081d','#ab081d','-45','-320','60')"/>
+				<img src="templates\Sweden.png" class="templateimg" title="Sweden" alt="Sweden" onclick="Template('#306a82','#306a82','#306a82','#f8e92a','#f8e92a','#f8e92a','#306a82','#306a82','#306a82','-45','-320','60')"/>
+				<img src="templates\United States.png" class="templateimg" title="United States" alt="United States" onclick="Template('#24425c','#24425c','#24425c','#ffffff','#b71222','#ffffff','#b71222','#ffffff','#b71222','','','')"/>
+				<img src="templates\Promo1.png" class="templateimg" title="Promotional #1" alt="Promotional #1" onclick="Template('#fcc800','#ffffff','#2c3463','#ffffff','#fcc800','#ffffff','#2c3463','#ffffff','#fcc800','-45','-320','60')"/>
+				<img src="templates\Promo2.png" class="templateimg" title="Promotional #2" alt="Promotional #2" onclick="Template('#cd191b','#cd191b','#cd191b','#ff6412','#ff6412','#ff6412','#fae92b','#fae92b','#fae92b','0','0','-35')"/>
+				<img src="templates\Promo3.png" class="templateimg" title="Promotional #3" alt="Promotional #3" onclick="Template('#0dc5b6','#0dc5b6','#fac817','#fac817','#fc5f61','#fc5f61','#ebe4cf','#ebe4cf','#43758c','45','150','-398')"/>
+				<img src="templates\Update1.png" class="templateimg" title="Update #1 'Promo'" alt="Update #1 'Promo'" onclick="Template('#a03703','#a03703','#c4a484','#df520c','#df520c','#c4a484','#a03703','#a03703','#a03703','-90','-700','-70')"/>
+				<img src="templates\Update2.png" class="templateimg" title="Update #2 'Code Cleanup'" alt="Update #2 'Code Cleanup'" onclick="Template('#ffffff','#6b6b6b','#ffffff','#4cbb17','#4cbb17','#ffffff','#6b6b6b','#ffffff','#ffffff','-90','-700','-70')"/>
 				
-				function TDefault() {
-					document.getElementById("colorPickerA").value = "#f2e326";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#f2e326";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#88db27";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#88db27";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#06a032";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#06a032";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#1ba5b0";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#1ba5b0";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#06e3d2";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Apple">
-				<img src="templates\Apple.png" width="215px" id="Apple" alt="Apple"/></a>
+				<script>
+					function Template(a,b,c,d,e,f,g,h,i,r,x,y) {
+						document.getElementById("colorPickerA").value = a;
+						stripeA.style.stroke = colorPickerA.value;
+						document.getElementById("colorPickerB").value = b;
+						stripeB.style.stroke = colorPickerB.value;
+						document.getElementById("colorPickerC").value = c;
+						stripeC.style.stroke = colorPickerC.value;
+						document.getElementById("colorPickerD").value = d;
+						stripeD.style.stroke = colorPickerD.value;
+						document.getElementById("colorPickerE").value = e;
+						stripeE.style.stroke = colorPickerE.value;
+						document.getElementById("colorPickerF").value = f;
+						stripeF.style.stroke = colorPickerF.value;
+						document.getElementById("colorPickerG").value = g;
+						stripeG.style.stroke = colorPickerG.value;
+						document.getElementById("colorPickerH").value = h;
+						stripeH.style.stroke = colorPickerH.value;
+						document.getElementById("colorPickerI").value = i;
+						stripeI.style.stroke = colorPickerI.value;
+						document.getElementById("rotation").value = r;
+						document.getElementById("offsetX").value = x;
+						document.getElementById("offsetY").value = y;
+						toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
+					}
+				</script>
+			</section>
 			<script>
-				document.getElementById("Apple").onclick = function() {TApple()};
-				
-				function TApple() {
-					document.getElementById("colorPickerA").value = "#b61120";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#b61120";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#b61120";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#b61120";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#fefefe";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#fefefe";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#fefefe";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#fefefe";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#fefefe";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "0";
-					document.getElementById("offsetX").value = "0";
-					document.getElementById("offsetY").value = "0";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Australia">
-				<img src="templates\Australia.png" width="215px" id="Australia" alt="Australia"/></a>
-			<script>
-				document.getElementById("Australia").onclick = function() {TAustralia()};
-				
-				function TAustralia() {
-					document.getElementById("colorPickerA").value = "#f3a40b";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#f3a40b";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#f3a40b";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#f3a40b";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#048238";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#048238";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#048238";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#048238";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#048238";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Belgium">
-				<img src="templates\Belgium.png" width="215px" id="Belgium" alt="Belgium"/></a>
-			<script>
-				document.getElementById("Belgium").onclick = function() {TBelgium()};
-				
-				function TBelgium() {
-					document.getElementById("colorPickerA").value = "#0a0a08";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#0a0a08";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#0a0a08";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#f3a40b";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#f3a40b";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#f3a40b";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#b61122";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#b61122";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#b61122";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Brazil">
-				<img src="templates\Brazil.png" width="215px" id="Brazil" alt="Brazil"/></a>
-			<script>
-				document.getElementById("Brazil").onclick = function() {TBrazil()};
-				
-				function TBrazil() {
-					document.getElementById("colorPickerA").value = "#048238";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#048238";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#048238";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#24425c";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#24425c";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#24425c";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#fae929";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#fae929";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#fae929";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Canada">
-				<img src="templates\Canada.png" width="215px" id="Canada" alt="Canada"/></a>
-			<script>
-				document.getElementById("Canada").onclick = function() {TCanada()};
-				
-				function TCanada() {
-					document.getElementById("colorPickerA").value = "#ab081d";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ab081d";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#ab081d";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ffffff";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#ffffff";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#ab081d";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ab081d";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#ab081d";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="China">
-				<img src="templates\China.png" width="215px" id="China" alt="China"/></a>
-			<script>
-				document.getElementById("China").onclick = function() {TChina()};
-				
-				function TChina() {
-					document.getElementById("colorPickerA").value = "#bb0f27";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#f3a40b";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#bb0f27";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#bb0f27";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#bb0f27";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#bb0f27";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#bb0f27";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#bb0f27";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#bb0f27";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Denmark">
-				<img src="templates\Denmark.png" width="215px" id="Denmark" alt="Denmark"/></a>
-			<script>
-				document.getElementById("Denmark").onclick = function() {TDenmark()};
-				
-				function TDenmark() {
-					document.getElementById("colorPickerA").value = "#ab081d";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ab081d";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#ab081d";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ab081d";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#ffffff";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#ab081d";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ab081d";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#ab081d";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="France">
-				<img src="templates\France.png" width="215px" id="France" alt="France"/></a>
-			<script>
-				document.getElementById("France").onclick = function() {TFrance()};
-				
-				function TFrance() {
-					document.getElementById("colorPickerA").value = "#24425c";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#24425c";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#24425c";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ffffff";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#ffffff";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#b61121";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#b61121";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#b61121";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Germany">
-				<img src="templates\Germany.png" width="215px" id="Germany" alt="Germany"/></a>
-			<script>
-				document.getElementById("Germany").onclick = function() {TGermany()};
-				
-				function TGermany() {
-					document.getElementById("colorPickerA").value = "#0a0a08";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#0a0a08";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#0a0a08";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#b61122";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#b61122";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#b61122";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#f3a40b";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#f3a40b";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#f3a40b";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Great Britain">
-				<img src="templates\Great Britain.png" width="215px" id="GreatBritain" alt="Great Britain"/></a>
-			<script>
-				document.getElementById("GreatBritain").onclick = function() {TGreatBritain()};
-				
-				function TGreatBritain() {
-					document.getElementById("colorPickerA").value = "#24425c";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#24425c";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#ffffff";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ab081d";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#ab081d";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ab081d";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#ffffff";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#24425c";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#24425c";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Greece">
-				<img src="templates\Greece.png" width="215px" id="Greece" alt="Greece"/></a>
-			<script>
-				document.getElementById("Greece").onclick = function() {TGreece()};
-				
-				function TGreece() {
-					document.getElementById("colorPickerA").value = "#2c3463";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ffffff";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#2c3463";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ffffff";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#2c3463";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#2c3463";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ffffff";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#2c3463";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Italy">
-				<img src="templates\Italy.png" width="215px" id="Italy" alt="Italy"/></a>
-			<script>
-				document.getElementById("Italy").onclick = function() {TItaly()};
-				
-				function TItaly() {
-					document.getElementById("colorPickerA").value = "#2c327e";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#2c327e";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#2c327e";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#00a434";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#ffffff";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ab081d";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#2c327e";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#2c327e";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#2c327e";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Jamaica">
-				<img src="templates\Jamaica.png" width="215px" id="Jamaica" alt="Jamaica"/></a>
-			<script>
-				document.getElementById("Jamaica").onclick = function() {TJamaica()};
-				
-				function TJamaica() {
-					document.getElementById("colorPickerA").value = "#048238";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#048238";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#048238";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#fae929";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#fae929";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#fae929";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#0a0a08";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#0a0a08";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#0a0a08";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Japan">
-				<img src="templates\Japan.png" width="215px" id="Japan" alt="Japan"/></a>
-			<script>
-				document.getElementById("Japan").onclick = function() {TJapan()};
-				
-				function TJapan() {
-					document.getElementById("colorPickerA").value = "#ffffff";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ffffff";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#ffffff";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ffffff";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#b61122";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#ffffff";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ffffff";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#ffffff";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Mexico">
-				<img src="templates\Mexico.png" width="215px" id="Mexico" alt="Mexico"/></a>
-			<script>
-				document.getElementById("Mexico").onclick = function() {TMexico()};
-				
-				function TMexico() {
-					document.getElementById("colorPickerA").value = "#048238";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#048238";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#048238";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ffffff";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#ffffff";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#ab081d";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ab081d";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#ab081d";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Netherlands">
-				<img src="templates\Netherlands.png" width="215px" id="Netherlands" alt="Netherlands"/></a>
-			<script>
-				document.getElementById("Netherlands").onclick = function() {TNetherlands()};
-				
-				function TNetherlands() {
-					document.getElementById("colorPickerA").value = "#e04a01";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#e04a01";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#e04a01";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#e04a01";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#2c327e";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#e04a01";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#e04a01";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#e04a01";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#e04a01";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="New Zealand">
-				<img src="templates\New Zealand.png" width="215px" id="NewZealand" alt="New Zealand"/></a>
-			<script>
-				document.getElementById("NewZealand").onclick = function() {TNewZealand()};
-				
-				function TNewZealand() {
-					document.getElementById("colorPickerA").value = "#0a0a08";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#0a0a08";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#0a0a08";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#0a0a08";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#808080";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#0a0a08";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#0a0a08";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#0a0a08";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#0a0a08";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Russia">
-				<img src="templates\Russia.png" width="215px" id="Russia" alt="Russia"/></a>
-			<script>
-				document.getElementById("Russia").onclick = function() {TRussia()};
-				
-				function TRussia() {
-					document.getElementById("colorPickerA").value = "#ffffff";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ffffff";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#ffffff";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#2c327e";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#2c327e";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#2c327e";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#b61122";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#b61122";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#b61122";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="South Africa">
-				<img src="templates\South Africa.png" width="215px" id="SouthAfrica" alt="South Africa"/></a>
-			<script>
-				document.getElementById("SouthAfrica").onclick = function() {TSouthAfrica()};
-				
-				function TSouthAfrica() {
-					document.getElementById("colorPickerA").value = "#ab071f";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ffffff";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#048238";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#f3a40b";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#0a0a08";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#f3a40b";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#048238";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ffffff";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#2e347e";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="South Korea">
-				<img src="templates\South Korea.png" width="215px" id="SouthKorea" alt="South Korea"/></a>
-			<script>
-				document.getElementById("SouthKorea").onclick = function() {TSouthKorea()};
-				
-				function TSouthKorea() {
-					document.getElementById("colorPickerA").value = "#ffffff";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ffffff";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#ffffff";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#aa081d";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#2c327e";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#ffffff";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ffffff";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#ffffff";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Spain">
-				<img src="templates\Spain.png" width="215px" id="Spain" alt="Spain"/></a>
-			<script>
-				document.getElementById("Spain").onclick = function() {TSpain()};
-				
-				function TSpain() {
-					document.getElementById("colorPickerA").value = "#ab081d";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ab081d";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#ab081d";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#f3a40b";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#f3a40b";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#f3a40b";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#ab081d";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ab081d";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#ab081d";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Sweden">
-				<img src="templates\Sweden.png" width="215px" id="Sweden" alt="Sweden"/></a>
-			<script>
-				document.getElementById("Sweden").onclick = function() {TSweden()};
-				
-				function TSweden() {
-					document.getElementById("colorPickerA").value = "#306a82";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#306a82";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#306a82";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#f8e92a";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#f8e92a";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#f8e92a";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#306a82";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#306a82";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#306a82";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="United States">
-				<img src="templates\United States.png" width="215px" id="UnitedStates" alt="United States"/></a>
-			<script>
-				document.getElementById("UnitedStates").onclick = function() {TUnitedStates()};
-				
-				function TUnitedStates() {
-					document.getElementById("colorPickerA").value = "#24425c";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#24425c";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#24425c";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ffffff";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#b71222";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#b71222";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ffffff";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#b71222";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Promotional #1">
-				<img src="templates\Promo1.png" width="215px" id="Promo1" alt="Promotional #1"/></a>
-			<script>
-				document.getElementById("Promo1").onclick = function() {TPromo1()};
-				
-				function TPromo1() {
-					document.getElementById("colorPickerA").value = "#fcc800";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#ffffff";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#2c3463";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ffffff";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#fcc800";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ffffff";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#2c3463";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ffffff";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#fcc800";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "-45";
-					document.getElementById("offsetX").value = "-320";
-					document.getElementById("offsetY").value = "60";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Promotional #2">
-				<img src="templates\Promo2.png" width="215px" id="Promo2" alt="Promotional #2"/></a>
-			<script>
-				document.getElementById("Promo2").onclick = function() {TPromo2()};
-				
-				function TPromo2() {
-					document.getElementById("colorPickerA").value = "#cd191b";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#cd191b";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#cd191b";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#ff6412";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#ff6412";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#ff6412";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#fae92b";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#fae92b";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#fae92b";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "0";
-					document.getElementById("offsetX").value = "0";
-					document.getElementById("offsetY").value = "-35";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
-				}
-			</script>
-			<a title="Promotional #3">
-				<img src="templates\Promo3.png" width="215px" id="Promo3" alt="Promotional #3"/></a>
-			<script>
-				document.getElementById("Promo3").onclick = function() {TPromo3()};
-				
-				function TPromo3() {
-					document.getElementById("colorPickerA").value = "#0dc5b6";
-					stripeA.style.stroke = colorPickerA.value;
-					document.getElementById("colorPickerB").value = "#0dc5b6";
-					stripeB.style.stroke = colorPickerB.value;
-					document.getElementById("colorPickerC").value = "#fac817";
-					stripeC.style.stroke = colorPickerC.value;
-					document.getElementById("colorPickerD").value = "#fac817";
-					stripeD.style.stroke = colorPickerD.value;
-					document.getElementById("colorPickerE").value = "#fc5f61";
-					stripeE.style.stroke = colorPickerE.value;
-					document.getElementById("colorPickerF").value = "#fc5f61";
-					stripeF.style.stroke = colorPickerF.value;
-					document.getElementById("colorPickerG").value = "#ebe4cf";
-					stripeG.style.stroke = colorPickerG.value;
-					document.getElementById("colorPickerH").value = "#ebe4cf";
-					stripeH.style.stroke = colorPickerH.value;
-					document.getElementById("colorPickerI").value = "#43758c";
-					stripeI.style.stroke = colorPickerI.value;
-					document.getElementById("rotation").value = "45";
-					document.getElementById("offsetX").value = "150";
-					document.getElementById("offsetY").value = "-400";
-					toRotate.style.transform = "rotate("+rotation.value+"deg) translate("+offsetX.value+"px,"+offsetY.value+"px)";
+				function hide() {
+				  let tohide = document.getElementById("tohide");
+				  let dropdown = document.getElementById("dropdown");
+				  
+				  if (tohide.style.display === "none") {
+					tohide.style.display = "block";
+					dropdown.style.transform = "rotate(0deg)";
+				  } else {
+					tohide.style.display = "none";
+					dropdown.style.transform = "rotate(180deg)";
+				  }
 				}
 			</script>
 		</article>
@@ -986,8 +236,6 @@
 			</svg></a>
 			
 			<script>
-			
-			
 			document.getElementById("theme").onclick = function() {theme()};
 			
 			function theme() {
@@ -1011,9 +259,11 @@
 				document.getElementById("foot").style.backgroundColor = "#E4E4E4";
 				document.getElementById("templates").style.color = "black";
 				document.getElementById("templates").style.backgroundColor = "#E4E4E4";
-				document.getElementById("github").style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
-				document.getElementById("download").style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
-				document.getElementById("web").style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
+				
+				var all = document.getElementsByClassName("buttons");
+				for (var i = 0; i < all.length; i++) {
+				  all[i].style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
+				}
 			}
 			document.getElementById("dark").onclick = function() {dark()};
 
@@ -1030,19 +280,24 @@
 				document.getElementById("foot").style.backgroundColor = "#303030";
 				document.getElementById("templates").style.color = "white";
 				document.getElementById("templates").style.backgroundColor = "#303030";
-				document.getElementById("github").style.filter = "invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%)";
-				document.getElementById("download").style.filter = "invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%)";
-				document.getElementById("web").style.filter = "invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%)";
+				
+				var all = document.getElementsByClassName("buttons");
+				for (var i = 0; i < all.length; i++) {
+				  all[i].style.filter = "invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%)";
+				}
 			}
 			</script>
 			
-			<br/><br/><a href="https://github.com/ChauhanSai/Script-Projects/blob/main/HTML/stripesGenerator/" title="GitHub" target="_blank"><img src="https://simpleicons.org/icons/github.svg" id="github"/></a>   <a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2" title="Download" target="_blank">
-				<svg id="download" viewBox="0 0 24 24">
+			<br/><br/><a href="https://github.com/ChauhanSai/Script-Projects/blob/main/HTML/stripesGenerator/" title="GitHub" target="_blank"><img src="https://simpleicons.org/icons/github.svg" id="github" class="buttons"/></a>   <a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2" title="Download" target="_blank">
+				<svg id="download" class="buttons" viewBox="0 0 24 24">
                     <path fill="#000000" ng-attr-d="{{icon.data}}" d="M14,2H6C4.89,2 4,2.89 4,4V20C4,21.11 4.89,22 6,22H18C19.11,22 20,21.11 20,20V8L14,2M12,19L8,15H10.5V12H13.5V15H16L12,19M13,9V3.5L18.5,9H13Z"></path>
                 </svg></a>   <a href="https://chauhansai.github.io/Script-Projects/HTML/stripesGenerator/stripesGenerator.html" title="Webpage" target="_blank">
-				<svg id="web" viewBox="0 0 24 24">
+				<svg id="web" class="buttons" viewBox="0 0 24 24">
                     <path fill="#000000" d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
                 </svg></a>
+				
+				<br/><br/>Submit your stripes on Twitter<br/>
+				<a href="https://twitter.com/intent/tweet?text=I%20made%20this%20cool%20design%20using%20Stripes%20Generator%20@chauhansai_dev" title="Twitter" target="_blank"><img src="https://simpleicons.org/icons/twitter.svg" id="twitter" class="buttons"/></a>
 			
 		</footer>
 	</body>

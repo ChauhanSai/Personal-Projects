@@ -96,19 +96,35 @@
 	padding:15px; 
 }
 
+.templateimg {
+	width: 215px;
+	cursor: pointer;
+}
+
+.buttons{
+	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
+}
+
 #github {
 	height:45px;
-	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
+}
+
+#twitter {
+	height:35px;
+}
+
+#dropdown {
+	height:20px;
+	transform: rotate(0deg);
+	cursor: pointer;
 }
 
 #download {
 	height:45px;
-	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
 }
 
 #web {
 	height:45px;
-	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
 }
 
 a:link {
@@ -137,5 +153,31 @@ a:active {
 
 #theme {
 	text-decoration: underline;
+	cursor: pointer;
+}
+
+input[type=color] {
+	width: 50px;
+	margin: 0px 2px;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 2px;
+	border: none;
+	cursor: pointer;
+}
+
+input[type=number] {
+	width: 152px;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 5px;
+	border: none;
+}
+
+button {
+	background-color: #ffffff;
+	color: #000000;
+	padding: 7px;
+	border: none;
 	cursor: pointer;
 }
