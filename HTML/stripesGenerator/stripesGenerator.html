@@ -15,11 +15,11 @@
 			<h1>Stripes</h1>
 			<b>for Apple Watch S3 or older<super>*</super></b><br/><br/>
 			<section>
-				<label for="colorPickerA">Stripes: </label> <input type="color" id="colorPickerA" value="#f2e326"/> <input type="color" id="colorPickerB" value="#f2e326"/> <input type="color" id="colorPickerC" value="#88db27"/> <input type="color" id="colorPickerD" value="#88db27"/> <input type="color" id="colorPickerE" value="#06a032"/> <input type="color" id="colorPickerF" value="#06a032"/> <input type="color" id="colorPickerG" value="#1ba5b0"/> <input type="color" id="colorPickerH" value="#1ba5b0"/> <input type="color" id="colorPickerI" value="#06e3d2"/>
+				<input type="color" id="colorPickerA" value="#f2e326"/> <input type="color" id="colorPickerB" value="#f2e326"/> <input type="color" id="colorPickerC" value="#88db27"/> <input type="color" id="colorPickerD" value="#88db27"/> <input type="color" id="colorPickerE" value="#06a032"/> <input type="color" id="colorPickerF" value="#06a032"/> <input type="color" id="colorPickerG" value="#1ba5b0"/> <input type="color" id="colorPickerH" value="#1ba5b0"/> <input type="color" id="colorPickerI" value="#06e3d2"/>
 				<br/><br/>
 				<label for="rotation">Rotation: </label> <input type="number" id="rotation" value="-45"/> <label for="offsetX">Offset: x</label> <input type="number" id="offsetX" value="-320"/> <label for="offsetY"> y</label> <input type="number" id="offsetY" value="60"/>
 				<br/><br/>
-				<button type="button" id="gradientButton">Toggle Gradient</button>
+				<label for="gradientButton0">Gradient: </label> <button type="button" id="gradientButton0">None</button> <button type="button" id="gradientButton1">Light</button> <button type="button" id="gradientButton2">Medium</button> <button type="button" id="gradientButton3">Bold</button>
 				<noscript id="noscript"><br/><br/>Uh oh, it looks like your broswer doesn't support JavaScript</noscript>
 			</section>
 		</header>
@@ -127,21 +127,36 @@
 					
 					<defs>
 						<linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
-							<stop offset="60%" style="stop-color:#000000;stop-opacity:0" />
-							<stop offset="125%" style="stop-color:#000000;stop-opacity:0.5" />
+							<stop id="grad1" offset="60%" style="stop-color:#000000;stop-opacity:0" />
+							<stop id="grad2" offset="125%" style="stop-color:#000000;stop-opacity:0.5" />
 						</linearGradient>
 					</defs>
 					<rect width="626" height="770" x="-25" y="-25" fill="url(#grad)" id="gradrect" style="display: none;"/>
 					<script>
-						document.getElementById("gradientButton").onclick = function() {gradient()};
+						document.getElementById("gradientButton0").onclick = function() {gradientOff()};
+						document.getElementById("gradientButton1").onclick = function() {gradient1()};
+						document.getElementById("gradientButton2").onclick = function() {gradient2()};
+						document.getElementById("gradientButton3").onclick = function() {gradient3()};
 						
-						function gradient() {
-							if (document.getElementById("gradrect").style.display === "none") {
-								document.getElementById("gradrect").style.display = "block";
-							  } else {
-								document.getElementById("gradrect").style.display = "none";
-							  }
+						function gradientOff() {
+							document.getElementById("gradrect").style.display = "none";
 						}
+						function gradientOn() {
+							document.getElementById("gradrect").style.display = "block";
+						}
+						function gradient1() {
+							gradientOn();
+							document.getElementById("grad2").style.stopOpacity = "0.5";
+						}
+						function gradient2() {
+							gradientOn();
+							document.getElementById("grad2").style.stopOpacity = "0.75";
+						}
+						function gradient3() {
+							gradientOn();
+							document.getElementById("grad2").style.stopOpacity = "1.0";
+						}
+						
 					</script>
 				</svg>
 			</section>
@@ -183,6 +198,7 @@
 				<img src="templates\Promo3.png" class="templateimg" title="Promotional #3" alt="Promotional #3" onclick="Template('#0dc5b6','#0dc5b6','#fac817','#fac817','#fc5f61','#fc5f61','#ebe4cf','#ebe4cf','#43758c','45','150','-398')"/>
 				<img src="templates\Update1.png" class="templateimg" title="Update #1 'Promo'" alt="Update #1 'Promo'" onclick="Template('#a03703','#a03703','#c4a484','#df520c','#df520c','#c4a484','#a03703','#a03703','#a03703','-90','-700','-70')"/>
 				<img src="templates\Update2.png" class="templateimg" title="Update #2 'Code Cleanup'" alt="Update #2 'Code Cleanup'" onclick="Template('#ffffff','#6b6b6b','#ffffff','#4cbb17','#4cbb17','#ffffff','#6b6b6b','#ffffff','#ffffff','-90','-700','-70')"/>
+				<img src="templates\Update3.png" class="templateimg" title="Update #3 'Gradient Upgrade'" alt="Update #3 'Gradient Upgrade'" onclick="Template('#707070','#858585','#999999','#adadad','#c2c2c2','#d6d6d6','#ebebeb','#ffffff','#ffffff','10','0','-100')"/>
 				
 				<script>
 					function Template(a,b,c,d,e,f,g,h,i,r,x,y) {
@@ -265,7 +281,6 @@
 				  all[i].style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
 				}
 			}
-			document.getElementById("dark").onclick = function() {dark()};
 
 			function dark() {
 				document.getElementById("body").style.color = "white";

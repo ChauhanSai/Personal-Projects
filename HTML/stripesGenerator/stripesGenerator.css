@@ -157,8 +157,9 @@ a:active {
 }
 
 input[type=color] {
-	width: 50px;
-	margin: 0px 2px;
+	width: 4em;
+	height: 4em;
+	margin: 0px 3px;
 	background-color: #ffffff;
 	color: #000000;
 	padding: 2px;
@@ -167,7 +168,8 @@ input[type=color] {
 }
 
 input[type=number] {
-	width: 152px;
+	width: 6.5%;
+	font-size: 1.25em;
 	background-color: #ffffff;
 	color: #000000;
 	padding: 5px;
@@ -175,9 +177,15 @@ input[type=number] {
 }
 
 button {
+	font-size: 1.25em;
 	background-color: #ffffff;
 	color: #000000;
 	padding: 7px;
 	border: none;
 	cursor: pointer;
+	margin: 0px 5px;
+}
+
+label {
+	font-size: 1.25em;
 }
