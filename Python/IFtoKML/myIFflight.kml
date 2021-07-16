@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Infinite Flight 07/15/21</name>
+	<Placemark id="b639b753">
+		<name>downunder</name>
+		<Point>
+			<coordinates>150.80882540211283,-34.18561756440432,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="02bdda12">
+		<name>flight</name>
+		<description></description>
+		<gx:Track>
+			<extrude>1</extrude>
+			<tessellate>1</tessellate>
+			<altitudeMode>absolute</altitudeMode>
+			<when>2021-07-15T03:15:13Z</when>
+			<gx:coord>150.80882540211132 -34.18561756440422 269.5264291714344</gx:coord>
+			<when>2021-07-15T03:15:13Z</when>
+			<gx:coord>150.80882540211238 -34.18561756440442 269.5264291714344</gx:coord>
+			<when>2021-07-15T03:15:14Z</when>
+			<gx:coord>150.80882540210334 -34.185617564363646 269.5264291714344</gx:coord>
+			<when>2021-07-15T03:15:15Z</when>
+			<gx:coord>150.80882542516503 -34.185616078832744 269.5265478477168</gx:coord>
+			<when>2021-07-15T03:15:16Z</when>
+			<gx:coord>150.80882564394432 -34.18560216430073 269.52366820262984</gx:coord>
+			<when>2021-07-15T03:15:17Z</when>
+			<gx:coord>150.80882628491617 -34.18556124590374 269.5225093636372</gx:coord>
+			<when>2021-07-15T03:15:18Z</when>
+			<gx:coord>150.80882746297937 -34.185485823181644 269.5237188145737</gx:coord>
+			<when>2021-07-15T03:15:19Z</when>
+			<gx:coord>150.80882924553268 -34.18537206201119 269.52511675137055</gx:coord>
+			<when>2021-07-15T03:15:20Z</when>
+			<gx:coord>150.80883174273788 -34.18521252686823 269.52765607476545</gx:coord>
+			<when>2021-07-15T03:15:21Z</when>
+			<gx:coord>150.80883732218126 -34.18485607845069 269.5340471416191</gx:coord>
+			<when>2021-07-15T03:15:22Z</when>
+			<gx:coord>150.80883850088335 -34.184781077247294 269.5358272858547</gx:coord>
+			<when>2021-07-15T03:15:23Z</when>
+			<gx:coord>150.80884298730237 -34.18449522413452 269.5405743371496</gx:coord>
+			<when>2021-07-15T03:15:24Z</when>
+			<gx:coord>150.80884812241365 -34.18416720025013 269.5464732464793</gx:coord>
+			<when>2021-07-15T03:15:25Z</when>
+			<gx:coord>150.8088540998156 -34.183785141611104 269.5531051563766</gx:coord>
+			<when>2021-07-15T03:15:26Z</when>
+			<gx:coord>150.80885947373983 -34.183442812883 269.5723778355861</gx:coord>
+			<when>2021-07-15T03:15:27Z</when>
+			<gx:coord>150.80886657351633 -34.18299812918889 269.66768361652873</gx:coord>
+			<when>2021-07-15T03:15:28Z</when>
+			<gx:coord>150.8088739296993 -34.1825486186774 269.8379125269165</gx:coord>
+			<when>2021-07-15T03:15:29Z</when>
+			<gx:coord>150.80888215549692 -34.18205802651678 270.3245690561388</gx:coord>
+			<when>2021-07-15T03:15:30Z</when>
+			<gx:coord>150.80889228898107 -34.181509658066695 273.0413309455712</gx:coord>
+			<when>2021-07-15T03:15:31Z</when>
+			<gx:coord>150.80891289465413 -34.18064941645681 274.90053976381654</gx:coord>
+			<when>2021-07-15T03:15:33Z</when>
+			<gx:coord>150.80891694500787 -34.1804930185176 273.71708242359966</gx:coord>
+			<when>2021-07-15T03:15:34Z</when>
+			<gx:coord>150.80892625203356 -34.180233313033796 271.10031402826365</gx:coord>
+			<when>2021-07-15T03:15:35Z</when>
+			<gx:coord>150.80896512280705 -34.179932618021496 269.39432501675896</gx:coord>
+			<when>2021-07-15T03:15:36Z</when>
+			<gx:coord>150.80896512280705 -34.179932618021496 269.39432501675896</gx:coord>
+			<when>2021-07-15T03:15:37Z</when>
+			<gx:coord>150.80896512280705 -34.179932618021496 269.39432501675896</gx:coord>
+		</gx:Track>
+	</Placemark>
+	<Placemark id="58adb2d1">
+		<name>end</name>
+		<Point>
+			<coordinates>150.80896512280705,-34.179932618021496,0</coordinates>
+		</Point>
+	</Placemark>
+	<description>downunder-end</description>
+</Document>
+</kml>
