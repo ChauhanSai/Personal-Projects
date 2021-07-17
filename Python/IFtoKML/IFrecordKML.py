@@ -25,6 +25,13 @@ if __name__ == '__main__':
     kml.write(dateStart)
     kml.write('</name>')
 
+    timeBreak = ''
+    timeBreak = float(input('How often do you want to send/receive data(seconds): '))
+    if timeBreak <= 0.0:
+        timeBreak = 1.0
+
+    print('Chosen interval =',timeBreak,'seconds')
+
     airport1 = input('Outbound Airport(Enter when ready to push): ')
     print('Press "',breakLetter,'" to end flight')
     kml.write('\n\t<Placemark id="b639b753">\n\t\t<name>')
@@ -81,7 +88,7 @@ if __name__ == '__main__':
         if keyboard.is_pressed(breakLetter): break
         print('Press "',breakLetter,'" to end flight')
         if keyboard.is_pressed(breakLetter): break
-        time.sleep(1.0 - ((time.time() - timeStart) % 1.0))
+        time.sleep(timeBreak - ((time.time() - timeStart) % timeBreak))
         if keyboard.is_pressed(breakLetter): break
     
     ##Run when finished
