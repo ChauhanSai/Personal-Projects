@@ -93,7 +93,7 @@ if __name__ == '__main__':
     
     ##Run when finished
     kml.write('\n\t\t</gx:Track>\n\t</Placemark>')
-    airport2 = input('\n\nOutbound Airport(Enter when parked): ')
+    airport2 = input('\n\nInbound Airport(Enter when parked): ')
     airport2 = airport2.replace(breakLetter, "")
     kml.write('\n\t<Placemark id="58adb2d1">\n\t\t<name>')
     kml.write(airport2)
