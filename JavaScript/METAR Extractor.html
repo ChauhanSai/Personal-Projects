@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>METAR Extractor</title>
+		<style>
+		body {
+			padding:20px;
+			font-family: Veranda, Helvetica, sans-serif; 
+			color:black; 
+			background-color:#FFFFFF;
+		}
+		
+		article {
+			color:black; 
+			background-color:#E4E4E4; 
+			padding:15px; 
+		}
+		
+		#text {
+			font-size: 1.25em;
+			line-height: 0.5;
+		}
+		
+		label {
+			font-size: 1.25em;
+		}
+		
+		input[type=text] {
+			width: 90%;
+			font-size: 1.25em;
+			background-color: #ffffff;
+			color: #000000;
+			padding: 5px;
+			border: none;
+		}
+
+		input[type=number] {
+			width: 15%;
+			font-size: 1.25em;
+			background-color: #ffffff;
+			color: #000000;
+			padding: 5px;
+			border: none;
+			margin-right: 20px;
+		}
+		
+		</style>
+	</head>
+	<body align="center" onLoad="run()">
+		<article id="inputs">
+			<label for="time">Local Sim Time: </label> <input type="number" id="time" placeholder="0-24" max="24" min="0"/>
+			<br/><br/>
+			<label for="metar">METAR: </label> <input type="text" id="metar" placeholder="KDFW 170153Z 18019G28KT 10SM BKN240 BKN300 31/21 A2992 RMK AO2 SLP123 T03110211"/>
+		</article>
+		
+		<br/>
+		
+		<article id="text">
+			<p id="textInfoAirport"></p>
+			<p id="textInfoZulu"></p>
+			<br/>
+			<p id="textInfoTime"></p>
+			<br/>
+			<p id="textInfoVisibility"></p>
+			<p id="textInfoWindDirection"></p>
+			<p id="textInfoWindSpeed"></p>
+			<p id="textInfoWindGust"></p>
+			<p id="textInfoTurbulance"></p>
+			<p id="textInfoTemperature"></p>
+			<p id="textInfoClouds"></p>
+		</article>
+		<script>
+			
+			let inputMetar = document.getElementById("metar");
+			let inputTime = document.getElementById("time");
+			
+			inputMetar.addEventListener("input", function() {run()}, false);
+			inputTime.addEventListener("input", function() {run()}, false);
+			
+			function run(){
+								
+				var timeSim = inputTime.value;
+				var infoTime = '';
+				if (timeSim > 6 && timeSim < 18) {infoTime = 'Noon'} else {if (timeSim == 6) {infoTime = 'Sunrise'} else {if (timeSim == 18) {infoTime = 'Sunset'} else {infoTime = 'Night'}}}
+				
+				var metar = inputMetar.value;
+				//KDFW 170153Z 18019G28KT 10SM BKN240 BKN300 31/21 A2992 RMK AO2 SLP123 T03110211
+				//0123456789 123456789 123456789 123456789
+
+				var infoZulu = metar.substring(5,7) +":"+ metar.substring(7,9);
+				var infoAirport = metar.substring(0,4);
+
+				if(metar.charAt(metar.indexOf("KT")-3) !== 'G'){
+				  var infoWindDirection = metar.substring(metar.indexOf("KT")-5,metar.indexOf("KT")-2);
+				  var infoWindSpeed = metar.substring(metar.indexOf("KT")-2,metar.indexOf("KT"));
+				  var infoWindGust = 0
+				} else {
+				infoWindDirection = metar.substring(metar.indexOf("KT")-8,metar.indexOf("KT")-5);
+				infoWindSpeed = metar.substring(metar.indexOf("KT")-5,metar.indexOf("KT")-3);
+				infoWindGust = metar.substring(metar.indexOf("KT")-2,metar.indexOf("KT"));
+				}
+
+				var infoTurbulance = (Number(infoWindSpeed)+Number(infoWindGust))/2;
+				if (infoTurbulance > 0 && infoTurbulance <= 12) {infoTurbulance = 'Light'} else if (infoTurbulance > 12 && infoTurbulance <= 24) {infoTurbulance = 'Moderate'} else if (infoTurbulance > 24 && infoTurbulance <= 36) {infoTurbulance = 'Severe'} else if (infoTurbulance > 36) {infoTurbulance = 'Extreme'}
+				var infoVisibility = Math.round((metar.substring(metar.indexOf("SM")-3, metar.indexOf("SM")))*1.609);
+
+				if(metar.substring(metar.indexOf("SM")+3, metar.indexOf("SM")+6)==='CLR'){
+				  var infoClouds = 'CLR';
+				} else infoClouds = metar.substring(metar.indexOf("SM")+3, metar.indexOf("SM")+9);
+
+				var infoTemperature = metar.substring(metar.indexOf("/")-3, metar.indexOf("/"));
+				
+				if(inputMetar.value == '') {document.getElementById("text").style.display = "none";} else document.getElementById("text").style.display = "block";
+				document.getElementById("textInfoAirport").innerHTML = 'Airport: '+infoAirport;
+				document.getElementById("textInfoZulu").innerHTML = 'Time(Zulu): '+infoZulu+'z';
+				if(inputTime.value == '') {document.getElementById("textInfoTime").innerHTML = 'Time(Local): N/A'} else document.getElementById("textInfoTime").innerHTML = 'Time(Local): '+infoTime;
+				document.getElementById("textInfoVisibility").innerHTML = 'Visibility: '+infoVisibility+'km';
+				document.getElementById("textInfoWindDirection").innerHTML = 'Wind Direction: '+infoWindDirection+'°';
+				document.getElementById("textInfoWindSpeed").innerHTML = 'Wind Velocity: '+infoWindSpeed+'kts';
+				document.getElementById("textInfoWindGust").innerHTML = 'Wind Gusts: '+infoWindGust+'kts';
+				document.getElementById("textInfoTurbulance").innerHTML = 'Turbulance: '+infoTurbulance;
+				document.getElementById("textInfoTemperature").innerHTML = 'Temperature: '+infoTemperature+'°C';
+				document.getElementById("textInfoClouds").innerHTML = 'Clouds: '+infoClouds;			}
+		</script>
+	</body>
+</html>
