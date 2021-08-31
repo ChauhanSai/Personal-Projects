@@ -1,0 +1,60 @@
+footer { 
+	padding:10px;
+	margin: auto;
+}
+
+body {
+	font-family: "Atkinson Hyperlegible", "Veranda", "Helvetica", sans-serif; 
+	color: white;
+}
+
+h1 {
+	font-size: 3em;
+	margin: 10px 0px;
+	cursor: pointer;
+}
+
+header  {
+	margin: auto;
+	padding: 350px 0px;
+}
+
+.buttons{
+	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
+}
+
+#github {
+	height:45px;
+}
+
+#download {
+	height:45px;
+}
+
+#web {
+	height:45px;
+}
+
+a:link {
+  color: gray;
+  text-decoration: none;
+}
+
+a:visited {
+  color: gray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: underline;
+}
+
+a:active {
+  color: gray;
+  text-decoration: underline;
+}
+
+a {
+	cursor: pointer;
+}
