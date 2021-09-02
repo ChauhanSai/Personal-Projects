@@ -1,33 +1,58 @@
-from PIL import Image
+print('Please wait')
 
-name=input("Image name: ")
-WaveImage = Image.open(name, 'r')
-WaveIm = WaveImage.load()
+import sys
+import numpy as np
+import skimage.color
+import skimage.io
+from matplotlib import pyplot as plt
 
-width, height = WaveImage.size
+name = input('File name: ')
 
-print(width,height)
+# Read Grayscale Image
+image = skimage.io.imread(fname=name, as_gray=True)
 
-recordR = open("recordR.txt", 'w')
-recordG = open("recordG.txt", 'w')
-recordB = open("recordB.txt", 'w')
+# Create Grayscale Histogram
+histogram, bin_edges = np.histogram(image, bins=256, range=(0, 1))
+grayscale = open('histogramGrayscale.txt', 'w')
+grayscale.write(str(histogram))
+grayscale.write('\n')
+grayscale.write(str(bin_edges))
+grayscale.write('\n\n')
+grayscale.close()
+print('Grayscale Histogram Successful')
 
-for y in range(height):
-    for x in range(width):
-        if ".png" in name:
-            r, g, b, xx = WaveIm[x,y]
-        else:
-            r, g, b = WaveIm[x,y]
+# Draw Grayscale Histogram
+plt.figure()
+plt.title("Grayscale Histogram")
+plt.xlabel("Value")
+plt.ylabel("Pixels")
+plt.xlim([0.0, 1.0])
 
-        print("[",x,",",y,"]",": {",r,",",g,",",b,"}"," of  [",width,",",height,"]")
-        
-        recordR.write(str(r))
-        recordR.write("\n")
-        recordG.write(str(g))
-        recordG.write("\n")
-        recordB.write(str(b))
-        recordB.write("\n")
+plt.plot(bin_edges[0:-1], histogram)
+plt.savefig('histogramGrayscale.png')
 
-recordR.close()
-recordG.close()
-recordB.close()
+# Read Image
+image = skimage.io.imread(fname=name)
+
+# Create Histogram
+colors = ("red", "green", "blue")
+channel_ids = (0, 1, 2)
+plt.figure()
+plt.title("Color Histogram")
+plt.xlim([0, 256])
+color = open('histogramColor.txt', 'w')
+for channel_id, c in zip(channel_ids, colors):
+    histogram, bin_edges = np.histogram(
+        image[:, :, channel_id], bins=256, range=(0, 256)
+    )
+    color.write(str(histogram))
+    color.write('\n')
+    color.write(str(bin_edges))
+    color.write('\n\n')
+    plt.plot(bin_edges[0:-1], histogram, color=c)
+
+color.close()
+plt.xlabel("Value")
+plt.ylabel("Pixels")
+plt.savefig('histogramColor.png')
+print('Color Histogram Successful')
