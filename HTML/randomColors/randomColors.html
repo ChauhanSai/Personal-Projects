@@ -11,9 +11,11 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible"/>
 		<link rel="shortcut icon" type="image/jpg" href="favicon.jpg"/>
 	</head>
-	<body align="center" style="background-color:(0,0,0)" id="color">
+	<body align="center" style="background-color: rgb(0,0,0)" id="color" onload="generate()">
 		<header margin="auto">
-			<h1 onclick="generate()">Loading...</h1>
+			<h1><span onclick="generate()" id="hex">Loading... </span> </h1> 
+			<h3><span onclick="generate()" id="rgb">Loading... </span> </h3> 
+			<noscript><br/><br/> Uh oh, it looks like your broswer doesn't support JavaScript</noscript>
 		</header>
 		
 		<br/> <br/>
@@ -31,43 +33,58 @@
 		
 		<script>
 			function generate() {
-				let red = Math.random()*256;
-				let green = Math.random()*256;
-				let blue = Math.random()*256;
+				let red = Math.round(Math.random()*256);
+				let green = Math.round(Math.random()*256);
+				let blue = Math.round(Math.random()*256);
 				
-				document.getElementById("color").style.backgroundColor = "("+red+", "+green+", "+blue+")";
+				function componentToHex(c) {
+				  var hex = c.toString(16);
+				  return hex.length == 1 ? "0" + hex : hex;
+				}
+				function rgbToHex(r, g, b) {
+				  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+				}
+				
+				document.getElementById("color").style.backgroundColor = "rgb("+red+","+green+","+blue+")";
+				document.getElementById("hex").innerHTML = rgbToHex(red,green,blue);
+				document.getElementById("rgb").innerHTML = "rgb("+red+", "+green+", "+blue+")";
 				
 				theme(red,green,blue);
 			}
 		
 			function theme(red,green,blue) {
-				let darkness = 0;
-				if(red<125)
-					darkness++;
-				if(green<125)
-					darkness++;
-				if(blue<125)
-					darkness++;
-				if(darkness>=2){
-					light();
-				} else dark();
+				let brightness = 0;
+				
+				if((red+green+blue)/3>125){
+					dark();
+				} else light();
 			}
 			
-			function light() {
+			function dark() {
 				document.getElementById("color").style.color = "black";
 				
-				var all = document.getElementsByClassName("buttons");
-				for (var i = 0; i < all.length; i++) {
-				  all[i].style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
+				var a = document.getElementsByTagName("a");
+				for (var i = 0; i < a.length; i++) {
+				  a[i].style.color = "black";
+				}
+				
+				var buttons = document.getElementsByClassName("buttons");
+				for (var i = 0; i < buttons.length; i++) {
+				  buttons[i].style.filter = "invert(0%) sepia(21%) saturate(0%) hue-rotate(218deg) brightness(94%) contrast(100%)";
 				}
 			}
 
-			function dark() {
+			function light() {
 				document.getElementById("color").style.color = "white";
 				
-				var all = document.getElementsByClassName("buttons");
-				for (var i = 0; i < all.length; i++) {
-				  all[i].style.filter = "invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%)";
+				var a = document.getElementsByTagName("a");
+				for (var i = 0; i < a.length; i++) {
+				  a[i].style.color = "white";
+				}
+				
+				var buttons = document.getElementsByClassName("buttons");
+				for (var i = 0; i < buttons.length; i++) {
+				  buttons[i].style.filter = "invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%)";
 				}
 			}
 			</script>

@@ -12,46 +12,53 @@ h1 {
 	font-size: 3em;
 	margin: 10px 0px;
 	cursor: pointer;
+	margin: auto;
+}
+
+h3 {
+	font-size: 1.5em;
+	margin: 10px 0px;
+	cursor: pointer;
+	margin: auto;
 }
 
 header  {
 	margin: auto;
-	padding: 350px 0px;
+	padding: 345px 0px;
+}
+
+noscript {
+	color:red;
 }
 
 .buttons{
 	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
-}
-
-#github {
 	height:45px;
 }
 
-#download {
-	height:45px;
+#copyHex{
+	height: 50px;
+	margin: auto;
 }
 
-#web {
-	height:45px;
+#copyRgb{
+	height: 30px;
+	margin: auto;
 }
 
 a:link {
-  color: gray;
   text-decoration: none;
 }
 
 a:visited {
-  color: gray;
   text-decoration: none;
 }
 
 a:hover {
-  color: gray;
   text-decoration: underline;
 }
 
 a:active {
-  color: gray;
   text-decoration: underline;
 }
 
