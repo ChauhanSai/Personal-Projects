@@ -8,23 +8,29 @@ body {
 	color: white;
 }
 
+span {
+	cursor: pointer;
+}
+
+span:hover {
+	text-decoration: underline;
+}
+
 h1 {
 	font-size: 3em;
 	margin: 10px 0px;
-	cursor: pointer;
 	margin: auto;
 }
 
 h3 {
 	font-size: 1.5em;
 	margin: 10px 0px;
-	cursor: pointer;
 	margin: auto;
 }
 
 header  {
 	margin: auto;
-	padding: 35vh 0px;
+	padding: 34vh 0px;
 }
 
 noscript {
@@ -52,6 +58,7 @@ a:link {
 
 a:visited {
   text-decoration: none;
+  color: white;
 }
 
 a:hover {

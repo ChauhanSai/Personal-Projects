@@ -120,7 +120,7 @@ h1 {
 }
 
 #dropdown {
-	height:20px;
+	height:2vh;
 	transform: rotate(0deg);
 	cursor: pointer;
 }
