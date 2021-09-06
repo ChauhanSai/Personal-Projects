@@ -51,19 +51,19 @@
 	</tr>
 	<tr>
 		<td><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r1">git-release-api</a></td>
-		<td>Python</td>
+		<td><a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r1/git-release-api.zip">Python</a></td>
 		<td><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2">stripesGenerator</a></td>
-		<td>HTML</td>
+		<td><a href="https://chauhansai.github.io/Script-Projects/HTML/stripesGenerator/stripesGenerator.html">HTML</a></td>
 	</tr>
 	<tr>
 		<td><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r3">IFtoKML</a></td>
-		<td>Python</td>
+		<td><a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFtoKML.zip">Python</a></td>
 		<td><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r4">randomColors</a></td>
-		<td>HTML</td>
+		<td><a href="https://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html">HTML</a></td>
 	</tr>
 	<tr>
 		<td><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r5">colorWaves</a></td>
-		<td>Python</td>
+		<td><a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r5/colorWaves.zip">Python</a></td>
 		<td><a>N/A</a></td>
 		<td>N/A</td>
 	</tr>
