@@ -5,7 +5,6 @@ footer {
 
 body {
 	font-family: "Atkinson Hyperlegible", "Veranda", "Helvetica", sans-serif; 
-	color: white;
 }
 
 span {
@@ -30,7 +29,7 @@ h3 {
 
 header  {
 	margin: auto;
-	padding: 34vh 0px;
+	padding: 33vh 0px;
 }
 
 noscript {
@@ -40,6 +39,10 @@ noscript {
 .buttons{
 	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
 	height:45px;
+}
+
+.clipboards{
+	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
 }
 
 #copyHex{
