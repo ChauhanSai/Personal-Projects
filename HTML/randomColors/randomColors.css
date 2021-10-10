@@ -29,7 +29,12 @@ h3 {
 
 header  {
 	margin: auto;
-	padding: 33vh 0px;
+	padding-top: 10px;
+}
+
+article  {
+	margin: auto;
+	padding: 28vh 0px;
 }
 
 noscript {
