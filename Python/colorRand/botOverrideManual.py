@@ -1,5 +1,5 @@
 import tweepy
-import random
+import time
 from PIL import Image, ImageDraw, ImageFont
 import os
 
@@ -16,10 +16,15 @@ auth.set_access_token("###", "###")
 # Create API object
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-# generate
-red = round(random.random()*256)
-green = round(random.random()*256)
-blue = round(random.random()*256)
+# input color
+red, green, blue = eval(input("Value r,g,b: "))
+message = input("Message: ")
+
+timeBreak = 86400.0
+
+print("Waiting ("+str(round(timeBreak - ((time.time() - 1633798800) % timeBreak)))+")")
+
+time.sleep(timeBreak - ((time.time() - 1633798800) % timeBreak))
 
 # setColor
 rgb = (red, green, blue)
@@ -52,7 +57,10 @@ color.save(fileName)
 media = api.media_upload(fileName)
 
 # Post tweet with image
-tweet = "Hex: "+hexString+"\nRGB: "+rgbString+"\nhttps://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html?color="+hexString.replace("#","")
+if message != "":
+    tweet = message+"\nHex: "+hexString+"\nRGB: "+rgbString+"\nhttps://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html?color="+hexString.replace("#","")
+else:
+    tweet = "Hex: "+hexString+"\nRGB: "+rgbString+"\nhttps://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html?color="+hexString.replace("#","")
 post_result = api.update_status(status=tweet, media_ids=[media.media_id])
 
 os.remove(fileName)
