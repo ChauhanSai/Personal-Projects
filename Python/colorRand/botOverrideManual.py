@@ -2,6 +2,8 @@ import tweepy
 import time
 from PIL import Image, ImageDraw, ImageFont
 import os
+import requests
+from io import BytesIO
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler("###",
@@ -36,20 +38,21 @@ fileName += ".png"
 # create image
 if (red+green+blue)/3>125 :
     fontColor = (0,0,0)
-    overlay = "Overlay.png"
+    overlay = requests.get("https://chauhansai.github.io/Script-Projects/Python/colorRand/Overlay.png")
 else:
     fontColor = (255,255,255)
-    overlay = "Overlay_Invert.png"
+    overlay = requests.get("https://chauhansai.github.io/Script-Projects/Python/colorRand/Overlay_Invert.png")
+Font = requests.get("https://chauhansai.github.io/Script-Projects/Python/colorRand/AtkinsonHyperlegible-Regular.ttf")
 
 color = Image.new('RGBA', (1920, 1080), (red, green, blue, 255))
-hexFont = ImageFont.truetype('AtkinsonHyperlegible-Regular.ttf', 80)
-rgbFont = ImageFont.truetype('AtkinsonHyperlegible-Regular.ttf', 60)
-userFont = ImageFont.truetype('AtkinsonHyperlegible-Regular.ttf', 40)
+hexFont = ImageFont.truetype(BytesIO(Font.content), 80)
+rgbFont = ImageFont.truetype(BytesIO(Font.content), 60)
+userFont = ImageFont.truetype(BytesIO(Font.content), 40)
 d = ImageDraw.Draw(color)
 d.text((70,870), hexString, font=hexFont, fill=fontColor)
 d.text((70,950), rgbString, font=rgbFont, fill=fontColor)
 d.text((1635,970), "@colorRand", font=userFont, fill=fontColor)
-logo = Image.open(overlay) 
+logo = Image.open(BytesIO(overlay.content)) 
 color.paste(logo, (0, 0), logo) 
 
 color.save(fileName)
