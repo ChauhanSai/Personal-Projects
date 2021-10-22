@@ -39,8 +39,8 @@
 		
 		<script>
 		
-			var splashChoice = ['Follow our twitter', 'Join us on twitter', 'Check out how this website works']
-			var buttonChoice = ['twitterButton', 'twitterButton', 'githubButton']
+			var splashChoice = ['Follow our twitter', 'Join us on twitter', 'Check out how this website works', 'Share this color', 'Name this color', 'Text your friends', 'What would you call this?', 'Like this color?', 'Get daily random colors', 'Beep Boop Bop']
+			var buttonChoice = ['twitterButton', 'twitterButton', 'githubButton', 'shareButton', 'nameButton', 'shareButton', 'nameButton', 'shareButton', 'twitterButton', 'githubButton']
 			var rand = Math.round(Math.random()*(splashChoice.length-1));
 			var splash = splashChoice[rand];
 			var button = buttonChoice[rand];
@@ -121,9 +121,8 @@
 			
 			function share(){
 				var title = document.getElementById("hex").innerHTML;
-				var text = "Test";
 				var url = "https://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html?color="+document.getElementById("hex").innerHTML.substring(1);
-				navigator.share({title, text, url})
+				navigator.share({title, url})
 			}
 			
 			function copy(x) {
