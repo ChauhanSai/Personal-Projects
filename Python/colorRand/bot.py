@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 import requests
 from io import BytesIO
+from datetime import datetime
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler("###",
@@ -19,9 +20,23 @@ auth.set_access_token("###", "###")
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 # generate
-red = round(random.random()*256)
-green = round(random.random()*256)
-blue = round(random.random()*256)
+today = datetime.now().strftime("%y%m%d")
+## OVERRIDE
+overrideDef = {"%y%m%d": "0,0,0"}
+override = 0
+for i in overrideDef:
+    if i==today:
+        red, green, blue = eval(overrideDef[today])
+        override = 1
+        ## MESSAGE
+        message = ""
+        print("Override",today)
+        break
+
+if not override:
+    red = round(random.random()*256)
+    green = round(random.random()*256)
+    blue = round(random.random()*256)
 
 # setColor
 rgb = (red, green, blue)
@@ -55,7 +70,10 @@ color.save(fileName)
 media = api.media_upload(fileName)
 
 # Post tweet with image
-tweet = "Hex: "+hexString+"\nRGB: "+rgbString+"\nhttps://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html?color="+hexString.replace("#","")
+if message != "":
+    tweet = message+"\nHex: "+hexString+"\nRGB: "+rgbString+"\nhttps://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html?color="+hexString.replace("#","")
+else:
+    tweet = "Hex: "+hexString+"\nRGB: "+rgbString+"\nhttps://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html?color="+hexString.replace("#","")
 post_result = api.update_status(status=tweet, media_ids=[media.media_id])
 
 os.remove(fileName)
