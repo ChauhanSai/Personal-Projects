@@ -6,6 +6,7 @@ import os
 import requests
 from io import BytesIO
 from datetime import datetime
+import pytz
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler("###",
@@ -28,16 +29,19 @@ while True:
     time.sleep(timeBreak - ((time.time() - 1633798800) % timeBreak))
 
     # generate
-    today = datetime.now().strftime("%y%m%d")
+    tz = pytz.timezone('America/Chicago')
+    today = datetime.now(tz).strftime("%y%m%d")
+    print(today)
+    message = ""
     ## OVERRIDE
     overrideDef = {"%y%m%d": "0,0,0"}
     override = 0
     for i in overrideDef:
-        if i==today:
-            red, green, blue = eval(overrideDef[today])
+        if today in i:
+            red, green, blue = eval(overrideDef[i])
             override = 1
             ## MESSAGE
-            message = ""
+            message = i.replace(today, "")
             print("Override",today)
             break
 
@@ -70,11 +74,12 @@ while True:
     d.text((70,870), hexString, font=hexFont, fill=fontColor)
     d.text((70,950), rgbString, font=rgbFont, fill=fontColor)
     d.text((1635,970), "@colorRand", font=userFont, fill=fontColor)
-    logo = Image.open(BytesIO(overlay.content)) 
-    color.paste(logo, (0, 0), logo) 
+    logo = Image.open(BytesIO(overlay.content))
+    color.paste(logo, (0, 0), logo)
 
     color.save(fileName)
-
+    print("File saved")
+    print("...")
     media = api.media_upload(fileName)
 
     # Post tweet with image
