@@ -123,6 +123,52 @@ for i in range(len(bedrock)):
   print(textureB,' → ',textureJ)
 print('Completed /block/ pass #4\n')
 
+# items
+bedrock = []
+java    = []
+for i in range(len(bedrock)):
+  textureB=bedrock[i]
+  textureJ=java[i]
+  src= r'textures/items/'
+  src+=textureB
+  src+='.png'
+  dst= r'temp/assets/minecraft/textures/item/'
+  dst+=textureB
+  dst+='.png'
+  rnm= r'temp/assets/minecraft/textures/item/'
+  rnm+=textureJ
+  rnm+='.png'
+  try:
+      shutil.copyfile(src, dst)
+      os.rename(dst, rnm)
+  except Exception:
+      pass
+  print(textureB,' → ',textureJ)
+print('Completed /item/ pass #1\n')
+
+# items candles/
+bedrock = ['black_candle', 'blue_candle', 'brown_candle', 'candle', 'cyan_candle', 'gray_candle', 'green_candle', 'light_blue_candle', 'lime_candle', 'magenta_candle', 'orange_candle', 'pink_candle', 'purple_candle', 'red_candle', 'white_candle', 'yellow_candle', 'light_gray_candle']
+java    = ['black_candle', 'blue_candle', 'brown_candle', 'candle', 'cyan_candle', 'gray_candle', 'green_candle', 'light_blue_candle', 'lime_candle', 'magenta_candle', 'orange_candle', 'pink_candle', 'purple_candle', 'red_candle', 'white_candle', 'yellow_candle', 'light_gray_candle']
+for i in range(len(bedrock)):
+  textureB=bedrock[i]
+  textureJ=java[i]
+  src= r'textures/items/candles/'
+  src+=textureB
+  src+='.png'
+  dst= r'temp/assets/minecraft/textures/item/'
+  dst+=textureB
+  dst+='.png'
+  rnm= r'temp/assets/minecraft/textures/item/'
+  rnm+=textureJ
+  rnm+='.png'
+  try:
+      shutil.copyfile(src, dst)
+      os.rename(dst, rnm)
+  except Exception:
+      pass
+  print(textureB,' → ',textureJ)
+print('Completed /item/ pass #2\n')
+
 # colormap
 bedrock = ['foliage', 'grass']
 java    = ['foliage', 'grass']
@@ -331,8 +377,8 @@ for i in range(len(bedrock)):
 print('Completed /misc/ pass #2\n')
 
 # tga
-bedrock = ['grass_side', 'stonecutter2_saw']
-java    = ['grass_block_side_overlay', 'stonecutter_saw']
+bedrock = ['grass_side', 'stonecutter2_saw', 'seagrass_doubletall_top_a', 'seagrass_doubletall_bottom_a', 'scaffolding_top', 'scaffolding_side', 'scaffolding_bottom', 'reeds', 'kelp_top', 'kelp_a', 'grindstone_side', 'grindstone_pivot', 'grindstone_round', 'fern', 'double_plant_syringa_top', 'double_plant_syringa_bottom', 'double_plant_grass_top', 'double_plant_grass_bottom', 'double_plant_fern_top', 'double_plant_fern_bottom', 'cactus_top', 'cactus_bottom', 'cactus_side']
+java    = ['grass_block_side_overlay', 'stonecutter_saw', 'tall_seagrass_top', 'tall_seagrass_bottom', 'scaffolding_top', 'scaffolding_side', 'scaffolding_bottom', 'sugar_cane', 'kelp', 'kelp_plant', 'grindstone_side', 'grindstone_pivot', 'grindstone_round', 'fern', 'lilac_top', 'lilac_bottom', 'tall_grass_top', 'tall_grass_bottom', 'large_fern_top', 'large_fern_bottom', 'cactus_top', 'cactus_bottom', 'cactus_side']
 for i in range(len(bedrock)):
   textureB=bedrock[i]
   textureJ=java[i]
