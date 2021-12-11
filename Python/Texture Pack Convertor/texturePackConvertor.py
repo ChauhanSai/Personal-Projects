@@ -3,8 +3,8 @@ import shutil
 import os
 
 packName = input('Zip Name: ')
-if os.path.exists('temp/assets/minecraft/'):
-    shutil.rmtree('temp/assets/minecraft/')
+if os.path.exists('temp/'):
+    shutil.rmtree('temp/')
 
 os.makedirs('temp/assets/minecraft/textures/block/')
 os.makedirs('temp/assets/minecraft/textures/colormap/')
@@ -124,8 +124,8 @@ for i in range(len(bedrock)):
 print('Completed /block/ pass #4\n')
 
 # items
-bedrock = []
-java    = []
+bedrock = ['boat_acacia', 'door_acacia', 'sign_acacia', 'amethyst_shard', 'apple', 'armor_stand', 'arrow', 'bucket_axolotl', 'potato_baked', 'bamboo', 'beef_raw', 'beetroot', 'seeds_beetroot', 'beetroot_soup', 'boat_birch', 'door_birch', 'sign_birch', 'dye_powder_black_new', 'blaze_powder', 'blaze_rod', 'dye_powder_blue', 'bone', 'dye_powder_white', 'book_normal', 'bow_standby', 'bow_pulling_0', 'bow_pulling_1', 'bow_pulling_2', 'bowl', 'bread', 'brewing_stand', 'brick', 'broken_elytra', 'dye_powder_brown_new', 'bucket_empty', 'cake', 'campfire', 'carrot', 'carrot_on_a_stick', 'cauldron', 'chain', 'chainmail_boots', 'chainmail_chestplate', 'chainmail_helmet', 'chainmail_leggings', 'charcoal', 'minecart_chest', 'chicken_raw', 'chorus_fruit', 'clay_ball', 'coal', 'dye_powder_brown', 'fish_raw', 'bucket_cod', 'minecart_command_block', 'comparator', 'beef_cooked', 'chicken_cooked', 'fish_cooked', 'mutton_cooked', 'porkchop_cooked', 'rabbit_cooked', 'fish_salmon_cooked', 'cookie', 'copper_ingot', 'banner_pattern', 'crimson_door', 'sign_crimson', 'crossbow_arrow', 'crossbow_firework', 'crossbow_pulling_0', 'crossbow_pulling_1', 'crossbow_pulling_2', 'crossbow_standby', 'dye_powder_cyan', 'boat_darkoak', 'door_dark_oak', 'sign_darkoak', 'diamond', 'diamond_axe', 'diamond_boots', 'diamond_chestplate', 'diamond_helmet', 'diamond_hoe', 'diamond_horse_armor', 'diamond_leggings', 'diamond_pickaxe', 'diamond_shovel', 'diamond_sword', 'dragons_breath', 'dried_kelp', 'egg', 'elytra', 'emerald', 'empty_armor_slot_boots', 'empty_armor_slot_chestplate', 'empty_armor_slot_helmet', 'empty_armor_slot_leggings', 'empty_armor_slot_shield', 'book_enchanted', 'end_crystal', 'ender_eye', 'ender_pearl', 'experience_bottle', 'feather', 'spider_eye_fermented', 'map_filled', 'map_filled', 'fireball', 'fireworks', 'fishing_rod_uncast', 'fishing_rod_cast', 'flint', 'flint_and_steel', 'banner_pattern', 'flower_pot', 'minecart_furnace', 'ghast_tear', 'potion_bottle_empty', 'melon_speckled', 'banner_pattern', 'glow_berries', 'dye_powder_glow', 'glow_item_frame', 'glowstone_dust', 'gold_ingot', 'gold_nugget', 'apple_golden', 'gold_axe', 'gold_boots', 'carrot_golden', 'gold_chestplate', 'gold_helmet', 'gold_hoe', 'gold_horse_armor', 'gold_leggings', 'gold_pickaxe', 'gold_shovel', 'gold_sword', 'dye_powder_gray', 'dye_powder_green', 'gunpowder', 'heartofthesea_closed', 'honey_bottle', 'honeycomb', 'hopper', 'minecart_hopper', 'dye_powder_black', 'iron_axe', 'iron_boots', 'iron_chestplate', 'door_iron', 'iron_helmet', 'iron_hoe', 'iron_horse_armor', 'iron_ingot', 'iron_leggings', 'iron_nugget', 'iron_pickaxe', 'iron_shovel', 'iron_sword', 'item_frame', 'boat_jungle', 'door_jungle', 'sign_jungle', 'kelp', 'lantern', 'dye_powder_blue', 'bucket_lava', 'lead', 'leather', 'light_block_0', 'light_block_1', 'light_block_2', 'light_block_3', 'light_block_4', 'light_block_5', 'light_block_6', 'light_block_7', 'light_block_8', 'light_block_9', 'light_block_10', 'light_block_11', 'light_block_12', 'light_block_13', 'light_block_14', 'light_block_15', 'dye_powder_light_blue', 'dye_powder_silver', 'dye_powder_lime', 'potion_bottle_lingering_empty', 'dye_powder_magenta', 'magma_cream', 'map_empty', 'seeds_melon', 'melon', 'bucket_milk', 'minecart_normal', 'banner_pattern', 'mushroom_stew', 'record_11', 'record_13', 'record_blocks', 'record_cat', 'record_chirp', 'record_far', 'record_mall', 'record_mellohi', 'record_otherside', 'record_pigstep', 'record_stal', 'record_strad', 'record_wait', 'record_ward', 'mutton_raw', 'name_tag', 'nautilus', 'netherbrick', 'nether_sprouts', 'nether_star', 'nether_wart', 'netherite_axe', 'netherite_boots', 'netherite_chestplate', 'netherite_helmet', 'netherite_hoe', 'netherite_ingot', 'netherite_leggings', 'netherite_pickaxe', 'netherite_scrap', 'netherite_shovel', 'netherite_sword', 'boat_oak', 'door_wood', 'sign', 'dye_powder_orange', 'painting', 'paper', 'phantom_membrane', 'banner_pattern', 'dye_powder_pink', 'potato_poisonous', 'chorus_fruit_popped', 'porkchop_raw', 'potato', 'potion_bottle_empty', 'potion_overlay', 'bucket_powder_snow', 'prismarine_crystals', 'prismarine_shard', 'fish_pufferfish_raw', 'bucket_pufferfish', 'pumpkin_pie', 'seeds_pumpkin', 'dye_powder_purple', 'quartz', 'rabbit_raw', 'rabbit_foot', 'rabbit_hide', 'rabbit_stew', 'raw_copper', 'raw_gold', 'raw_iron', 'dye_powder_red', 'redstone_dust', 'repeater', 'rotten_flesh', 'saddle', 'fish_salmon_raw', 'bucket_salmon', 'turtle_shell_piece', 'sea_pickle', 'shears', 'shulker_shell', 'banner_pattern', 'slimeball', 'snowball', 'soul_campfire', 'soul_lantern', 'spawn_egg', 'spawn_egg_overlay', 'spider_eye', 'boat_spruce', 'door_spruce', 'sign_spruce', 'spyglass', 'spyglass', 'stick', 'stone_axe', 'stone_hoe', 'stone_pickaxe', 'stone_shovel', 'stone_sword', 'string', 'sugar', 'reeds', 'suspicious_stew', 'sweet_berries', 'tipped_arrow_base', 'tipped_arrow_head', 'minecart_tnt', 'totem', 'trident', 'fish_clownfish_raw', 'bucket_tropical', 'turtle_egg', 'turtle_helmet', 'warped_door', 'warped_fungus_on_a_stick', 'sign_warped', 'bucket_water', 'wheat', 'seeds_wheat', 'dye_powder_white_new', 'wood_axe', 'wood_hoe', 'wood_pickaxe', 'wood_shovel', 'wood_sword', 'book_writable', 'book_written', 'dye_powder_yellow', 'leather_chestplate', 'leather_chestplate']
+java    = ['acacia_boat', 'acacia_door', 'acacia_sign', 'amethyst_shard', 'apple', 'armor_stand', 'arrow', 'axolotl_bucket', 'baked_potato', 'bamboo', 'beef', 'beetroot', 'beetroot_seeds', 'beetroot_soup', 'birch_boat', 'birch_door', 'birch_sign', 'black_dye', 'blaze_powder', 'blaze_rod', 'blue_dye', 'bone', 'bone_meal', 'book', 'bow', 'bow_pulling_0', 'bow_pulling_1', 'bow_pulling_2', 'bowl', 'bread', 'brewing_stand', 'brick', 'broken_elytra', 'brown_dye', 'bucket', 'cake', 'campfire', 'carrot', 'carrot_on_a_stick', 'cauldron', 'chain', 'chainmail_boots', 'chainmail_chestplate', 'chainmail_helmet', 'chainmail_leggings', 'charcoal', 'chest_minecart', 'chicken', 'chorus_fruit', 'clay_ball', 'coal', 'cocoa_beans', 'cod', 'cod_bucket', 'command_block_minecart', 'comparator', 'cooked_beef', 'cooked_chicken', 'cooked_cod', 'cooked_mutton', 'cooked_porkchop', 'cooked_rabbit', 'cooked_salmon', 'cookie', 'copper_ingot', 'creeper_banner_pattern', 'crimson_door', 'crimson_sign', 'crossbow_arrow', 'crossbow_firework', 'crossbow_pulling_0', 'crossbow_pulling_1', 'crossbow_pulling_2', 'crossbow_standby', 'cyan_dye', 'dark_oak_boat', 'dark_oak_door', 'dark_oak_sign', 'diamond', 'diamond_axe', 'diamond_boots', 'diamond_chestplate', 'diamond_helmet', 'diamond_hoe', 'diamond_horse_armor', 'diamond_leggings', 'diamond_pickaxe', 'diamond_shovel', 'diamond_sword', 'dragon_breath', 'dried_kelp', 'egg', 'elytra', 'emerald', 'empty_armor_slot_boots', 'empty_armor_slot_chestplate', 'empty_armor_slot_helmet', 'empty_armor_slot_leggings', 'empty_armor_slot_shield', 'enchanted_book', 'end_crystal', 'ender_eye', 'ender_pearl', 'experience_bottle', 'feather', 'fermented_spider_eye', 'filled_map', 'filled_map_markings', 'fire_charge', 'firework_rocket', 'fishing_rod', 'fishing_rod_cast', 'flint', 'flint_and_steel', 'flower_banner_pattern', 'flower_pot', 'furnace_minecart', 'ghast_tear', 'glass_bottle', 'glistering_melon_slice', 'globe_banner_pattern', 'glow_berries', 'glow_ink_sac', 'glow_item_frame', 'glowstone_dust', 'gold_ingot', 'gold_nugget', 'golden_apple', 'golden_axe', 'golden_boots', 'golden_carrot', 'golden_chestplate', 'golden_helmet', 'golden_hoe', 'golden_horse_armor', 'golden_leggings', 'golden_pickaxe', 'golden_shovel', 'golden_sword', 'gray_dye', 'green_dye', 'gunpowder', 'heart_of_the_sea', 'honey_bottle', 'honeycomb', 'hopper', 'hopper_minecart', 'ink_sac', 'iron_axe', 'iron_boots', 'iron_chestplate', 'iron_door', 'iron_helmet', 'iron_hoe', 'iron_horse_armor', 'iron_ingot', 'iron_leggings', 'iron_nugget', 'iron_pickaxe', 'iron_shovel', 'iron_sword', 'item_frame', 'jungle_boat', 'jungle_door', 'jungle_sign', 'kelp', 'lantern', 'lapis_lazuli', 'lava_bucket', 'lead', 'leather', 'light_00', 'light_01', 'light_02', 'light_03', 'light_04', 'light_05', 'light_06', 'light_07', 'light_08', 'light_09', 'light_10', 'light_11', 'light_12', 'light_13', 'light_14', 'light_15', 'light_blue_dye', 'light_gray_dye', 'lime_dye', 'lingering_potion', 'magenta_dye', 'magma_cream', 'map', 'melon_seeds', 'melon_slice', 'milk_bucket', 'minecart', 'mojang_banner_pattern', 'mushroom_stew', 'music_disc_11', 'music_disc_13', 'music_disc_blocks', 'music_disc_cat', 'music_disc_chirp', 'music_disc_far', 'music_disc_mall', 'music_disc_mellohi', 'music_disc_otherside', 'music_disc_pigstep', 'music_disc_stal', 'music_disc_strad', 'music_disc_wait', 'music_disc_ward', 'mutton', 'name_tag', 'nautilus_shell', 'nether_brick', 'nether_sprouts', 'nether_star', 'nether_wart', 'netherite_axe', 'netherite_boots', 'netherite_chestplate', 'netherite_helmet', 'netherite_hoe', 'netherite_ingot', 'netherite_leggings', 'netherite_pickaxe', 'netherite_scrap', 'netherite_shovel', 'netherite_sword', 'oak_boat', 'oak_door', 'oak_sign', 'orange_dye', 'painting', 'paper', 'phantom_membrane', 'piglin_banner_pattern', 'pink_dye', 'poisonous_potato', 'popped_chorus_fruit', 'porkchop', 'potato', 'potion', 'potion_overlay', 'powder_snow_bucket', 'prismarine_crystals', 'prismarine_shard', 'pufferfish', 'pufferfish_bucket', 'pumpkin_pie', 'pumpkin_seeds', 'purple_dye', 'quartz', 'rabbit', 'rabbit_foot', 'rabbit_hide', 'rabbit_stew', 'raw_copper', 'raw_gold', 'raw_iron', 'red_dye', 'redstone', 'repeater', 'rotten_flesh', 'saddle', 'salmon', 'salmon_bucket', 'scute', 'sea_pickle', 'shears', 'shulker_shell', 'skull_banner_pattern', 'slime_ball', 'snowball', 'soul_campfire', 'soul_lantern', 'spawn_egg', 'spawn_egg_overlay', 'spider_eye', 'spruce_boat', 'spruce_door', 'spruce_sign', 'spyglass', 'spyglass_model', 'stick', 'stone_axe', 'stone_hoe', 'stone_pickaxe', 'stone_shovel', 'stone_sword', 'string', 'sugar', 'sugar_cane', 'suspicious_stew', 'sweet_berries', 'tipped_arrow_base', 'tipped_arrow_head', 'tnt_minecart', 'totem_of_undying', 'trident', 'tropical_fish', 'tropical_fish_bucket', 'turtle_egg', 'turtle_helmet', 'warped_door', 'warped_fungus_on_a_stick', 'warped_sign', 'water_bucket', 'wheat', 'wheat_seeds', 'white_dye', 'wooden_axe', 'wooden_hoe', 'wooden_pickaxe', 'wooden_shovel', 'wooden_sword', 'writable_book', 'written_book', 'yellow_dye', 'leather_chestplate', 'leather_chestplate_overlay']
 for i in range(len(bedrock)):
   textureB=bedrock[i]
   textureJ=java[i]
@@ -144,6 +144,23 @@ for i in range(len(bedrock)):
   except Exception:
       pass
   print(textureB,' → ',textureJ)
+
+try:
+  src= r'textures/ui/recipe_book_icon.png'
+  dst= r'temp/assets/minecraft/textures/item/recipe_book_icon.png'
+  rnm= r'temp/assets/minecraft/textures/item/knowledge_book.png'
+  shutil.copyfile(src, dst)
+  os.rename(dst, rnm)
+except Exception:
+  pass
+try:
+  src= r'textures/blocks/pointed_dripstone_down_tip.png'
+  dst= r'temp/assets/minecraft/textures/item/pointed_dripstone_down_tip.png'
+  rnm= r'temp/assets/minecraft/textures/item/pointed_dripstone.png'
+  shutil.copyfile(src, dst)
+  os.rename(dst, rnm)
+except Exception:
+  pass
 print('Completed /item/ pass #1\n')
 
 # items candles/
@@ -376,7 +393,7 @@ for i in range(len(bedrock)):
   print(textureB,' → ',textureJ)
 print('Completed /misc/ pass #2\n')
 
-# tga
+# tga blocks
 bedrock = ['grass_side', 'stonecutter2_saw', 'seagrass_doubletall_top_a', 'seagrass_doubletall_bottom_a', 'scaffolding_top', 'scaffolding_side', 'scaffolding_bottom', 'reeds', 'kelp_top', 'kelp_a', 'grindstone_side', 'grindstone_pivot', 'grindstone_round', 'fern', 'double_plant_syringa_top', 'double_plant_syringa_bottom', 'double_plant_grass_top', 'double_plant_grass_bottom', 'double_plant_fern_top', 'double_plant_fern_bottom', 'cactus_top', 'cactus_bottom', 'cactus_side']
 java    = ['grass_block_side_overlay', 'stonecutter_saw', 'tall_seagrass_top', 'tall_seagrass_bottom', 'scaffolding_top', 'scaffolding_side', 'scaffolding_bottom', 'sugar_cane', 'kelp', 'kelp_plant', 'grindstone_side', 'grindstone_pivot', 'grindstone_round', 'fern', 'lilac_top', 'lilac_bottom', 'tall_grass_top', 'tall_grass_bottom', 'large_fern_top', 'large_fern_bottom', 'cactus_top', 'cactus_bottom', 'cactus_side']
 for i in range(len(bedrock)):
@@ -394,6 +411,24 @@ for i in range(len(bedrock)):
       pass
   print(textureB,' → ',textureJ)
 print('Completed /block/ targa pass\n')
+
+# tga items
+bedrock = ['leather_boots', 'leather_boots', 'leather_helmet', 'leather_helmet', 'leather_horse_armor', 'leather_leggings', 'leather_leggings']
+java    = ['leather_boots', 'leather_boots_overlay', 'leather_helmet', 'leather_helmet_overlay', 'leather_horse_armor', 'leather_leggings', 'leather_leggings_overlay']
+for i in range(len(bedrock)):
+  textureB=bedrock[i]
+  textureJ=java[i]
+  src= r'textures/items/'
+  src+=textureB
+  src+='.tga'
+  rnm= r'temp/assets/minecraft/textures/item/'
+  rnm+=textureJ
+  rnm+='.png'
+
+  Image.open(src).save(rnm)
+
+  print(textureB,' → ',textureJ)
+print('Completed /item/ targa pass\n')
 
 shutil.make_archive(packName, 'zip', 'temp')
 shutil.rmtree('temp/')
