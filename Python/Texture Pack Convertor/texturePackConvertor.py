@@ -3,11 +3,15 @@ from tkinter import ttk
 from PIL import Image
 import shutil
 import os
+import time
 
 # Set-up the window
 window = tk.Tk()
 window.title("Texture Pack Convertor")
-window.tk.call('wm', 'iconphoto', window._w, tk.PhotoImage(file='icon.png'))
+try:
+    window.iconbitmap('icon.ico')
+except Exception:
+    pass
 
 mainFrame = tk.Frame(master=window, width=150, height=150)
 mainFrame.pack(padx=5, pady=5)
@@ -41,14 +45,16 @@ packNameLabel.pack(side=tk.RIGHT)
 convertFrame = tk.Frame(master=mainFrame, width=150, height=150)
 convertFrame.pack()
 
-progress = ttk.Progressbar(master=mainFrame, orient ="horizontal", length = 800, mode = 'determinate')
+progress = ttk.Progressbar(master=mainFrame, orient ="horizontal", length = 750, mode = 'determinate')
 progress.pack(pady=10)
 
 def convert():
     convertButton['text']='Converting...'
-    if inputEntry.get()[-1:]:
+    progress['value'] = 0
+    window.update_idletasks()
+    if inputEntry.get()[-1:] != "/":
         inputEntry.insert(len(inputEntry.get()),"/")
-    if outputEntry.get()[-1:]:
+    if outputEntry.get()[-1:] != "/":
         outputEntry.insert(len(outputEntry.get()),"/")
     packName = packNameEntry.get()
     print(packName)
@@ -557,12 +563,19 @@ def convert():
     outputDir += packName
     shutil.make_archive(outputDir, 'zip', 'temp')
     shutil.rmtree('temp/')
-    print('Successfully compressed', packName,'. zip')
+    convertMessage = 'Successfully compressed '
+    convertMessage+= packName
+    convertMessage+= '.zip'
+    print(convertMessage)
+    convertButton['text']=convertMessage
+    progress['value'] = 100
+    window.update_idletasks()
+    time.sleep(5)
     convertButton['text']='Convert'
 
-convertButton = tk.Button(master=convertFrame, text="Convert", width=15, height=2, command=convert)
+convertButton = tk.Button(master=convertFrame, text="Convert", width=40, height=2, command=convert)
 convertButton.pack(side=tk.RIGHT)
-creditLabel = tk.Label(master=convertFrame, text="Created By ChauhanSai on GitHub", width=100, anchor="w")
+creditLabel = tk.Label(master=convertFrame, text="Created By ChauhanSai on GitHub\t\t\t\t\t     \nProgram may report 'Not Responding' please wait(See console for progress)", width=65, anchor="w")
 creditLabel.pack(side=tk.LEFT)
 
 # Run the application
