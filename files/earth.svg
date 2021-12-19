@@ -8,9 +8,9 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="24"
-   height="24"
-   viewBox="0 0 24 24"
+   width="20"
+   height="20"
+   viewBox="0 0 20 20"
    id="svg1448"
    sodipodi:docname="earth.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
@@ -22,6 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -42,13 +43,14 @@
      showgrid="false"
      inkscape:zoom="35.416667"
      inkscape:cx="12"
-     inkscape:cy="12"
+     inkscape:cy="10.870588"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1448" />
+     inkscape:current-layer="svg1448"
+     inkscape:document-rotation="0" />
   <path
-     d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+     d="M 15.9,15.39 C 15.64,14.59 14.89,14 14,14 H 13 V 11 A 1,1 0 0 0 12,10 H 6 V 8 H 8 A 1,1 0 0 0 9,7 V 5 h 2 A 2,2 0 0 0 13,3 V 2.59 c 2.93,1.18 5,4.05 5,7.41 0,2.08 -0.8,3.97 -2.1,5.39 M 9,17.93 C 5.05,17.44 2,14.08 2,10 2,9.38 2.08,8.78 2.21,8.21 L 7,13 v 1 a 2,2 0 0 0 2,2 M 10,0 A 10,10 0 0 0 0,10 10,10 0 0 0 10,20 10,10 0 0 0 20,10 10,10 0 0 0 10,0 Z"
      id="path1446"
      style="fill:#0366d6;fill-opacity:1" />
 </svg>

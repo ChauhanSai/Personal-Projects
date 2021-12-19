@@ -8,9 +8,9 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="24"
-   height="24"
-   viewBox="0 0 24 24"
+   width="20"
+   height="20"
+   viewBox="0 0 20 20"
    id="svg867"
    sodipodi:docname="tray-arrow-down.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
@@ -22,6 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -46,9 +47,10 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg867" />
+     inkscape:current-layer="svg867"
+     inkscape:document-rotation="0" />
   <path
-     d="M2 12H4V17H20V12H22V17C22 18.11 21.11 19 20 19H4C2.9 19 2 18.11 2 17V12M12 15L17.55 9.54L16.13 8.13L13 11.25V2H11V11.25L7.88 8.13L6.46 9.55L12 15Z"
+     d="m 0,11.5 h 2 v 5 h 16 v -5 h 2 v 5 c 0,1.11 -0.89,2 -2,2 H 2 c -1.1,0 -2,-0.89 -2,-2 v -5 m 10,3 L 15.55,9.04 14.13,7.63 11,10.75 V 1.5 H 9 v 9.25 L 5.88,7.63 4.46,9.05 Z"
      id="path865"
      style="fill:#0366d6;fill-opacity:1" />
 </svg>
