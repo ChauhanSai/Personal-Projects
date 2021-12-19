@@ -49,14 +49,14 @@
 		Usage: Easily create texture packs for Bedrock and Java or convert an old Bedrock pack to work with Java.
 	</p>
 	<!----<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/.exe">
-		<img src="https://chauhansai.github.io/Script-Projects\files\tray-arrow-down.svg" />
+		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/.zip">
-			<img src="https://chauhansai.github.io/Script-Projects\files\zip-box-outline.svg" />
+			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
 			Download .zip
 		</a>
 	</details>--->
@@ -72,7 +72,7 @@
 		Usage: Generate plotted and typed histograms for any chosen image.
 	</p>
 	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r5/colorWaves.zip">
-		<img src="https://chauhansai.github.io/Script-Projects\files\tray-arrow-down.svg" />
+		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 </section>
@@ -87,7 +87,7 @@
 		Usage: Generate 3D Flight Plans of previous flights that can be viewed in Google Earth. 
 	</p>
 	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFtoKML.zip">
-		<img src="https://chauhansai.github.io/Script-Projects\files\tray-arrow-down.svg" />
+		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 </section>
@@ -102,7 +102,7 @@
 		Usage: Using the data given from the API, counting the downloads of a GitHub repository's releases
 	</p>
 	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r1/git-release-api.zip">
-		<img src="https://chauhansai.github.io/Script-Projects\files\tray-arrow-down.svg" />
+		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 </section>
@@ -114,14 +114,14 @@
 		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r4">Random Colors</a></b> is a website that generates and displays random colors to use in any project.
 	</p>
 	<a href="https://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html">
-		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" />
+		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" height="16px"/>
 		Visit Webpage
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r4/randomColors.zip">
-			<img src="https://chauhansai.github.io/Script-Projects\files\zip-box-outline.svg" />
+			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
 			Download .zip
 		</a>
 	</details>
@@ -134,7 +134,7 @@
 		<b>@colorRand</b> is a twitter bot that posts daily random colors through the use of <b><a href="#random-colors">Random Colors</a></b>
 	</p>
 	<a href="https://twitter.com/colorRand">
-		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" />
+		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" height="16px"/>
 		Visit Twitter
 	</a>
 </section>
@@ -146,14 +146,14 @@
 		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2">Stripes Generator</a></b> is a website that allows you to create stripes faces for your Apple Watch S3 and older.
 	</p>
 	<a href="https://chauhansai.github.io/Script-Projects/HTML/stripesGenerator/stripesGenerator.html">
-		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" />
+		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" height="16px"/>
 		Visit Webpage
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r2/stripesGenerator.zip">
-			<img src="https://chauhansai.github.io/Script-Projects\files\zip-box-outline.svg" />
+			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
 			Download .zip
 		</a>
 	</details>
