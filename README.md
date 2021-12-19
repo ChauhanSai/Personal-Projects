@@ -41,25 +41,29 @@
 
 <section>
 	<h3>Texture Pack Convertor</h3>
-	<b>Coming Soon</b>
+	<b>Python</b>
 	<p>
-		<!---<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r6">Texture Pack Convertor</a></b> is a---> Python script that converts a Minecraft Bedrock texture pack to the Minecraft Java Edition file system. All textures are converted, with the exception of mobs, to match the structure and naming convention of Java Edition and zipped into a ready to use file for Minecraft 1.18.
+		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r6">Texture Pack Convertor</a></b> is a Python script that converts a Minecraft Bedrock texture pack to the Minecraft Java Edition file system. All textures are converted, with the exception of mobs, to match the structure and naming convention of Java Edition and zipped into a ready to use file for Minecraft 1.18.
 	</p>
 	<p>
 		Usage: Easily create texture packs for Bedrock and Java or convert an old Bedrock pack to work with Java.
 	</p>
-	<!----<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/.exe">
+	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertor.exe">
 		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
-		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/.zip">
+		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/Texture.Pack.Convertor.zip">
 			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
-			Download .zip
+			Download Source .Py
 		</a>
-	</details>--->
+		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertorCMD.py">
+			<img src="https://chauhansai.github.io/Script-Projects/files/file-outline.svg" height="16px"/>
+			Download CMD .Py
+		</a>
+	</details>
 </section>
 
 <section>
