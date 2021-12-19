@@ -6,5 +6,4 @@
 Hidden/*
 */__pycache__
 *.pyc
-Python/Texture Pack Convertor/textures/
-Python/Texture Pack Convertor/pack_icon.png
+*.exe

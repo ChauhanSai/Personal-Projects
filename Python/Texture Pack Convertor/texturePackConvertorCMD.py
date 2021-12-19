@@ -424,9 +424,10 @@ for i in range(len(bedrock)):
   rnm= r'temp/assets/minecraft/textures/item/'
   rnm+=textureJ
   rnm+='.png'
-
-  Image.open(src).save(rnm)
-
+  try:
+      Image.open(src).save(rnm)
+  except Exception:
+      pass
   print(textureB,' → ',textureJ)
 print('Completed /item/ targa pass\n')
 

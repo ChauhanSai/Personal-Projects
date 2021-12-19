@@ -52,42 +52,45 @@ def convert():
     convertButton['text']='Converting...'
     progress['value'] = 0
     window.update_idletasks()
-    if inputEntry.get()[-1:] != "/":
-        inputEntry.insert(len(inputEntry.get()),"/")
-    if outputEntry.get()[-1:] != "/":
-        outputEntry.insert(len(outputEntry.get()),"/")
+    if inputEntry.get()[-1:] != "\\":
+        inputEntry.insert(len(inputEntry.get()),"\\")
+    if outputEntry.get()[-1:] != "\\":
+        outputEntry.insert(len(outputEntry.get()),"\\")
     packName = packNameEntry.get()
     print(packName)
     total = 0
-    
-    if os.path.exists('temp/'):
-        shutil.rmtree('temp/')
 
-    os.makedirs('temp/assets/minecraft/textures/block/')
-    os.makedirs('temp/assets/minecraft/textures/colormap/')
-    os.makedirs('temp/assets/minecraft/textures/entity/')
-    os.makedirs('temp/assets/minecraft/textures/environment/')
-    os.makedirs('temp/assets/minecraft/textures/item/')
-    os.makedirs('temp/assets/minecraft/textures/map/')
-    os.makedirs('temp/assets/minecraft/textures/misc/')
-    os.makedirs('temp/assets/minecraft/textures/models/armor/')
-    os.makedirs('temp/assets/minecraft/textures/painting/')
-    os.makedirs('temp/assets/minecraft/textures/mob_effect/')
-    os.makedirs('temp/assets/minecraft/textures/particle/')
-    print("The new directory is created!\n")
+    try:
+        if os.path.exists('temp/'):
+            shutil.rmtree('temp/')
+        os.makedirs('temp/assets/minecraft/textures/block/')
+        os.makedirs('temp/assets/minecraft/textures/colormap/')
+        os.makedirs('temp/assets/minecraft/textures/entity/')
+        os.makedirs('temp/assets/minecraft/textures/environment/')
+        os.makedirs('temp/assets/minecraft/textures/item/')
+        os.makedirs('temp/assets/minecraft/textures/map/')
+        os.makedirs('temp/assets/minecraft/textures/misc/')
+        os.makedirs('temp/assets/minecraft/textures/models/armor/')
+        os.makedirs('temp/assets/minecraft/textures/painting/')
+        os.makedirs('temp/assets/minecraft/textures/mob_effect/')
+        os.makedirs('temp/assets/minecraft/textures/particle/')
+        print("The new directory is created!\n")
 
-    src= inputEntry.get()
-    src+= 'pack_icon.png'
-    dst= r'temp/pack_icon.png'
-    rnm= r'temp/pack.png'
-    shutil.copyfile(src, dst)
-    os.rename(dst, rnm)
+        src= inputEntry.get()
+        src+= 'pack_icon.png'
+        dst= r'temp/pack_icon.png'
+        rnm= r'temp/pack.png'
+        shutil.copyfile(src, dst)
+        os.rename(dst, rnm)
 
-    mcmeta = open('temp/pack.mcmeta', 'w')
-    mcmeta.write('{\n\t"pack": {\n\t\t"pack_format": 8,\n\t\t"description": "')
-    mcmeta.write(packName)
-    mcmeta.write('"\n\t}\n}')
-    mcmeta.close()
+        mcmeta = open('temp/pack.mcmeta', 'w')
+        mcmeta.write('{\n\t"pack": {\n\t\t"pack_format": 8,\n\t\t"description": "')
+        mcmeta.write(packName)
+        mcmeta.write('"\n\t}\n}')
+        mcmeta.close()
+    except Exception:
+        convertButton['text']='Check Directory'
+        return None
 
     # blocks
     bedrock = ['door_acacia_lower', 'door_acacia_upper', 'leaves_acacia_opaque', 'log_acacia', 'log_acacia_top', 'planks_acacia', 'sapling_acacia', 'acacia_trapdoor', 'rail_activator', 'rail_activator_powered', 'flower_allium', 'amethyst_block', 'amethyst_cluster', 'ancient_debris_side', 'ancient_debris_top', 'stone_andesite', 'anvil_base', 'anvil_top_damaged_0', 'melon_stem_connected', 'pumpkin_stem_connected', 'azalea_leaves_opaque', 'azalea_plant', 'azalea_side', 'azalea_top', 'flower_houstonia', 'bamboo_leaf', 'bamboo_singleleaf', 'bamboo_small_leaf', 'bamboo_sapling', 'bamboo_stem', 'barrel_bottom', 'barrel_side', 'barrel_top', 'barrel_top_open', 'basalt_side', 'basalt_top', 'beacon', 'bedrock', 'bee_nest_bottom', 'bee_nest_front', 'bee_nest_front_honey', 'bee_nest_side', 'bee_nest_top', 'beehive_top', 'beehive_front', 'beehive_front_honey', 'beehive_side', 'beetroots_stage_0', 'beetroots_stage_1', 'beetroots_stage_2', 'beetroots_stage_3', 'bell_bottom', 'bell_side', 'bell_top', 'big_dripleaf_side1', 'big_dripleaf_stem', 'big_dripleaf_side2', 'big_dripleaf_top', 'door_birch_lower', 'door_birch_upper', 'leaves_birch_opaque', 'log_birch', 'log_birch_top', 'planks_birch', 'sapling_birch', 'birch_trapdoor', 'concrete_black', 'concrete_powder_black', 'glazed_terracotta_black', 'shulker_top_black', 'glass_black', 'glass_pane_top_black', 'hardened_clay_stained_black', 'wool_colored_black', 'blackstone', 'blackstone_top', 'blast_furnace_front_off', 'blast_furnace_front_on', 'blast_furnace_side', 'blast_furnace_top', 'concrete_blue', 'concrete_powder_blue', 'glazed_terracotta_blue', 'blue_ice', 'flower_blue_orchid', 'shulker_top_blue', 'glass_blue', 'glass_pane_top_blue', 'hardened_clay_stained_blue', 'wool_colored_blue', 'bone_block_side', 'bone_block_top', 'bookshelf', 'coral_plant_pink', 'coral_pink', 'coral_fan_pink', 'brewing_stand', 'brewing_stand_base', 'brick', 'concrete_brown', 'concrete_powder_brown', 'glazed_terracotta_brown', 'mushroom_brown', 'mushroom_block_skin_brown', 'shulker_top_brown', 'glass_brown', 'glass_pane_top_brown', 'hardened_clay_stained_brown', 'wool_colored_brown', 'coral_plant_purple', 'coral_purple', 'coral_fan_purple', 'budding_amethyst', 'cake_bottom', 'cake_inner', 'cake_side', 'cake_top', 'calcite', 'campfire', 'campfire_log', 'campfire_log_lit', 'carrots_stage_0', 'carrots_stage_1', 'carrots_stage_2', 'carrots_stage_3', 'cartography_table_side1', 'cartography_table_side2', 'cartography_table_side3', 'cartography_table_top', 'pumpkin_face_off', 'cauldron_bottom', 'cauldron_inner', 'cauldron_side', 'cauldron_top', 'cave_vines_head', 'cave_vines_head_berries', 'cave_vines_body', 'cave_vines_body_berries', 'chain_command_block_back', 'chain_command_block_conditional', 'chain_command_block_front', 'chain_command_block_side', 'anvil_top_damaged_1', 'chiseled_nether_bricks', 'chiseled_polished_blackstone', 'quartz_block_chiseled', 'quartz_block_chiseled_top', 'red_sandstone_carved', 'sandstone_carved', 'stonebrick_carved', 'chorus_flower', 'chorus_flower_dead', 'chorus_plant', 'clay', 'coal_block', 'coal_ore', 'coarse_dirt', 'cobblestone', 'web', 'cocoa_stage_0', 'cocoa_stage_1', 'cocoa_stage_2', 'command_block_back', 'command_block_conditional', 'command_block_front', 'command_block_side', 'comparator_off', 'comparator_on', 'composter_bottom', 'compost', 'compost_ready', 'composter_side', 'composter_top', 'copper_block', 'copper_ore', 'flower_cornflower', 'cracked_nether_bricks', 'cracked_polished_blackstone_bricks', 'stonebrick_cracked', 'crafting_table_front', 'crafting_table_side', 'crafting_table_top', 'crimson_fungus', 'crimson_nylium_top', 'crimson_nylium_side', 'crimson_roots', 'crimson_roots_pot', 'crying_obsidian', 'cut_copper', 'red_sandstone_smooth', 'sandstone_smooth', 'concrete_cyan', 'concrete_powder_cyan', 'glazed_terracotta_cyan', 'shulker_top_cyan', 'glass_cyan', 'glass_pane_top_cyan', 'hardened_clay_stained_cyan', 'wool_colored_cyan', 'anvil_top_damaged_2', 'flower_dandelion', 'door_dark_oak_lower', 'door_dark_oak_upper', 'leaves_big_oak_opaque', 'log_big_oak', 'log_big_oak_top', 'planks_big_oak', 'sapling_roofed_oak', 'dark_oak_trapdoor', 'prismarine_dark', 'daylight_detector_inverted_top', 'daylight_detector_side', 'daylight_detector_top', 'coral_plant_pink_dead', 'coral_pink_dead', 'coral_fan_pink_dead', 'coral_plant_purple_dead', 'coral_purple_dead', 'coral_fan_purple_dead', 'deadbush', 'coral_plant_red_dead', 'coral_red_dead', 'coral_fan_red_dead', 'coral_plant_yellow_dead', 'coral_yellow_dead', 'coral_fan_yellow_dead', 'coral_plant_blue_dead', 'coral_blue_dead', 'coral_fan_blue_dead', 'rail_detector', 'rail_detector_powered', 'diamond_block', 'diamond_ore', 'stone_diorite', 'dirt', 'grass_path_side', 'grass_path_top', 'dispenser_front_horizontal', 'dispenser_front_vertical', 'dragon_egg', 'dried_kelp_top', 'dried_kelp_side_a', 'dried_kelp_top', 'dripstone_block', 'dropper_front_horizontal', 'dropper_front_vertical', 'emerald_block', 'emerald_ore', 'enchanting_table_bottom', 'enchanting_table_side', 'enchanting_table_top', 'endframe_eye', 'endframe_side', 'endframe_top', 'end_rod', 'end_stone', 'end_bricks', 'exposed_copper', 'exposed_cut_copper', 'farmland_dry', 'farmland_wet', 'fire_0', 'fire_1', 'coral_plant_red', 'coral_red', 'coral_fan_red', 'fletcher_table_side2', 'fletcher_table_side1', 'fletcher_table_top', 'flower_pot', 'azalea_leaves_flowers_opaque', 'flowering_azalea_side', 'flowering_azalea_top', 'frosted_ice_0', 'frosted_ice_1', 'frosted_ice_2', 'frosted_ice_3', 'furnace_front_off', 'furnace_front_on', 'furnace_side', 'furnace_top', 'gilded_blackstone', 'glass', 'glass_pane_top', 'glow_item_frame', 'glow_lichen', 'glowstone', 'gold_block', 'gold_ore', 'stone_granite', 'tallgrass', 'grass_side_carried', 'grass_block_snow', 'grass_top', 'gravel', 'concrete_gray', 'concrete_powder_gray', 'glazed_terracotta_gray', 'shulker_top_gray', 'glass_gray', 'glass_pane_top_gray', 'hardened_clay_stained_gray', 'wool_colored_gray', 'concrete_green', 'concrete_powder_green', 'glazed_terracotta_green', 'shulker_top_green', 'glass_green', 'glass_pane_top_green', 'hardened_clay_stained_green', 'wool_colored_green', 'hanging_roots', 'hay_block_side', 'hay_block_top', 'honey_bottom', 'honey_side', 'honey_top', 'honeycomb', 'hopper_inside', 'hopper_outside', 'hopper_top', 'coral_plant_yellow', 'coral_yellow', 'coral_fan_yellow', 'ice', 'iron_bars', 'iron_block', 'door_iron_lower', 'door_iron_upper', 'iron_ore', 'iron_trapdoor', 'itemframe_background', 'pumpkin_face_on', 'jigsaw_back', 'jigsaw_lock', 'jigsaw_side', 'jigsaw_front', 'jukebox_side', 'jukebox_top', 'door_jungle_lower', 'door_jungle_upper', 'leaves_jungle_opaque', 'log_jungle', 'log_jungle_top', 'planks_jungle', 'sapling_jungle', 'jungle_trapdoor', 'ladder', 'lantern', 'lapis_block', 'lapis_ore', 'large_amethyst_bud', 'lava_flow', 'lava_still', 'lectern_base', 'lectern_front', 'lectern_sides', 'lectern_top', 'lever', 'concrete_light_blue', 'concrete_powder_light_blue', 'glazed_terracotta_light_blue', 'shulker_top_light_blue', 'glass_light_blue', 'glass_pane_top_light_blue', 'hardened_clay_stained_light_blue', 'wool_colored_light_blue', 'concrete_silver', 'concrete_powder_silver', 'glazed_terracotta_silver', 'shulker_top_silver', 'glass_silver', 'glass_pane_top_silver', 'hardened_clay_stained_silver', 'wool_colored_silver', 'lightning_rod', 'flower_lily_of_the_valley', 'waterlily', 'concrete_lime', 'concrete_powder_lime', 'glazed_terracotta_lime', 'shulker_top_lime', 'glass_lime', 'glass_pane_top_lime', 'hardened_clay_stained_lime', 'wool_colored_lime', 'lodestone_side', 'lodestone_top', 'loom_bottom', 'loom_front', 'loom_side', 'loom_top', 'concrete_magenta', 'concrete_powder_magenta', 'glazed_terracotta_magenta', 'shulker_top_magenta', 'glass_magenta', 'glass_pane_top_magenta', 'hardened_clay_stained_magenta', 'wool_colored_magenta', 'magma', 'medium_amethyst_bud', 'melon_side', 'melon_stem_disconnected', 'melon_top', 'moss_block', 'cobblestone_mossy', 'stonebrick_mossy', 'mushroom_block_inside', 'mushroom_block_skin_stem', 'mycelium_side', 'mycelium_top', 'nether_brick', 'nether_gold_ore', 'portal', 'quartz_ore', 'nether_sprouts', 'nether_wart_block', 'nether_wart_stage_0', 'nether_wart_stage_1', 'nether_wart_stage_2', 'netherite_block', 'netherrack', 'noteblock', 'door_wood_lower', 'door_wood_upper', 'leaves_oak_opaque', 'log_oak', 'log_oak_top', 'planks_oak', 'sapling_oak', 'trapdoor', 'observer_back', 'observer_back_lit', 'observer_front', 'observer_side', 'observer_top', 'obsidian', 'concrete_orange', 'concrete_powder_orange', 'glazed_terracotta_orange', 'shulker_top_orange', 'glass_orange', 'glass_pane_top_orange', 'hardened_clay_stained_orange', 'flower_tulip_orange', 'wool_colored_orange', 'flower_oxeye_daisy', 'oxidized_copper', 'oxidized_cut_copper', 'ice_packed', 'double_plant_paeonia_bottom', 'double_plant_paeonia_top', 'concrete_pink', 'concrete_powder_pink', 'glazed_terracotta_pink', 'shulker_top_pink', 'glass_pink', 'glass_pane_top_pink', 'hardened_clay_stained_pink', 'flower_tulip_pink', 'wool_colored_pink', 'piston_bottom', 'piston_inner', 'piston_side', 'piston_top_normal', 'piston_top_sticky', 'dirt_podzol_side', 'dirt_podzol_top', 'pointed_dripstone_down_base', 'pointed_dripstone_down_frustum', 'pointed_dripstone_down_middle', 'pointed_dripstone_down_tip', 'pointed_dripstone_down_merge', 'pointed_dripstone_up_base', 'pointed_dripstone_up_frustum', 'pointed_dripstone_up_middle', 'pointed_dripstone_up_tip', 'pointed_dripstone_up_merge', 'stone_andesite_smooth', 'polished_basalt_side', 'polished_basalt_top', 'polished_blackstone', 'polished_blackstone_bricks', 'stone_diorite_smooth', 'stone_granite_smooth', 'flower_rose', 'potatoes_stage_0', 'potatoes_stage_1', 'potatoes_stage_2', 'potatoes_stage_3', 'potted_azalea_bush_plant', 'potted_azalea_bush_side', 'potted_azalea_bush_top', 'potted_flowering_azalea_bush_plant', 'potted_flowering_azalea_bush_side', 'potted_flowering_azalea_bush_top', 'powder_snow', 'rail_golden', 'rail_golden_powered', 'prismarine_rough', 'prismarine_bricks', 'pumpkin_side', 'pumpkin_stem_disconnected', 'pumpkin_top', 'concrete_purple', 'concrete_powder_purple', 'glazed_terracotta_purple', 'shulker_top_purple', 'glass_purple', 'glass_pane_top_purple', 'hardened_clay_stained_purple', 'wool_colored_purple', 'purpur_block', 'purpur_pillar', 'purpur_pillar_top', 'quartz_block_bottom', 'quartz_block_side', 'quartz_block_top', 'quartz_bricks', 'quartz_block_lines', 'quartz_block_lines_top', 'rail_normal', 'rail_normal_turned', 'raw_copper_block', 'raw_gold_block', 'raw_iron_block', 'concrete_red', 'concrete_powder_red', 'glazed_terracotta_red', 'mushroom_red', 'mushroom_block_skin_red', 'red_nether_brick', 'red_sand', 'red_sandstone_normal', 'red_sandstone_bottom', 'red_sandstone_top', 'shulker_top_red', 'glass_red', 'glass_pane_top_red', 'hardened_clay_stained_red', 'flower_tulip_red', 'wool_colored_red', 'redstone_block', 'redstone_dust_cross', 'redstone_dust_line', 'redstone_dust_line', 'redstone_lamp_off', 'redstone_lamp_on', 'redstone_ore', 'redstone_torch_on', 'redstone_torch_off', 'repeater_off', 'repeater_on', 'repeating_command_block_back', 'repeating_command_block_conditional', 'repeating_command_block_front', 'repeating_command_block_side', 'respawn_anchor_bottom', 'respawn_anchor_side0', 'respawn_anchor_side1', 'respawn_anchor_side2', 'respawn_anchor_side3', 'respawn_anchor_side4', 'respawn_anchor_top', 'respawn_anchor_top_off', 'dirt_with_roots', 'double_plant_rose_bottom', 'double_plant_rose_top', 'sand', 'sandstone_normal', 'sandstone_bottom', 'sandstone_top', 'sea_lantern', 'sea_pickle', 'seagrass', 'shroomlight', 'shulker_top_undyed', 'slime', 'small_amethyst_bud', 'small_dripleaf_side', 'small_dripleaf_stem_bottom', 'small_dripleaf_stem_top', 'small_dripleaf_top', 'smithing_table_bottom', 'smithing_table_front', 'smithing_table_side', 'smithing_table_top', 'smoker_bottom', 'smoker_front_off', 'smoker_front_on', 'smoker_side', 'smoker_top', 'smooth_basalt', 'stone_slab_top', 'stone_slab_side', 'snow', 'soul_campfire', 'soul_campfire_log_lit', 'soul_fire_0', 'soul_fire_1', 'soul_lantern', 'soul_sand', 'soul_soil', 'soul_torch', 'mob_spawner', 'sponge', 'spore_blossom', 'spore_blossom_base', 'door_spruce_lower', 'door_spruce_upper', 'leaves_spruce_opaque', 'log_spruce', 'log_spruce_top', 'planks_spruce', 'sapling_spruce', 'spruce_trapdoor', 'stone', 'stonebrick', 'stonecutter_bottom', 'stonecutter_side', 'stonecutter_top', 'stripped_acacia_log', 'stripped_acacia_log_top', 'stripped_birch_log', 'stripped_birch_log_top', 'stripped_dark_oak_log', 'stripped_dark_oak_log_top', 'stripped_jungle_log', 'stripped_jungle_log_top', 'stripped_oak_log', 'stripped_oak_log_top', 'stripped_spruce_log', 'stripped_spruce_log_top', 'structure_block', 'structure_block_corner', 'structure_block_data', 'structure_block_load', 'structure_block_save', 'double_plant_sunflower_back', 'double_plant_sunflower_bottom', 'double_plant_sunflower_front', 'double_plant_sunflower_top', 'sweet_berry_bush_stage0', 'sweet_berry_bush_stage1', 'sweet_berry_bush_stage2', 'sweet_berry_bush_stage3', 'seagrass', 'target_side', 'target_top', 'hardened_clay', 'tinted_glass', 'tnt_bottom', 'tnt_side', 'tnt_top', 'torch_on', 'trip_wire', 'trip_wire_source', 'coral_plant_blue', 'coral_blue', 'coral_fan_blue', 'tuff', 'turtle_egg_not_cracked', 'turtle_egg_slightly_cracked', 'turtle_egg_very_cracked', 'twisting_vines_bottom', 'twisting_vines_base', 'vine', 'warped_fungus', 'warped_nylium_top', 'warped_nylium_side', 'warped_roots', 'warped_roots_pot', 'warped_wart_block', 'water_flow', 'water_still', 'weathered_copper', 'weathered_cut_copper', 'weeping_vines', 'weeping_vines_plant', 'sponge_wet', 'wheat_stage_0', 'wheat_stage_1', 'wheat_stage_2', 'wheat_stage_3', 'wheat_stage_4', 'wheat_stage_5', 'wheat_stage_6', 'wheat_stage_7', 'concrete_white', 'concrete_powder_white', 'glazed_terracotta_white', 'shulker_top_white', 'glass_white', 'glass_pane_top_white', 'hardened_clay_stained_white', 'flower_tulip_white', 'wool_colored_white', 'flower_wither_rose', 'concrete_yellow', 'concrete_powder_yellow', 'glazed_terracotta_yellow', 'shulker_top_yellow', 'glass_yellow', 'glass_pane_top_yellow', 'hardened_clay_stained_yellow', 'wool_colored_yellow']
@@ -550,9 +553,10 @@ def convert():
       rnm= r'temp/assets/minecraft/textures/item/'
       rnm+=textureJ
       rnm+='.png'
-
-      Image.open(src).save(rnm)
-
+      try:
+          Image.open(src).save(rnm)
+      except Exception:
+          pass
       print(textureB,' → ',textureJ)
       progress['value'] = round((total+i)/1513)
       window.update_idletasks()
@@ -573,8 +577,11 @@ def convert():
     time.sleep(5)
     convertButton['text']='Convert'
 
-convertButton = tk.Button(master=convertFrame, text="Convert", width=40, height=2, command=convert)
-convertButton.pack(side=tk.RIGHT)
+try:
+    convertButton = tk.Button(master=convertFrame, text="Convert", width=40, height=2, command=convert)
+    convertButton.pack(side=tk.RIGHT)
+except Exception:
+    convertButton['text']='Convert'
 creditLabel = tk.Label(master=convertFrame, text="Created By ChauhanSai on GitHub\t\t\t\t\t     \nProgram may report 'Not Responding' please wait(See console for progress)", width=65, anchor="w")
 creditLabel.pack(side=tk.LEFT)
 
