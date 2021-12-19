@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
-<link rel="shortcut icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/scroll_1f4dc.png"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
-<h2>Coding projects made with various languages </b>
+<h2>Coding projects made with various languages </h2>
 
 <h2>Languages</h2>
 <ul>
