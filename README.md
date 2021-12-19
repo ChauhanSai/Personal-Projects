@@ -57,11 +57,12 @@
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/Texture.Pack.Convertor.zip">
 			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
-			Download Source .Py
+			Download Source .py
 		</a>
+		<br/>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertorCMD.py">
 			<img src="https://chauhansai.github.io/Script-Projects/files/file-outline.svg" height="16px"/>
-			Download CMD .Py
+			Download CMD .py
 		</a>
 	</details>
 </section>
