@@ -66,7 +66,7 @@
 		</a>
 	</details>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/texturePackConvertor.png" width="90%"/>
+		<img src="https://chauhansai.github.io/Script-Projects/files/texturePackConvertor.png" width="80%"/>
 	</p>
 </section>
 
@@ -89,15 +89,31 @@
 	<h3>IF to KML</h3>
 	<b>Python</b>
 	<p>
-		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r3">IF to KML</a></b> is a Python script that retrieves the flight information from flight simulator Infinite Flight and writes it to a KML file that can be viewed in Google Earth.
+		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r3">IF to KML</a></b> is a Python script that retrieves the flight information from Infinite Flight flight simulator and writes it to a KML file that can be viewed in Google Earth.
 	</p>
 	<p>
 		Usage: Generate 3D Flight Plans of previous flights that can be viewed in Google Earth. 
 	</p>
-	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFtoKML.zip">
+	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFtoKML.exe">
 		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
+	<details>
+		<summary>Additional Files</summary>
+		<br>
+		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFtoKML.zip">
+			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			Download Source .py
+		</a>
+		<br/>
+		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFrecordKMLcmd.py">
+			<img src="https://chauhansai.github.io/Script-Projects/files/file-outline.svg" height="16px"/>
+			Download CMD .py
+		</a>
+	</details>
+	<p>
+		<img src="https://chauhansai.github.io/Script-Projects/files/IFtoKML.png" width="80%"/>
+	</p>
 </section>
 
 <section>
@@ -133,6 +149,9 @@
 			Download .zip
 		</a>
 	</details>
+	<p>
+		<img src="https://chauhansai.github.io/Script-Projects/files/randomColors.png" width="80%"/>
+	</p>
 </section>
 
 <section>
@@ -164,7 +183,9 @@
 			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
 			Download .zip
 		</a>
-	</details>
+	</details><p>
+		<img src="https://chauhansai.github.io/Script-Projects/files/stripesGenerator.png" width="80%"/>
+	</p>
 </section>
 
 <br/><br/>
