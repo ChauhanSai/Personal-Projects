@@ -51,7 +51,7 @@ progress.pack(pady=10)
 def convert():
     convertButton['text']='Converting...'
     progress['value'] = 0
-    window.update_idletasks()
+    window.update()
     if inputEntry.get()[-1:] != "\\":
         inputEntry.insert(len(inputEntry.get()),"\\")
     if outputEntry.get()[-1:] != "\\":
@@ -59,6 +59,7 @@ def convert():
     packName = packNameEntry.get()
     print(packName)
     total = 0
+    window.update()
 
     try:
         if os.path.exists('temp/'):
@@ -75,6 +76,7 @@ def convert():
         os.makedirs('temp/assets/minecraft/textures/mob_effect/')
         os.makedirs('temp/assets/minecraft/textures/particle/')
         print("The new directory is created!\n")
+        window.update()
 
         src= inputEntry.get()
         src+= 'pack_icon.png'
@@ -82,12 +84,14 @@ def convert():
         rnm= r'temp/pack.png'
         shutil.copyfile(src, dst)
         os.rename(dst, rnm)
+        window.update()
 
         mcmeta = open('temp/pack.mcmeta', 'w')
         mcmeta.write('{\n\t"pack": {\n\t\t"pack_format": 8,\n\t\t"description": "')
         mcmeta.write(packName)
         mcmeta.write('"\n\t}\n}')
         mcmeta.close()
+        window.update()
     except Exception:
         convertButton['text']='Check Directory'
         return None
@@ -114,10 +118,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
     print('Completed /block/ pass #1\n')
+    window.update()
 
     # blocks candles/
     bedrock = ['black_candle', 'black_candle_lit', 'blue_candle', 'blue_candle_lit', 'brown_candle', 'brown_candle_lit', 'candle', 'candle_lit', 'cyan_candle', 'cyan_candle_lit', 'gray_candle', 'gray_candle_lit', 'green_candle', 'green_candle_lit', 'light_blue_candle', 'light_blue_candle_lit', 'lime_candle', 'lime_candle_lit', 'magenta_candle', 'magenta_candle_lit', 'orange_candle', 'orange_candle_lit', 'pink_candle', 'pink_candle_lit', 'purple_candle', 'purple_candle_lit', 'red_candle', 'red_candle_lit', 'white_candle', 'white_candle_lit', 'yellow_candle', 'yellow_candle_lit', 'light_gray_candle', 'light_gray_candle_lit']
@@ -141,10 +146,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
     print('Completed /block/ pass #2\n')
+    window.update()
 
     # blocks deepslate/
     bedrock = ['chiseled_deepslate', 'cobbled_deepslate', 'cracked_deepslate_bricks', 'cracked_deepslate_tiles', 'deepslate', 'deepslate_bricks', 'deepslate_coal_ore', 'deepslate_copper_ore', 'deepslate_diamond_ore', 'deepslate_emerald_ore', 'deepslate_gold_ore', 'deepslate_iron_ore', 'deepslate_lapis_ore', 'deepslate_redstone_ore', 'deepslate_tiles', 'deepslate_top', 'polished_deepslate']
@@ -168,10 +174,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
     print('Completed /block/ pass #3\n')
+    window.update()
 
     # blocks huge_fungus/
     bedrock = ['crimson_door_lower', 'crimson_door_top', 'crimson_planks', 'crimson_log_side', 'crimson_log_top', 'crimson_trapdoor', 'stripped_crimson_stem_side', 'stripped_crimson_stem_top', 'stripped_warped_stem_side', 'stripped_warped_stem_top', 'warped_door_lower', 'warped_door_top', 'warped_planks', 'warped_stem_side', 'warped_stem_top', 'warped_trapdoor']
@@ -195,10 +202,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
     print('Completed /block/ pass #4\n')
+    window.update()
 
     # items
     bedrock = ['boat_acacia', 'door_acacia', 'sign_acacia', 'amethyst_shard', 'apple', 'armor_stand', 'arrow', 'bucket_axolotl', 'potato_baked', 'bamboo', 'beef_raw', 'beetroot', 'seeds_beetroot', 'beetroot_soup', 'boat_birch', 'door_birch', 'sign_birch', 'dye_powder_black_new', 'blaze_powder', 'blaze_rod', 'dye_powder_blue', 'bone', 'dye_powder_white', 'book_normal', 'bow_standby', 'bow_pulling_0', 'bow_pulling_1', 'bow_pulling_2', 'bowl', 'bread', 'brewing_stand', 'brick', 'broken_elytra', 'dye_powder_brown_new', 'bucket_empty', 'cake', 'campfire', 'carrot', 'carrot_on_a_stick', 'cauldron', 'chain', 'chainmail_boots', 'chainmail_chestplate', 'chainmail_helmet', 'chainmail_leggings', 'charcoal', 'minecart_chest', 'chicken_raw', 'chorus_fruit', 'clay_ball', 'coal', 'dye_powder_brown', 'fish_raw', 'bucket_cod', 'minecart_command_block', 'comparator', 'beef_cooked', 'chicken_cooked', 'fish_cooked', 'mutton_cooked', 'porkchop_cooked', 'rabbit_cooked', 'fish_salmon_cooked', 'cookie', 'copper_ingot', 'banner_pattern', 'crimson_door', 'sign_crimson', 'crossbow_arrow', 'crossbow_firework', 'crossbow_pulling_0', 'crossbow_pulling_1', 'crossbow_pulling_2', 'crossbow_standby', 'dye_powder_cyan', 'boat_darkoak', 'door_dark_oak', 'sign_darkoak', 'diamond', 'diamond_axe', 'diamond_boots', 'diamond_chestplate', 'diamond_helmet', 'diamond_hoe', 'diamond_horse_armor', 'diamond_leggings', 'diamond_pickaxe', 'diamond_shovel', 'diamond_sword', 'dragons_breath', 'dried_kelp', 'egg', 'elytra', 'emerald', 'empty_armor_slot_boots', 'empty_armor_slot_chestplate', 'empty_armor_slot_helmet', 'empty_armor_slot_leggings', 'empty_armor_slot_shield', 'book_enchanted', 'end_crystal', 'ender_eye', 'ender_pearl', 'experience_bottle', 'feather', 'spider_eye_fermented', 'map_filled', 'map_filled', 'fireball', 'fireworks', 'fishing_rod_uncast', 'fishing_rod_cast', 'flint', 'flint_and_steel', 'banner_pattern', 'flower_pot', 'minecart_furnace', 'ghast_tear', 'potion_bottle_empty', 'melon_speckled', 'banner_pattern', 'glow_berries', 'dye_powder_glow', 'glow_item_frame', 'glowstone_dust', 'gold_ingot', 'gold_nugget', 'apple_golden', 'gold_axe', 'gold_boots', 'carrot_golden', 'gold_chestplate', 'gold_helmet', 'gold_hoe', 'gold_horse_armor', 'gold_leggings', 'gold_pickaxe', 'gold_shovel', 'gold_sword', 'dye_powder_gray', 'dye_powder_green', 'gunpowder', 'heartofthesea_closed', 'honey_bottle', 'honeycomb', 'hopper', 'minecart_hopper', 'dye_powder_black', 'iron_axe', 'iron_boots', 'iron_chestplate', 'door_iron', 'iron_helmet', 'iron_hoe', 'iron_horse_armor', 'iron_ingot', 'iron_leggings', 'iron_nugget', 'iron_pickaxe', 'iron_shovel', 'iron_sword', 'item_frame', 'boat_jungle', 'door_jungle', 'sign_jungle', 'kelp', 'lantern', 'dye_powder_blue', 'bucket_lava', 'lead', 'leather', 'light_block_0', 'light_block_1', 'light_block_2', 'light_block_3', 'light_block_4', 'light_block_5', 'light_block_6', 'light_block_7', 'light_block_8', 'light_block_9', 'light_block_10', 'light_block_11', 'light_block_12', 'light_block_13', 'light_block_14', 'light_block_15', 'dye_powder_light_blue', 'dye_powder_silver', 'dye_powder_lime', 'potion_bottle_lingering_empty', 'dye_powder_magenta', 'magma_cream', 'map_empty', 'seeds_melon', 'melon', 'bucket_milk', 'minecart_normal', 'banner_pattern', 'mushroom_stew', 'record_11', 'record_13', 'record_blocks', 'record_cat', 'record_chirp', 'record_far', 'record_mall', 'record_mellohi', 'record_otherside', 'record_pigstep', 'record_stal', 'record_strad', 'record_wait', 'record_ward', 'mutton_raw', 'name_tag', 'nautilus', 'netherbrick', 'nether_sprouts', 'nether_star', 'nether_wart', 'netherite_axe', 'netherite_boots', 'netherite_chestplate', 'netherite_helmet', 'netherite_hoe', 'netherite_ingot', 'netherite_leggings', 'netherite_pickaxe', 'netherite_scrap', 'netherite_shovel', 'netherite_sword', 'boat_oak', 'door_wood', 'sign', 'dye_powder_orange', 'painting', 'paper', 'phantom_membrane', 'banner_pattern', 'dye_powder_pink', 'potato_poisonous', 'chorus_fruit_popped', 'porkchop_raw', 'potato', 'potion_bottle_empty', 'potion_overlay', 'bucket_powder_snow', 'prismarine_crystals', 'prismarine_shard', 'fish_pufferfish_raw', 'bucket_pufferfish', 'pumpkin_pie', 'seeds_pumpkin', 'dye_powder_purple', 'quartz', 'rabbit_raw', 'rabbit_foot', 'rabbit_hide', 'rabbit_stew', 'raw_copper', 'raw_gold', 'raw_iron', 'dye_powder_red', 'redstone_dust', 'repeater', 'rotten_flesh', 'saddle', 'fish_salmon_raw', 'bucket_salmon', 'turtle_shell_piece', 'sea_pickle', 'shears', 'shulker_shell', 'banner_pattern', 'slimeball', 'snowball', 'soul_campfire', 'soul_lantern', 'spawn_egg', 'spawn_egg_overlay', 'spider_eye', 'boat_spruce', 'door_spruce', 'sign_spruce', 'spyglass', 'spyglass', 'stick', 'stone_axe', 'stone_hoe', 'stone_pickaxe', 'stone_shovel', 'stone_sword', 'string', 'sugar', 'reeds', 'suspicious_stew', 'sweet_berries', 'tipped_arrow_base', 'tipped_arrow_head', 'minecart_tnt', 'totem', 'trident', 'fish_clownfish_raw', 'bucket_tropical', 'turtle_egg', 'turtle_helmet', 'warped_door', 'warped_fungus_on_a_stick', 'sign_warped', 'bucket_water', 'wheat', 'seeds_wheat', 'dye_powder_white_new', 'wood_axe', 'wood_hoe', 'wood_pickaxe', 'wood_shovel', 'wood_sword', 'book_writable', 'book_written', 'dye_powder_yellow', 'leather_chestplate', 'leather_chestplate']
@@ -222,8 +230,8 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
 
     try:
@@ -245,7 +253,7 @@ def convert():
     except Exception:
       pass
     print('Completed /item/ pass #1\n')
-    total += i
+    window.update()
 
     # items candles/
     bedrock = ['black_candle', 'blue_candle', 'brown_candle', 'candle', 'cyan_candle', 'gray_candle', 'green_candle', 'light_blue_candle', 'lime_candle', 'magenta_candle', 'orange_candle', 'pink_candle', 'purple_candle', 'red_candle', 'white_candle', 'yellow_candle', 'light_gray_candle']
@@ -269,10 +277,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /item/ pass #2\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /item/ pass #2\n')
+    window.update()
 
     # colormap
     bedrock = ['foliage', 'grass']
@@ -296,10 +305,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
+    total += i
     print('Completed /colormap/\n')
-    total += i
+    window.update()
 
     # environment
     bedrock = ['clouds', 'end_sky', 'moon_phases', 'sun']
@@ -323,10 +333,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
+    total += i
     print('Completed /environment/\n')
-    total += i
+    window.update()
 
     # environment
     bedrock = ['clouds', 'end_sky', 'moon_phases', 'sun']
@@ -350,10 +361,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /environment/ pass #1\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /environment/ pass #1\n')
+    window.update()
 
     # environment bedrockDestroy
     bedrock = ['destroy_stage_0','destroy_stage_1','destroy_stage_2','destroy_stage_3','destroy_stage_4','destroy_stage_5','destroy_stage_6','destroy_stage_7','destroy_stage_8','destroy_stage_9']
@@ -377,10 +389,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /environment/ pass #2\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /environment/ pass #2\n')
+    window.update()
 
     # map
     bedrock = ['map_background']
@@ -404,10 +417,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /map/\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /map/\n')
+    window.update()
 
     # misc
     bedrock = ['pumpkinblur']
@@ -431,10 +445,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /misc/ pass #1\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /misc/ pass #1\n')
+    window.update()
 
     # models
     bedrock = ['chain_1', 'chain_2', 'cloth_1', 'cloth_2', 'diamond_1', 'diamond_2', 'gold_1', 'gold_2', 'iron_1', 'iron_2', 'netherite_1', 'netherite_2', 'turtle_1']
@@ -458,10 +473,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /models/\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /models/\n')
+    window.update()
 
     # mob_effect bedrockUI
     bedrock = ['absorption_effect', 'bad_omen_effect', 'blindness_effect', 'conduit_power_effect', 'fire_resistance_effect', 'haste_effect', 'health_boost_effect', 'village_hero_effect', 'hunger_effect', 'invisibility_effect', 'jump_boost_effect', 'levitation_effect', 'mining_fatigue_effect', 'nausea_effect', 'night_vision_effect', 'poison_effect', 'regeneration_effect', 'resistance_effect', 'slow_falling_effect', 'slowness_effect', 'speed_effect', 'strength_effect', 'water_breathing_effect', 'weakness_effect', 'wither_effect']
@@ -485,10 +501,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /mob_effect/\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /mob_effect/\n')
+    window.update()
 
     # misc bedrockUI
     bedrock = ['frozen_effect', 'spyglass_scope']
@@ -512,10 +529,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /misc/ pass #2\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /misc/ pass #2\n')
+    window.update()
 
     # tga blocks
     bedrock = ['grass_side', 'stonecutter2_saw', 'seagrass_doubletall_top_a', 'seagrass_doubletall_bottom_a', 'scaffolding_top', 'scaffolding_side', 'scaffolding_bottom', 'reeds', 'kelp_top', 'kelp_a', 'grindstone_side', 'grindstone_pivot', 'grindstone_round', 'fern', 'double_plant_syringa_top', 'double_plant_syringa_bottom', 'double_plant_grass_top', 'double_plant_grass_bottom', 'double_plant_fern_top', 'double_plant_fern_bottom', 'cactus_top', 'cactus_bottom', 'cactus_side']
@@ -535,10 +553,11 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /block/ targa pass\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /block/ targa pass\n')
+    window.update()
 
     # tga items
     bedrock = ['leather_boots', 'leather_boots', 'leather_helmet', 'leather_helmet', 'leather_horse_armor', 'leather_leggings', 'leather_leggings']
@@ -558,22 +577,26 @@ def convert():
       except Exception:
           pass
       print(textureB,' → ',textureJ)
-      progress['value'] = round((total+i)/1513)
-      window.update_idletasks()
-    print('Completed /item/ targa pass\n')
+      progress['value'] = round(((total+i)/1190.0)*95)
+      window.update()
     total += i
+    print('Completed /item/ targa pass\n')
+    window.update()
     
     outputDir = outputEntry.get()
     outputDir += packName
     shutil.make_archive(outputDir, 'zip', 'temp')
+    window.update()
     shutil.rmtree('temp/')
+    window.update()
     convertMessage = 'Successfully compressed '
     convertMessage+= packName
     convertMessage+= '.zip'
+    window.update()
     print(convertMessage)
     convertButton['text']=convertMessage
     progress['value'] = 100
-    window.update_idletasks()
+    window.update()
     time.sleep(5)
     convertButton['text']='Convert'
 
@@ -582,7 +605,7 @@ try:
     convertButton.pack(side=tk.RIGHT)
 except Exception:
     convertButton['text']='Convert'
-creditLabel = tk.Label(master=convertFrame, text="Created By ChauhanSai on GitHub\t\t\t\t\t     \nProgram may report 'Not Responding' please wait(See console for progress)", width=65, anchor="w")
+creditLabel = tk.Label(master=convertFrame, text="Created By ChauhanSai on GitHub", width=65, anchor="w")
 creditLabel.pack(side=tk.LEFT)
 
 # Run the application
