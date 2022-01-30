@@ -7,34 +7,44 @@
 <ul>
 	<li>
 		<b>JavaScript </b>
-		<a href="https://atom.io/">
-			<img src="https://img.shields.io/badge/Editor-Atom-informational?style=flat&logo=atom&logoColor=white&color=111111" alt="Editor Atom">
-		</a>
-		<a href="http://jsfiddle.net/">
-			<img src="https://img.shields.io/badge/Editor-JSFiddle-informational?style=flat&logo=jsfiddle&logoColor=white&color=111111" alt="Editor Atom">
-		</a>
 	</li>
+	<p style="margin-left: 40px">
+		Made using Atom 
+		<br/><a href="https://atom.io/">
+			<img src="https://chauhansai.github.io/host/icons/logos/atom.svg" alt="Editor Atom" width="50%">
+		</a><br/>
+		Hosted via JSFiddle
+		<br/><a href="">
+			<img src="https://chauhansai.github.io/host/icons/logos/jsfiddle.svg" alt="Host JSFiddle" width="25%">
+		</a><br/>
+	</p>
 	<li>
 		<b>Java</b>
-		<a href="https://www.eclipse.org/downloads/packages/release/2020-03/r">
-			<img src="https://img.shields.io/badge/Editor-Eclipse-informational?style=flat&logo=eclipse-ide&logoColor=white&color=111111" alt="Editor Eclipse" />
-		</a>
-		<a href="https://www.jetbrains.com/idea/download/">
-			<img src="https://img.shields.io/badge/Editor-IntelliJ-informational?style=flat&logo=intellij-idea&logoColor=white&color=111111" alt="Editor IntelliJ" />
-		</a>
 	</li>
+	<p style="margin-left: 40px">
+		Built using IntelliJ IDEA<sup>i</sup> 
+		<br/><a href="">
+			<img src="https://chauhansai.github.io/host/icons/logos/IntelliJ_IDEA.svg" alt="Editor IntelliJ IDEA" width="50%">
+		</a><br/>
+	</p>
 	<li>
 		<b>Python</b>
-		<a href="https://www.python.org/downloads/">
-			<img src="https://img.shields.io/badge/Editor-IDEL-informational?style=flat&logo=python&logoColor=white&color=111111" alt="Editor IDEL" />
-		</a>
 	</li>
+	<p style="margin-left: 40px">
+		Built using PyCharm<sup>ii</sup> 
+		<br/><a href="">
+			<img src="https://chauhansai.github.io/host/icons/logos/PyCharm.svg" alt="Editor PyCharm" width="50%">
+		</a><br/>
+	</p>
 	<li>
 		<b>HTML</b>
-		<a href="https://notepad-plus-plus.org/downloads/">
-			<img src="https://img.shields.io/badge/Editor-Notepad++-informational?style=flat&logo=notepadplusplus&logoColor=white&color=111111" alt="Editor Notepad++" />
-		</a>
 	</li>
+	<p style="margin-left: 40px">
+		Written using Notepad++ 
+		<br/><a href="">
+			<img src="https://chauhansai.github.io/host/icons/logos/notepad++.svg" alt="Editor Notepad++" width="25%">
+		</a><br/>
+	</p>
 </ul>
 
 <h2>Releases</h2>
@@ -210,4 +220,16 @@
 	<a href="https://github.com/ChauhanSai/Script-Projects">
 		<img src="https://github-readme-stats.vercel.app/api/pin/?username=ChauhanSai&repo=Script-Projects&title_color=ffffff&text_color=ffffff&icon_color=ffffff&bg_color=1d1f21" />
 	</a>
+</p>
+<br/>
+<hr/>
+
+<p>
+	<sup>i</sup>Copyright © 2022 JetBrains s.r.o. IntelliJ and the IntelliJ logo are registered trademarks of JetBrains s.r.o.<br/>
+	<sup>ii</sup>Copyright © 2022 JetBrains s.r.o. PyCharm and the PyCharm logo are registered trademarks of JetBrains s.r.o.<br/>
+	Atom logo taken and optimized from <a href="https://github.com/atom/about/blob/master/lib/components/atom-logo.js"><i>https://github.com/atom/about/blob/master/lib/components/atom-logo.js</i></a><br/>
+	JSFiddle logo via <i>simpleicons.org</i><br/>
+	Notepad++ logo vectorised by <a href="https://commons.wikimedia.org/wiki/User:Vulphere">Vulphere</a> based from <a href="https://notepad-plus-plus.org/images/logo.svg"><i>https://notepad-plus-plus.org/images/logo.svg</i></a><br/>
+	<a href="https://materialdesignicons.com/icon/tray-arrow-down">tray-arrow-down</a> made by arnoldlepineux<br/>
+	<a href="https://materialdesignicons.com/icon/zip-box-outline">zip-box-outline</a> made by Michael Irigoyen <a href="http://twitter.com/mririgo">@mririgo</a><br/>
 </p>
