@@ -209,16 +209,16 @@
 <p align="center">
 	<a href="https://atom.io/">
 		<img src="https://chauhansai.github.io/host/icons/logos/atom.svg" alt="Editor Atom" height="60vh">
-	</a> 
+	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
 	<a href="https://jsfiddle.net/">
-		<img src="https://chauhansai.github.io/host/icons/logos/jsfiddle.svg" alt="Host JSFiddle" height="70vh">
-	</a> 
+		<img src="https://chauhansai.github.io/host/icons/logos/jsfiddle.svg" alt="Host JSFiddle" height="60vh">
+	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
 	<a href="https://www.jetbrains.com/idea/">
 		<img src="https://chauhansai.github.io/host/icons/logos/IntelliJ_IDEA.svg" alt="Editor IntelliJ IDEA" height="60vh">
-	</a> 
+	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
 	<a href="https://www.jetbrains.com/pycharm/">
 		<img src="https://chauhansai.github.io/host/icons/logos/PyCharm.svg" alt="Editor PyCharm" height="60vh">
-	</a> 
+	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
 	<a href="https://notepad-plus-plus.org/">
 		<img src="https://chauhansai.github.io/host/icons/logos/notepad++.svg" alt="Editor Notepad++" height="80vh">
 	</a>
