@@ -9,7 +9,8 @@
 		<b>JavaScript </b>
 	</li>
 	<p style="margin-left: 40px">
-		Made using Atom</br>
+		Made using Atom 
+		</br>
 		Hosted via JSFiddle
 	</p>
 	<li>
