@@ -9,41 +9,26 @@
 		<b>JavaScript </b>
 	</li>
 	<p style="margin-left: 40px">
-		Made using Atom 
-		<br/><a href="https://atom.io/">
-			<img src="https://chauhansai.github.io/host/icons/logos/atom.svg" alt="Editor Atom" width="50%">
-		</a><br/>
+		Made using Atom</br>
 		Hosted via JSFiddle
-		<br/><a href="">
-			<img src="https://chauhansai.github.io/host/icons/logos/jsfiddle.svg" alt="Host JSFiddle" width="25%">
-		</a><br/>
 	</p>
 	<li>
 		<b>Java</b>
 	</li>
 	<p style="margin-left: 40px">
 		Built using IntelliJ IDEA<sup>i</sup> 
-		<br/><a href="">
-			<img src="https://chauhansai.github.io/host/icons/logos/IntelliJ_IDEA.svg" alt="Editor IntelliJ IDEA" width="50%">
-		</a><br/>
 	</p>
 	<li>
 		<b>Python</b>
 	</li>
 	<p style="margin-left: 40px">
 		Built using PyCharm<sup>ii</sup> 
-		<br/><a href="">
-			<img src="https://chauhansai.github.io/host/icons/logos/PyCharm.svg" alt="Editor PyCharm" width="50%">
-		</a><br/>
 	</p>
 	<li>
 		<b>HTML</b>
 	</li>
 	<p style="margin-left: 40px">
-		Written using Notepad++ 
-		<br/><a href="">
-			<img src="https://chauhansai.github.io/host/icons/logos/notepad++.svg" alt="Editor Notepad++" width="25%">
-		</a><br/>
+		Written using Notepad++
 	</p>
 </ul>
 
@@ -221,6 +206,24 @@
 		<img src="https://github-readme-stats.vercel.app/api/pin/?username=ChauhanSai&repo=Script-Projects&title_color=ffffff&text_color=ffffff&icon_color=ffffff&bg_color=1d1f21" />
 	</a>
 </p>
+<p align="center">
+	<a href="https://atom.io/">
+		<img src="https://chauhansai.github.io/host/icons/logos/atom.svg" alt="Editor Atom" height="60vh">
+	</a> 
+	<a href="https://jsfiddle.net/">
+		<img src="https://chauhansai.github.io/host/icons/logos/jsfiddle.svg" alt="Host JSFiddle" height="70vh">
+	</a> 
+	<a href="https://www.jetbrains.com/idea/">
+		<img src="https://chauhansai.github.io/host/icons/logos/IntelliJ_IDEA.svg" alt="Editor IntelliJ IDEA" height="60vh">
+	</a> 
+	<a href="https://www.jetbrains.com/pycharm/">
+		<img src="https://chauhansai.github.io/host/icons/logos/PyCharm.svg" alt="Editor PyCharm" height="60vh">
+	</a> 
+	<a href="https://notepad-plus-plus.org/">
+		<img src="https://chauhansai.github.io/host/icons/logos/notepad++.svg" alt="Editor Notepad++" height="80vh">
+	</a>
+</p>
+	
 <br/>
 <hr/>
 
