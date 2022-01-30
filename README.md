@@ -8,9 +8,10 @@
 	<li>
 		<b>JavaScript </b>
 	</li>
-	<p style="margin-left: 40px">
+	<a style="margin-left: 40px">
 		Made using Atom 
-		</br>
+	</a> <br/>
+	<p style="margin-left: 40px">
 		Hosted via JSFiddle
 	</p>
 	<li>
