@@ -9,6 +9,7 @@
 *.pyc
 files/img0_3840x2160.jpg
 Python/MC Theme Engine/ui/*
+Python/MC Theme Engine/button/*
 
 DarknBlueUI/
 myUI/

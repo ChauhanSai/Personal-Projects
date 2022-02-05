@@ -23,13 +23,30 @@ def lighten_color(color, amount=0.5):
     return colorsys.hls_to_rgb(c[0], 1 - amount * (1 - c[1]), c[2])
 
 
-mainColor = eval(input("Main color: "))
-# 71,111,206
-borderColorRed, borderColorGreen, borderColorBlue = lighten_color('#%02x%02x%02x' % mainColor, 1.75)
-borderColor = round(borderColorRed*255), round(borderColorGreen*255), round(borderColorBlue*255)
+def pix(img, loc, color):
+    """
+    Sets pixel color and returns image object
+    :param img : image object
+    :type img: PIL.Image.Image
+    :param loc: length 2 tuple pos
+    :type loc: tuple
+    :param color: length 3 tuple rbg
+    :type color: tuple
+    :returns PIL.Image.Image
+    """
+    im = img.load()
+    im[loc] = color
 
-accentColor = eval(input("Accent color: "))
-# 184,144,48
+    return img
+
+
+# mainColor = eval(input("Main color: "))
+mainColor = eval("71,111,206")
+borderColorRed, borderColorGreen, borderColorBlue = lighten_color('#%02x%02x%02x' % mainColor, 1.75)
+borderColor = round(borderColorRed * 255), round(borderColorGreen * 255), round(borderColorBlue * 255)
+
+# accentColor = eval(input("Accent color: "))
+accentColor = eval("184,144,48")
 accentColorDarkRed, accentColorDarkGreen, accentColorDarkBlue = lighten_color('#%02x%02x%02x' % accentColor, 1.5)
 accentColorDark = round(accentColorDarkRed * 255), round(accentColorDarkGreen * 255), round(accentColorDarkBlue * 255)
 
@@ -44,11 +61,7 @@ accentColorLight = round(accentColorLightRed * 255), round(accentColorLightGreen
 
 ui = [f for f in os.listdir("ui") if os.path.isfile(os.path.join("ui", f))]
 colors = ["198, 198, 198", mainColor,
-          "0, 0, 0", borderColor,
-          "67, 160, 28", accentColor]
-          #"2, 95, 0", accentColorDark,
-          #"3, 115, 0", accentColorDarkLight,
-          #"55, 214, 30", accentColorLight]
+          "0, 0, 0", borderColor]
 
 for i in range(len(ui)):
     fileName = "ui/"
@@ -64,9 +77,6 @@ for i in range(len(ui)):
         replaceTo = eval(colors[j])
         replaceToRed, replaceToBlue, replaceToGreen = replaceTo
         replaceWith = colors[j + 1]
-        print(replaceTo)
-        print(replaceWith)
-        print("")
 
         color = (red == replaceToRed) & (blue == replaceToBlue) & (green == replaceToGreen)
         data[..., :-1][color.T] = replaceWith
@@ -79,3 +89,34 @@ for i in range(len(ui)):
         pass
     fileName = fileName.replace("ui", "myUI")
     Image.fromarray(data).save(fileName)
+
+button = [f for f in os.listdir("button") if os.path.isfile(os.path.join("button", f))]
+colors = ["67, 160, 28", accentColor,
+         "2, 95, 0", accentColorDark,
+         "3, 115, 0", accentColorDarkLight,
+         "55, 214, 30", accentColorLight]
+button_borderless_darkhover = ["0,0", accentColor, "1,0", accentColor, "2,0", accentColor, "0,1", accentColor, "1,1", accentColor, "2,1", accentColor, "0,2", accentColor, "1,2", accentColor, "2,2", accentColor]
+
+for i in range(len(button)):
+    fileName = "button/"
+    fileName += button[i]
+    im = Image.open(fileName)
+    arr = button[i].replace(".png", "")
+    print(arr)
+    j = 0
+    while j < len(arr):
+        replaceLoc = eval(arr[j])
+        print(replaceLoc)
+        replaceWith = eval(arr[j + 1])
+        print(replaceWith)
+
+        im = pix(im, replaceLoc, replaceWith)
+
+        j += 2
+
+    try:
+        os.makedirs("test")
+    except Exception:
+        pass
+    fileName = fileName.replace("button", "test")
+    im.save(fileName)
