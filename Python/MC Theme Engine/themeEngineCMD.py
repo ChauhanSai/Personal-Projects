@@ -1,6 +1,20 @@
 import os
+import shutil
+import uuid
 import numpy as np
 from PIL import Image
+import webcolors
+
+
+def closest_colour(requested_colour):
+    min_colours = {}
+    for key, name in webcolors.CSS3_HEX_TO_NAMES.items():
+        r_c, g_c, b_c = webcolors.hex_to_rgb(key)
+        rd = (r_c - requested_colour[0]) ** 2
+        gd = (g_c - requested_colour[1]) ** 2
+        bd = (b_c - requested_colour[2]) ** 2
+        min_colours[(rd + gd + bd)] = name
+    return min_colours[min(min_colours.keys())]
 
 
 def lighten_color(color, amount=0.5):
@@ -40,13 +54,11 @@ def pix(img, loc, color):
     return img
 
 
-# mainColor = eval(input("Main color: "))
-mainColor = eval("71,111,206")
+mainColor = eval(input("Main color: "))
 borderColorRed, borderColorGreen, borderColorBlue = lighten_color('#%02x%02x%02x' % mainColor, 1.75)
 borderColor = round(borderColorRed * 255), round(borderColorGreen * 255), round(borderColorBlue * 255)
 
-# accentColor = eval(input("Accent color: "))
-accentColor = eval("184,144,48")
+accentColor = eval(input("Accent color: "))
 accentColorDarkRed, accentColorDarkGreen, accentColorDarkBlue = lighten_color('#%02x%02x%02x' % accentColor, 1.5)
 accentColorDark = round(accentColorDarkRed * 255), round(accentColorDarkGreen * 255), round(accentColorDarkBlue * 255)
 
@@ -59,19 +71,28 @@ accentColorLightRed, accentColorLightGreen, accentColorLightBlue = lighten_color
 accentColorLight = round(accentColorLightRed * 255), round(accentColorLightGreen * 255), round(
     accentColorLightBlue * 255)
 
-ui = [f for f in os.listdir("ui") if os.path.isfile(os.path.join("ui", f))]
+accentBorderColorRed, accentBorderColorGreen, accentBorderColorBlue = lighten_color('#%02x%02x%02x' % accentColor, .15)
+accentBorderColor = round(accentBorderColorRed * 255), round(accentBorderColorGreen * 255), round(
+    accentBorderColorBlue * 255)
+
+colorName = closest_colour(mainColor)
+accentName = closest_colour(accentColor).title()
+dirName = colorName
+dirName += "/textures/ui/"
+print("\nCreating", colorName.title(), "UI with", accentName, "accents\n")
+
+ui = [f for f in os.listdir("assets/ui") if os.path.isfile(os.path.join("assets/ui", f))]
 colors = ["198, 198, 198", mainColor,
           "0, 0, 0", borderColor]
-
 for i in range(len(ui)):
-    fileName = "ui/"
+    fileName = "assets/ui/"
     fileName += ui[i]
     im = Image.open(fileName)
     im = im.convert('RGBA')
     data = np.array(im)
     red, green, blue, alpha = data.T
 
-    # Replace replaceToRed, Green, Blue with replaceWith... (leaves alpha values alone...)
+    # Replace replaceToRed, Green, Blue with replaceWith...
     j = 0
     while j < len(colors):
         replaceTo = eval(colors[j])
@@ -84,39 +105,112 @@ for i in range(len(ui)):
         j += 2
 
     try:
-        os.makedirs("myUI")
+        os.makedirs(dirName)
     except Exception:
         pass
-    fileName = fileName.replace("ui", "myUI")
+    fileName = fileName.replace("assets/ui/", dirName)
     Image.fromarray(data).save(fileName)
+    print(fileName)
 
-button = [f for f in os.listdir("button") if os.path.isfile(os.path.join("button", f))]
-colors = ["67, 160, 28", accentColor,
-         "2, 95, 0", accentColorDark,
-         "3, 115, 0", accentColorDarkLight,
-         "55, 214, 30", accentColorLight]
-button_borderless_darkhover = ["0,0", accentColor, "1,0", accentColor, "2,0", accentColor, "0,1", accentColor, "1,1", accentColor, "2,1", accentColor, "0,2", accentColor, "1,2", accentColor, "2,2", accentColor]
+ac = accentColor
+acd = accentColorDark
+acdl = accentColorDarkLight
+acl = accentColorLight
+abc = accentBorderColor
+
+button_borderless_darkhover = [ac, ac, ac, acdl, ac, acdl, acdl, acd, ac, acdl, acdl, acd, acdl, acd, acd, acd]
+button_borderless_darkpressed = [acd, acd, acd, acdl, acd, acdl, acdl, ac, acd, acdl, acdl, ac, acdl, ac, ac, ac]
+button_borderless_lighthover = [acl, acl, acl, ac, acl, ac, ac, acd, acl, ac, ac, acd, ac, acd, acd, acd]
+button_borderless_lightpressed = [acd, acd, acd, ac, acd, ac, ac, acl, acd, ac, ac, acl, ac, acl, acl, acl]
+slider_button_hover = [abc, abc, abc, abc, abc, abc, abc, acl, acl, acl, ac, abc, abc, acl, ac, ac, acd, abc, abc, acl,
+                       ac, ac, acd, abc, abc, ac, acd, acd, acd, abc, abc, abc, abc, abc, abc, abc]
+slider_progress_hover = [ac, ac, ac, ac, ac, ac, ac, ac, ac]
+slider_step_background_hover = [acd, acd, acd, acd, acd, acd, acd, acd, acd]
+slider_step_progress_hover = [acd, acd, acd, acd, acd, acd, acd, acd, acd]
+toggle_off_hover = [abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, abc, acl, acl, acl, acl, acl, acl, acl, ac, abc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, abc, abc, abc, abc, abc, abc, abc,
+                    abc, abc, abc, abc, abc, abc, abc, abc, abc, 0, 0, 0, 0, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc,
+                    acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, abc, 0, 0, 0, 0, abc,
+                    acl, ac, ac, ac, ac, ac, ac, acd, abc, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd,
+                    acd, acd, acd, abc, 0, 0, 0, 0, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, acd, acd, acd, acd,
+                    acdl, acdl, acd, acd, acd, acd, acd, acd, acd, acd, acd, abc, 0, 0, 0, 0, abc, acl, ac, ac, ac, ac,
+                    ac, ac, acd, abc, acd, acd, acd, acd, acdl, acdl, acd, acd, acd, acd, acd, acd, acd, acd, acd, abc,
+                    0, 0, 0, 0, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, acd, acd, acd, acd, acdl, acdl, acd, acd,
+                    acd, acd, acd, acd, acd, acd, acd, abc, 0, 0, 0, 0, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, acd,
+                    acd, acd, acd, acdl, acdl, acd, acd, acd, acd, acd, acd, acd, acd, acd, abc, 0, 0, 0, 0, abc, acl,
+                    ac, ac, ac, ac, ac, ac, acd, abc, acd, acd, acd, acd, acdl, acdl, acd, acd, acd, acd, acd, acd, acd,
+                    acd, acd, abc, 0, 0, 0, 0, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, acd, acd, acd, acd, acdl,
+                    acdl, acd, acd, acd, acd, acd, acd, acd, acd, acd, abc, 0, 0, 0, 0, abc, acl, ac, ac, ac, ac, ac,
+                    ac, acd, abc, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, abc, 0, 0,
+                    0, 0, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd,
+                    acd, acd, acd, acd, acd, abc, 0, 0, 0, 0, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, abc, abc, abc,
+                    abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, 0, 0, 0, 0, abc, ac, acd, acd, acd,
+                    acd, acd, acd, acd, abc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, abc, abc, abc,
+                    abc, abc, abc, abc, abc, abc, abc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+toggle_on_hover = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, abc, abc, abc, abc, abc, abc, abc, abc,
+                   abc, abc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, abc, acl, acl, acl, acl, acl,
+                   acl, acl, ac, abc, 0, 0, 0, 0, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc,
+                   abc, abc, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, 0, 0, 0, 0, abc, acd, acd, acd, acd, acd, acd,
+                   acd, acd, acd, acd, acd, acd, acd, acd, acd, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, 0, 0, 0, 0,
+                   abc, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, abc, acl, ac, ac, ac,
+                   ac, ac, ac, acd, abc, 0, 0, 0, 0, abc, acd, acd, acd, acd, acd, acd, acd, acd, acd, acdl, acdl, acd,
+                   acd, acd, acd, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, 0, 0, 0, 0, abc, acd, acd, acd, acd, acd,
+                   acd, acd, acd, acd, acdl, acdl, acd, acd, acd, acd, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, 0, 0,
+                   0, 0, abc, acd, acd, acd, acd, acd, acd, acd, acd, acd, acdl, acdl, acd, acd, acd, acd, abc, acl, ac,
+                   ac, ac, ac, ac, ac, acd, abc, 0, 0, 0, 0, abc, acd, acd, acd, acd, acd, acd, acd, acd, acd, acdl,
+                   acdl, acd, acd, acd, acd, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, 0, 0, 0, 0, abc, acd, acd, acd,
+                   acd, acd, acd, acd, acd, acd, acdl, acdl, acd, acd, acd, acd, abc, acl, ac, ac, ac, ac, ac, ac, acd,
+                   abc, 0, 0, 0, 0, abc, acd, acd, acd, acd, acd, acd, acd, acd, acd, acdl, acdl, acd, acd, acd, acd,
+                   abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, 0, 0, 0, 0, abc, acd, acd, acd, acd, acd, acd, acd, acd,
+                   acd, acd, acd, acd, acd, acd, acd, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, 0, 0, 0, 0, abc, acd,
+                   acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, acd, abc, acl, ac, ac, ac, ac, ac,
+                   ac, acd, abc, 0, 0, 0, 0, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc,
+                   abc, abc, acl, ac, ac, ac, ac, ac, ac, acd, abc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                   0, 0, 0, abc, ac, acd, acd, acd, acd, acd, acd, acd, abc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                   0, 0, 0, 0, 0, 0, abc, abc, abc, abc, abc, abc, abc, abc, abc, abc]
+
+button = [button_borderless_darkhover, button_borderless_darkpressed, button_borderless_lighthover,
+          button_borderless_lightpressed, slider_button_hover, slider_progress_hover, slider_step_background_hover,
+          slider_step_progress_hover, toggle_off_hover, toggle_on_hover]
+buttonName = ["button_borderless_darkhover.png", "button_borderless_darkpressed.png",
+              "button_borderless_lighthover.png", "button_borderless_lightpressed.png", "slider_button_hover.png",
+              "slider_progress_hover.png", "slider_step_background_hover.png", "slider_step_progress_hover.png",
+              "toggle_off_hover.png", "toggle_on_hover.png"]
 
 for i in range(len(button)):
-    fileName = "button/"
-    fileName += button[i]
+    fileName = "assets/button/"
+    fileName += buttonName[i]
     im = Image.open(fileName)
-    arr = button[i].replace(".png", "")
-    print(arr)
-    j = 0
-    while j < len(arr):
-        replaceLoc = eval(arr[j])
-        print(replaceLoc)
-        replaceWith = eval(arr[j + 1])
-        print(replaceWith)
+    width, height = im.size
+    arr = button[i]
 
-        im = pix(im, replaceLoc, replaceWith)
+    curr = 0
+    for j in range(height):
+        for k in range(width):
+            replaceLoc = (k, j)
+            replaceWith = arr[curr]
+            if replaceWith != 0:
+                im = pix(im, replaceLoc, replaceWith)
+            curr += 1
 
-        j += 2
-
-    try:
-        os.makedirs("test")
-    except Exception:
-        pass
-    fileName = fileName.replace("button", "test")
+    fileName = fileName.replace("assets/button/", dirName)
     im.save(fileName)
+    print(fileName)
+
+dst = (colorName
+       + '/manifest.json')
+name = (colorName.title()
+        + ' UI')
+desc = (colorName.title()
+        + ' with '
+        + accentName
+        + ' accents, auto-generated by Theme Engine')
+with open("assets/manifest.json", 'r') as original, open(dst, 'w') as new:
+    for line in original:
+        new.write(line.replace("415", str(desc)).replace("417", name).replace("488", str(uuid.uuid4())).replace("489", str(uuid.uuid4())))
+    new.close()
+
+# shutil.make_archive(colorName, 'zip', colorName)
+# shutil.rmtree(dirName)
+print('\nSuccessfully compressed', colorName, '. zip')

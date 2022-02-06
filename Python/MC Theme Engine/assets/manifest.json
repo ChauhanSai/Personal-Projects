@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "415",
+        "name": "417",
+        "uuid": "488",
+        "version": [0, 0, 1],
+        "min_engine_version": [ 1, 18, 0 ]
+    },
+    "modules": [
+        {
+            "description": "415",
+            "type": "resources",
+            "uuid": "489",
+            "version": [0, 0, 1]
+        }
+    ]
+}
