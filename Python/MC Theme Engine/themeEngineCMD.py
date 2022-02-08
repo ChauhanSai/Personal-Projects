@@ -53,23 +53,29 @@ def pix(img, loc, color):
 
     return img
 
-
+# TODO : Add fail safe
 mainColor = eval(input("Main color: "))
+
 borderColorRed, borderColorGreen, borderColorBlue = lighten_color('#%02x%02x%02x' % mainColor, 1.75)
 borderColor = round(borderColorRed * 255), round(borderColorGreen * 255), round(borderColorBlue * 255)
 
 accentColor = eval(input("Accent color: "))
+
 accentColorDarkRed, accentColorDarkGreen, accentColorDarkBlue = lighten_color('#%02x%02x%02x' % accentColor, 1.5)
 accentColorDark = round(accentColorDarkRed * 255), round(accentColorDarkGreen * 255), round(accentColorDarkBlue * 255)
 
-accentColorDarkLightRed, accentColorDarkLightGreen, accentColorDarkLightBlue = lighten_color(
-    '#%02x%02x%02x' % accentColorDark, .9)
-accentColorDarkLight = round(accentColorDarkLightRed * 255), round(accentColorDarkLightGreen * 255), round(
-    accentColorDarkLightBlue * 255)
 
 accentColorLightRed, accentColorLightGreen, accentColorLightBlue = lighten_color('#%02x%02x%02x' % accentColor, .6)
 accentColorLight = round(accentColorLightRed * 255), round(accentColorLightGreen * 255), round(
     accentColorLightBlue * 255)
+
+try:
+    accentColorDarkLightRed, accentColorDarkLightGreen, accentColorDarkLightBlue = lighten_color(
+        '#%02x%02x%02x' % accentColorDark, .9)
+    accentColorDarkLight = round(accentColorDarkLightRed * 255), round(accentColorDarkLightGreen * 255), round(
+        accentColorDarkLightBlue * 255)
+except ValueError:
+    accentColorDarkLight = accentColorLight
 
 accentBorderColorRed, accentBorderColorGreen, accentBorderColorBlue = lighten_color('#%02x%02x%02x' % accentColor, .15)
 accentBorderColor = round(accentBorderColorRed * 255), round(accentBorderColorGreen * 255), round(
@@ -211,6 +217,13 @@ with open("assets/manifest.json", 'r') as original, open(dst, 'w') as new:
         new.write(line.replace("415", str(desc)).replace("417", name).replace("488", str(uuid.uuid4())).replace("489", str(uuid.uuid4())))
     new.close()
 
+# TODO : Create pack_icon
+icon = (colorName
+       + '/pack_icon.png')
+Image.open("assets/pack_icon.png").save(icon)
+
+# FIXME : Unhide following to create zip
+# TODO : Possibly rename extenstion to .mpack
 # shutil.make_archive(colorName, 'zip', colorName)
 # shutil.rmtree(dirName)
 print('\nSuccessfully compressed', colorName, '. zip')
