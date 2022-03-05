@@ -12,4 +12,4 @@ files/img0_3840x2160.jpg
 
 Python/Texture Matrix/textures/*
 Python/MC Crafting Visuals/textures/*
-*.json
+Python/MC Crafting Visuals/recipes/*
