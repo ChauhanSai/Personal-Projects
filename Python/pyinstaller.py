@@ -21,7 +21,7 @@ def pyinstaller(loc):
     :type loc: basestring
     """
     file, dir = getDir(loc)
-    args = ['pyinstaller', '-F', '--icon', '"icon.ico"', '--onefile', file]
+    args = ['pyinstaller', '-F', '--icon', 'icon.ico', '--onefile', file]
     print(' '.join(args))
     subprocess.run(args, cwd=dir)
 
@@ -46,7 +46,7 @@ else:
     pyinstallerIcon(dirInput, icoInput)
 
 again = input("Run again? (true/false): ")
-if again:
+if int(again == 'true'):
     if icoInput == '':
         pyinstaller(dirInput)
     else:
