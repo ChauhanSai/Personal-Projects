@@ -39,6 +39,8 @@ def getDir(loc):
 
 
 dirInput = input("Relative Python\\\\ Directory: ")
+if '/' in dirInput:
+    dirInput = dirInput.replace('/', '\\\\')
 icoInput = input("Icon File (Empty for icon.ico): ")
 if icoInput == '':
     pyinstaller(dirInput)
@@ -51,3 +53,10 @@ if int(again == 'true'):
         pyinstaller(dirInput)
     else:
         pyinstallerIcon(dirInput, icoInput)
+
+    again = input("Run again? (true/false): ")
+    if int(again == 'true'):
+        if icoInput == '':
+            pyinstaller(dirInput)
+        else:
+            pyinstallerIcon(dirInput, icoInput)

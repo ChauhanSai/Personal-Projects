@@ -1,15 +1,21 @@
+*/#Hidden/*
+files/img0_3840x2160.jpg
 
+# General extensions
 *.lnk
 *.url
 *.exe
 *.zip
 */.metadata/
-*/#Hidden/*
+
+# Python
 */__pycache__/*
 *.pyc
-files/img0_3840x2160.jpg
+Python/*/*.spec
+Python/*/builds/*
+Python/*/dist/*
 
-
+# WIP Projects
 Python/Texture Matrix/textures/*
 Python/MC Crafting Visuals/textures/*
 Python/MC Crafting Visuals/recipes/*
