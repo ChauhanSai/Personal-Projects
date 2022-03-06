@@ -133,10 +133,18 @@
 	<p>
 		Usage: Using the data given from the API, counting the downloads of a GitHub repository's releases
 	</p>
-	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r1/git-release-api.zip">
+	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r1/gitReleaseDownloads.exe">
 		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
+	<details>
+		<summary>Additional Files</summary>
+		<br>
+		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r1/git-release-api.zip">
+			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			Download Source .py
+		</a>
+	</details>
 	<p>
 		<img src="https://chauhansai.github.io/Script-Projects/files/gitReleaseAPI.png" width="80%"/>
 	</p>
