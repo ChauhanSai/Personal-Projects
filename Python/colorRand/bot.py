@@ -1,11 +1,12 @@
-import tweepy
 import random
-from PIL import Image, ImageDraw, ImageFont
-import os
-import requests
-from io import BytesIO
 from datetime import datetime
-import pytz
+from io import BytesIO
+from os import remove
+
+import tweepy
+from PIL import Image, ImageDraw, ImageFont
+from pytz import timezone
+from requests import get
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler("###",
@@ -21,31 +22,47 @@ auth.set_access_token("###",
 # Create API object
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-# Generate
-tz = pytz.timezone('America/Chicago')
+# Log
+tz = timezone('America/Chicago')
 today = datetime.now(tz).strftime("%y%m%d")
 print(today)
-# OVERRIDE
-overrideArray = [["", "", ""]]
-# Date "%y%M%D", "r, g, b", message ""
-override = 0  # false
+
+# Generate
+message = ""
+# REGULAR
+rgb = (random.randint(0, 256), random.randint(0, 256), random.randint(0, 256))
+
+# OVERRIDE      # Date "%y%M%D", "r, g, b", message ""
+overrideArray = [["220330", "77,210,254", "I never had to look farther than the darkness inside my own heart.\n#MarvelStudios' #MoonKnight"],
+                 ["220401", "84,163,163", "Sony Pictures' #Morbius"],
+                 ["220506", "220, 6, 3", "Forget everything that you think you know.\n#MarvelStudios' #DrStrange #MultiverseOfMadness"]]
+
 for i in range(len(overrideArray)):
     if today in overrideArray[i][0]:
-        red, green, blue = eval(overrideArray[i][1])
-        override = 1  # true
-        # MESSAGE
+        rgb = eval(overrideArray[i][1])
         message = overrideArray[i][2]
         print("Override", today)
+        print(message)
         break
 
-if not override:
-    red = round(random.random() * 256)
-    green = round(random.random() * 256)
-    blue = round(random.random() * 256)
-    message = ""
+typeRandom = random.random()
+if typeRandom <= .01:
+    # GRAYSCALE
+    gray = random.randint(0, 256)
+    rgb = (gray, gray, gray)
+    print("Feeling Gray")
+else:
+    if typeRandom <= .02:
+        # SINGLE
+        rRGB = [0, 0, 0]
+        colors = ['Red', 'Green', 'Blue']
+        num = random.randint(0, 3)
+        rRGB[num] = random.randint(0, 256)
+        rgb = eval(str(rRGB[0]) + ", " + str(rRGB[1]) + ", " + str(rRGB[2]))
+        message = "Feeling " + colors[num]
+        print(message)
 
-# Set color
-rgb = (red, green, blue)
+red, green, blue = rgb
 rgbString = str(red) + ", " + str(green) + ", " + str(blue)
 hexString = '#%02x%02x%02x' % rgb
 fileName = hexString
@@ -54,11 +71,11 @@ fileName += ".png"
 # Create image
 if (red + green + blue) / 3 > 125:
     fontColor = (0, 0, 0)
-    overlay = requests.get("https://chauhansai.github.io/Script-Projects/Python/colorRand/Overlay.png")
+    overlay = get("https://chauhansai.github.io/Script-Projects/Python/colorRand/Overlay.png")
 else:
     fontColor = (255, 255, 255)
-    overlay = requests.get("https://chauhansai.github.io/Script-Projects/Python/colorRand/Overlay_Invert.png")
-Font = requests.get("https://chauhansai.github.io/Script-Projects/Python/colorRand/AtkinsonHyperlegible-Regular.ttf")
+    overlay = get("https://chauhansai.github.io/Script-Projects/Python/colorRand/Overlay_Invert.png")
+Font = get("https://chauhansai.github.io/Script-Projects/Python/colorRand/AtkinsonHyperlegible-Regular.ttf")
 
 color = Image.new('RGBA', (1920, 1080), (red, green, blue, 255))
 hexFont = ImageFont.truetype(BytesIO(Font.content), 80)
@@ -85,6 +102,6 @@ else:
         "#", "")
 post_result = api.update_status(status=tweet, media_ids=[media.media_id])
 
-os.remove(fileName)
+remove(fileName)
 
 print(hexString)
