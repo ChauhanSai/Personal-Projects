@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+<!-- View HTML: -->
+<!-- https://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html -->
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>APCS 1999 FRQ</title>
+		<link rel="stylesheet" type="text/css" href="../main.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible"/>
+		<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
+	</head>
+	<body align="center" onload="resize()">
+		<div class="headRow" style="height: 5%;">
+			<div class="column" align="left">
+				<header>FRQ Practice</header>1999
+			</div>
+			<div class="column">
+				<p id="time" align="right"></p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="column">
+				<object data="test.pdf" type="application/pdf" width="100%" height="100%"> </object>
+			</div>
+			<div class="column" align="left">
+				Part A: 
+				<textarea class="textarea"></textarea>
+				Part A: 
+				<textarea class="textarea"></textarea>
+				Part A: 
+				<textarea class="textarea"></textarea>
+			</div>
+		</div>
+		
+		<footer>
+			<p align="right" margin="16px 10px" >Submit</p>
+		</footer>
+		
+		<script>
+			var countTo = new Date(new Date().getTime() + 90.017*60000);
+
+			var x = setInterval(function() {
+
+			  var now = new Date().getTime();
+				
+			  var distance = countTo - now;
+				
+			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				
+			  document.getElementById("time").innerHTML = hours + ":"
+			  + minutes + ":" + seconds + "";
+				
+			  if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("time").innerHTML = "Auto-Submitted";
+			  }
+			}, 1000);
+			
+			function resize() {				
+				var all = document.getElementsByClassName("textarea");
+				for (var i = 0; i < all.length; i++) {
+				  all[i].style.height = "300px";
+				}
+			}
+		</script>
+		
+	</body>
+</html>
+

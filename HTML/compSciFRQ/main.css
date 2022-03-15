@@ -1,0 +1,50 @@
+body {
+	font-family: "Atkinson Hyperlegible", "Veranda", "Helvetica", sans-serif; 
+	background-color: #1a1a1a;
+	color: white;
+	padding: 0px;
+}
+
+header {
+	font-size: 1.5em;
+	padding: 0px;
+}
+
+div {
+	padding: 20px;
+}
+
+.row {
+	padding: 10px;
+	display: flex;
+	margin: auto;
+	height: auto;
+}
+
+.headRow {
+	background-color: #303030;
+	padding: 10px;
+	display: flex;
+}
+
+.column {
+	flex: 50%;
+}
+
+textarea {
+	background-color: #303030;
+	color: white;
+	resize: vertical; 
+	width:100%; 
+	min-height: 200px;
+}	
+
+footer {
+	background-color: #303030;
+	padding: 5px;
+}
+
+p {
+    margin-inline-start: 0px;
+    margin-inline-end: 15px;
+}
