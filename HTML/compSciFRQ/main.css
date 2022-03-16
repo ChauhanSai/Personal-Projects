@@ -10,9 +10,14 @@ header {
 	padding: 0px;
 }
 
+.frq {
+	padding: 0px;
+}
+
 div {
 	padding: 20px;
 }
+
 
 #left {
 	position:fixed;
@@ -93,4 +98,6 @@ a {
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  text-decoration: none;
+  color: white;
 }
