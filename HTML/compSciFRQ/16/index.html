@@ -13,14 +13,14 @@
 			<div class="column" align="left">
 				<header>FRQ Practice</header>2016
 			</div>
-			<div class="column">
+			<div class="column" align="left">
 				<p id="time" align="right"></p>
 			</div>
 		</div>
 		
 		<div class="row">
-			<div class="column">
-				<object data="test.pdf" type="application/pdf" width="100%" height="100%" id="pdf">Loading PDF...</object>
+			<div class="column" align="left">
+				<object data="test.pdf" type="application/pdf" style="width:45%; height:800px; position:fixed; top=0; left=0;" id="pdf" >Loading PDF...</object>
 			</div>
 			<div class="column" align="left">
 				<h3>FRQ 1:</h3>
@@ -32,16 +32,34 @@
 				<h3>FRQ 2:</h3>
 				Part A: 
 				<textarea class="textarea"></textarea>
+				Part B: 
+				<textarea class="textarea"></textarea>
+				Part C: 
+				<textarea class="textarea"></textarea>
+				
+				<h3>FRQ 3:</h3>
+				Part A: 
+				<textarea class="textarea"></textarea>
+				Part B: 
+				<textarea class="textarea"></textarea>
+				
+				<h3>FRQ 4:</h3>
+				Part A: 
+				<textarea class="textarea"></textarea>
+				Part B: 
+				<textarea class="textarea"></textarea>
+				Part C: 
+				<textarea class="textarea"></textarea>
+				<br/><br/>
+				<footer align="right">
+					<a onclick="next()" id="skip">Skip</a>
+					<button style="margin:16px 10px;" onclick="submit()" id="submitButton">Submit</button>
+				</footer>
 			</div>
 		</div>
 		
-		<footer align="right">
-			<a onclick="next()" id="skip">Skip</a>
-			<button style="margin:16px 10px;" onclick="submit()" id="submitButton">Submit</button>
-		</footer>
-		
 		<script>
-			var countTo = new Date(new Date().getTime() + 90.017*60000);
+			var countTo = new Date(new Date().getTime() + 105.017*60000);
 
 			var x = setInterval(function() {
 
