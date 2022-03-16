@@ -8,10 +8,10 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible"/>
 		<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
 	</head>
-	<body align="center" onload="resize()">
+	<body align="center" onload="load()">
 		<div class="headRow" style="height: 5%;">
 			<div class="column" align="left">
-				<header>FRQ Practice</header>2010
+				<header><a href="https://chauhansai.github.io/Script-Projects/HTML/compSciFRQ/" id="header">FRQ Practice</a></header>2010
 			</div>
 			<div class="column" align="left">
 				<p id="time" align="right"></p>
@@ -23,24 +23,32 @@
 				<object data="test.pdf" type="application/pdf" style="width:45%; height:800px; position:fixed; top=0; left=0;" id="pdf" >Loading PDF...</object>
 			</div>
 			<div class="column" align="left">
-				<h3>FRQ 1:</h3>
-				Part A: 
-				<textarea class="textarea"></textarea>
-				Part B: 
-				<textarea class="textarea"></textarea>
-				
-				<h3>FRQ 2:</h3>
-				<textarea class="textarea"></textarea>
-				
-				<h3>FRQ 3:</h3>
-				Part A: 
-				<textarea class="textarea"></textarea>
-				Part B: 
-				<textarea class="textarea"></textarea>-
-				
-				<h3>FRQ 4:</h3>
-				Part A: 
-				<textarea class="textarea"></textarea>-
+				<div id="f1" class="frq">
+					<h3>FRQ 1:</h3>
+					Part A: 
+					<textarea class="textarea"></textarea>
+					Part B: 
+					<textarea class="textarea"></textarea>
+				</div>
+
+				<div id="f2" class="frq">
+					<h3>FRQ 2:</h3>
+					<textarea class="textarea"></textarea>
+				</div>
+
+				<div id="f3" class="frq">
+					<h3>FRQ 3:</h3>
+					Part A: 
+					<textarea class="textarea"></textarea>
+					Part B: 
+					<textarea class="textarea"></textarea>-
+				</div>
+
+				<div id="f4" class="frq">
+					<h3>FRQ 4:</h3>
+					Part A: 
+					<textarea class="textarea"></textarea>-</div>
+
 				<br/><br/>
 				<footer align="right">
 					<a onclick="next()" id="skip">Skip</a>
@@ -71,6 +79,34 @@
 			  }
 			}, 1000);
 			
+			function getParameterByName(name, url = window.location.href) {
+				name = name.replace(/[\[\]]/g, '\\$&');
+				var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+					results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			}
+			
+			function load(){
+				resize();
+				var hide = ['f1','f2','f3','f4'];
+				var frq = getParameterByName('frq');
+				if(frq!=null){
+					console.log('true');
+					hide[parseInt(frq)-1] = ' ';
+					for (let j = 0; j < hide.length; j++) {
+						if(hide[j]!=' '){
+							console.log('true');
+							document.getElementById(hide[j]).style.display = "none";
+						}
+					}
+					document.getElementById("pdf").data = 'frq'+frq+'.pdf';
+					countTo = new Date(new Date().getTime() + 25.017*60000);
+				}
+				
+			}
+			
 			function resize() {				
 				var all = document.getElementsByClassName("textarea");
 				for (var i = 0; i < all.length; i++) {
@@ -94,12 +130,18 @@
 					document.getElementById("submitButton").innerHTML = "Next FRQ";
 					document.getElementById("skip").innerHTML = "";
 					document.getElementById("pdf").data = 'score.pdf';
+					document.getElementById("header").innerHTML = 'FRQ Self Score';
 					clearInterval(x);
 				}
 			}
 			
 			function next(){
-				location.href='https://chauhansai.github.io/Script-Projects/HTML/compSciFRQ/?next=true';
+				var frq = getParameterByName('frq');
+				if(frq!=null){
+					location.href='https://chauhansai.github.io/Script-Projects/HTML/compSciFRQ/?next=true&frq=true';
+				} else {
+					location.href='https://chauhansai.github.io/Script-Projects/HTML/compSciFRQ/?next=true';
+				}
 			}
 		</script>
 		

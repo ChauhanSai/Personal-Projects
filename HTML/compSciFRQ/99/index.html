@@ -11,7 +11,7 @@
 	<body align="center" onload="load()">
 		<div class="headRow" style="height: 5%;">
 			<div class="column" align="left">
-				<header><a href="https://chauhansai.github.io/Script-Projects/HTML/compSciFRQ/">FRQ Practice</a></header>1999
+				<header><a href="https://chauhansai.github.io/Script-Projects/HTML/compSciFRQ/" id="header">FRQ Practice</a></header>1999
 			</div>
 			<div class="column" align="left">
 				<p id="time" align="right"></p>
@@ -111,6 +111,8 @@
 							document.getElementById(hide[j]).style.display = "none";
 						}
 					}
+					document.getElementById("pdf").data = 'frq'+frq+'.pdf';
+					countTo = new Date(new Date().getTime() + 25.017*60000);
 				}
 				
 			}
@@ -138,6 +140,7 @@
 					document.getElementById("submitButton").innerHTML = "Next FRQ";
 					document.getElementById("skip").innerHTML = "";
 					document.getElementById("pdf").data = 'score.pdf';
+					document.getElementById("header").innerHTML = 'FRQ Self Score';
 					clearInterval(x);
 				}
 			}
