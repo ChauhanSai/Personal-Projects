@@ -32,6 +32,7 @@
 		
 		<div class="row">
 			<div class="column" align="left">
+				<p id="pdfLinkP"><a href="" id="pdfLink" target="_blank">PDF Error?</a></p>
 				<object data="test.pdf" type="application/pdf" style="width:45%; height:800px; position:fixed;" id="pdf" >Loading PDF...</object>
 				<div id="counter" style="padding:0px 0px; display:none; position:fixed;">
 					<div class="row" >
@@ -43,20 +44,17 @@
 							<h3 id="score">0.0 pts</p>
 						</div>
 						<script>
-							var maxScores = [0, 0, 0, 0];
+							var maxScores = true;
 							var frq = getParameterByName('frq');
 							if(frq!=null){
-								maxScore = maxScores[parseInt(frq)-1];
+								maxScore = 9;
 							} else {
-								maxScore = 0;
-								for (let i = 0; i < maxScores.length; i++) {
-									maxScore += maxScores[i];
-								}
+								maxScore = 9*4;
 							}
-							if(maxScore==0){
-								var end = ' pts';
-							} else {
+							if(maxScores){
 								var end = '/'+maxScore.toFixed(1)+' pts';
+							} else {
+								var end = ' pts';
 							}
 							document.getElementById("score").innerHTML = parseFloat(document.getElementById("score").innerHTML).toFixed(1)+end;
 						</script>
@@ -146,7 +144,7 @@
 					document.getElementById("pdf").data = 'frq'+frq+'.pdf';
 					countTo = new Date(new Date().getTime() + 25.017*60000);
 				}
-				
+				document.getElementById("pdfLink").href = document.getElementById("pdf").data;
 			}
 			
 			function resize() {				
@@ -177,6 +175,7 @@
 					document.getElementById("header").innerHTML = 'FRQ Self Score';
 					document.getElementById("counter").style.display = 'block';
 					document.getElementById("countBack").style.display = 'block';
+					document.getElementById("pdfLinkP").style.display = 'none';
 					clearInterval(x);
 				}
 			}
