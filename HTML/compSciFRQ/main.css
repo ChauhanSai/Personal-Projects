@@ -14,6 +14,40 @@ header {
 	padding: 0px;
 }
 
+button {
+	font-size: 1.25em;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    margin: 0px 5px;
+    font-family: "Atkinson Hyperlegible", "Veranda", "Helvetica", sans-serif;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	border-radius: 5px;
+}
+
+.counter {
+	width: 69px;
+	border-radius: 5px;
+}
+
+button.counter {
+	border-radius: 0px;
+}
+
+div#countBack {
+	background-color: #303030;
+	width:45%; 
+	height:80px; 
+	position:fixed;
+	border-radius: 0px 15px 15px 0px;
+	margin: 38px 0px;
+}
+
 div {
 	padding: 20px;
 }
@@ -29,20 +63,6 @@ article {
 	padding: 35vh 0px;
 }
 
-button {
-	font-size: 1.25em;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 7px;
-    border: none;
-    cursor: pointer;
-    margin: 0px 5px;
-    font-family: "Atkinson Hyperlegible", "Veranda", "Helvetica", sans-serif;
-	-webkit-transition: all 0.2s linear;
-	-moz-transition: all 0.2s linear;
-	-o-transition: all 0.2s linear;
-	transition: all 0.2s linear;
-}
 
 select {
     background-color: #ffffff;
@@ -64,6 +84,7 @@ select {
 	background-color: #303030;
 	padding: 10px;
 	display: flex;
+	border-radius: 5px;
 }
 
 .column {
@@ -80,11 +101,13 @@ textarea {
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	transition: all 0.2s linear;
+	border-radius: 5px;
 }	
 
 footer {
 	background-color: #303030;
 	padding: 5px;
+	border-radius: 5px;
 }
 
 p {

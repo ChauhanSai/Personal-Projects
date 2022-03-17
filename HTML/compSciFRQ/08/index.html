@@ -7,6 +7,16 @@
 		<link rel="stylesheet" type="text/css" href="../main.css" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible"/>
 		<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
+		<script>
+			function getParameterByName(name, url = window.location.href) {
+				name = name.replace(/[\[\]]/g, '\\$&');
+				var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+					results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			}
+		</script>
 	</head>
 	<body align="center" onload="load()">
 		<div class="headRow" style="height: 5%;">
@@ -18,9 +28,40 @@
 			</div>
 		</div>
 		
+		<div id="countBack" style="display:none;" ></div>
+		
 		<div class="row">
 			<div class="column" align="left">
-				<object data="test.pdf" type="application/pdf" style="width:45%; height:800px; position:fixed; top=0; left=0;" id="pdf" >Loading PDF...</object>
+				<object data="test.pdf" type="application/pdf" style="width:45%; height:800px; position:fixed;" id="pdf" >Loading PDF...</object>
+				<div id="counter" style="padding:0px 0px; display:none; position:fixed;">
+					<div class="row" >
+						<div align="left">
+							<button class="counter" onclick="count(1)">+1</button> <button class="counter" onclick="count(0.5)">+0.5</button><br/>
+							<button class="counter" onclick="count(-1)">-1</button> <button class="counter" onclick="count(-0.5)">-0.5</button>
+						</div>
+						<div align="left" style="padding:24px 0px;">
+							<h3 id="score">0.0 pts</p>
+						</div>
+						<script>
+							var maxScores = [0, 0, 0, 0];
+							var frq = getParameterByName('frq');
+							if(frq!=null){
+								maxScore = maxScores[parseInt(frq)-1];
+							} else {
+								maxScore = 0;
+								for (let i = 0; i < maxScores.length; i++) {
+									maxScore += maxScores[i];
+								}
+							}
+							if(maxScore==0){
+								var end = ' pts';
+							} else {
+								var end = '/'+maxScore.toFixed(1)+' pts';
+							}
+							document.getElementById("score").innerHTML = parseFloat(document.getElementById("score").innerHTML).toFixed(1)+end;
+						</script>
+					</div>
+				</div>
 			</div>
 			<div class="column" align="left">
 				<div id="f1" class="frq">
@@ -87,26 +128,15 @@
 			  }
 			}, 1000);
 			
-			function getParameterByName(name, url = window.location.href) {
-				name = name.replace(/[\[\]]/g, '\\$&');
-				var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-					results = regex.exec(url);
-				if (!results) return null;
-				if (!results[2]) return '';
-				return decodeURIComponent(results[2].replace(/\+/g, ' '));
-			}
-			
 			function load(){
 				resize();
 				var hide = ['f1','f2','f3','f4'];
 				var frq = getParameterByName('frq');
 				if(frq!=null){
-					console.log('true');
 					hide[parseInt(frq)-1] = ' ';
-					for (let j = 0; j < hide.length; j++) {
-						if(hide[j]!=' '){
-							console.log('true');
-							document.getElementById(hide[j]).style.display = "none";
+					for (let i = 0; i < hide.length; i++) {
+						if(hide[i]!=' '){
+							document.getElementById(hide[i]).style.display = "none";
 						}
 					}
 					document.getElementById("pdf").data = 'frq'+frq+'.pdf';
@@ -138,8 +168,26 @@
 					document.getElementById("submitButton").innerHTML = "Next FRQ";
 					document.getElementById("skip").innerHTML = "";
 					document.getElementById("pdf").data = 'score.pdf';
+					document.getElementById("pdf").style.height = '660px';
+					document.getElementById("pdf").style.paddingTop = '140px';
 					document.getElementById("header").innerHTML = 'FRQ Self Score';
+					document.getElementById("counter").style.display = 'block';
+					document.getElementById("countBack").style.display = 'block';
 					clearInterval(x);
+				}
+			}
+			
+			function count(num){
+				let data = parseFloat(document.getElementById("score").innerHTML)
+				let temp = data+parseFloat(num);
+				if(maxScore!=0 && temp > maxScore){
+					document.getElementById("score").innerHTML = maxScore.toFixed(1)+end;
+				} else { 
+					document.getElementById("score").innerHTML = temp.toFixed(1)+end;
+				}
+				if(temp < 0){
+					document.getElementById("score").innerHTML = '0.0'+end;
+				
 				}
 			}
 			
