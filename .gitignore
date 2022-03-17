@@ -16,6 +16,5 @@ Python/*/builds/*
 Python/*/dist/*
 
 # WIP Projects
-Python/Texture Matrix/textures/*
-Python/MC Crafting Visuals/textures/*
-Python/MC Crafting Visuals/recipes/*
+Python/textureMatrix/*/*
+Python/craftingVisuals/*/*

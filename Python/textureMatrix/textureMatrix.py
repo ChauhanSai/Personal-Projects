@@ -2,6 +2,11 @@ import math
 import os
 from PIL import Image, ImageOps
 
+if not path.exists('textures/'):
+    makedirs('textures/')
+
+input("Directory created, please add textures and press ENTER to begin")
+
 textureDir = "textures"
 ui = [f for f in os.listdir(textureDir) if os.path.isfile(os.path.join(textureDir, f))]
 amount = math.ceil(math.sqrt(len(ui)))

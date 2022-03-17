@@ -10,6 +10,12 @@ header {
 	padding: 0px;
 }
 
+h1 {
+	font-size: 1.5em;
+	padding: 0px;
+}
+	
+
 .frq {
 	padding: 0px;
 }
@@ -60,7 +66,7 @@ div {
 
 article {
 	margin: auto;
-	padding: 35vh 0px;
+	padding: 28vh 0px;
 }
 
 
