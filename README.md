@@ -43,11 +43,11 @@
 		Computer Science FRQ Practice is a website that selects random Free Response Questions and Examinations as practice for the AP Computer Science A Exam.
 	</p>
 	<a href="https://chauhansai.github.io/Script-Projects/HTML/compSciFRQ/">
-		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" height="16px"/>
+		<img src="files/earth.svg" height="16px"/>
 		Visit Webpage
 	</a>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/compSciFRQ.png" width="80%"/>
+		<img src="files/compSciFRQ.png" width="80%"/>
 	</p>
 </section>
 
@@ -55,56 +55,51 @@
 	<h3>Texture Matrix</h3>
 	<b>Python</b>
 	<p>
-		<b><a href="">Texture Matrix</a></b> is a Python script that creates a square matrix of textures to showcase for patch notes, blogs, social media, etc. Recomended for Minecraft Bedrock packs to emulate the visuals of Just Enough Items (JEI).
+		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/r8/">Texture Matrix</a></b> is a Python script that creates a square matrix of textures to showcase for patch notes, blogs, social media, etc. Recomended for Minecraft Bedrock packs to emulate the visuals of Just Enough Items (JEI).
 	</p>
 	<p>
 		Usage: Easily create promotional images to showcase your texture work.
 	</p>
-	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertor.exe">
-		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
+	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r8/textureMatrix.exe">
+		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
-		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/Texture.Pack.Convertor.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r8/textureMatrix.zip">
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
-		<br/>
-		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertorCMD.py">
-			<img src="https://chauhansai.github.io/Script-Projects/files/file-outline.svg" height="16px"/>
-			Download CMD .py
-		</a>
-	</details>
+	</details>-->
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/textureMatrix.png" width="80%"/>
-	</p>-->
+		<img src="files/textureMatrix.png" width="80%"/>
+	</p>
 </section>
 
 <section>
 	<h3>Crafting Visualizer</h3>
 	<b>Python</b>
 	<p>
-		<b><a href="">Crafting Visualizer</a></b> is a Python script that visualizes Minecraft Bedrock crafting recipes such that Crafting Table GUI images are created for use outside of Minecraft. 
+		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/r7/">Crafting Visualizer</a></b> is a Python script that visualizes Minecraft Bedrock crafting recipes such that Crafting Table GUI images are created for use outside of Minecraft. 
 	</p>
 	<p>
 		Usage: Create Crafting GUI images for your Minecrat Bedrock blocks and items.
 	</p>
-	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r/craftingVisuals.exe">
-		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
+	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r7/craftingVisuals.exe">
+		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
-		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r/craftingVisuals.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r7/craftingVisuals.zip">
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
 	</details>-->
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/craftingVisuals.png" width="80%"/>
+		<img src="files/craftingVisuals.png" width="80%"/>
 	</p>
 </section>
 
@@ -118,24 +113,24 @@
 		Usage: Make your Minecraft unique using your preferred colors.
 	</p>
 	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertor.exe">
-		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
+		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/Texture.Pack.Convertor.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
 		<br/>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertorCMD.py">
-			<img src="https://chauhansai.github.io/Script-Projects/files/file-outline.svg" height="16px"/>
+			<img src="files/file-outline.svg" height="16px"/>
 			Download CMD .py
 		</a>
 	</details>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/themeEngine.png" width="80%"/>
+		<img src="files/themeEngine.png" width="80%"/>
 	</p>-->
 </section>
 
@@ -149,24 +144,24 @@
 		Usage: Easily create texture packs for Bedrock and Java or convert an old Bedrock pack to work with Java.
 	</p>
 	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertor.exe">
-		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
+		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/Texture.Pack.Convertor.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
 		<br/>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertorCMD.py">
-			<img src="https://chauhansai.github.io/Script-Projects/files/file-outline.svg" height="16px"/>
+			<img src="files/file-outline.svg" height="16px"/>
 			Download CMD .py
 		</a>
 	</details>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/texturePackConvertor.png" width="80%"/>
+		<img src="files/texturePackConvertor.png" width="80%"/>
 	</p>
 </section>
 
@@ -180,19 +175,19 @@
 		Usage: Generate plotted and typed histograms for any chosen image.
 	</p>
 	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r5/colorWaves.exe">
-		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
+		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r5/colorWaves.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
 	</details>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/colorWaves.png" width="80%"/>
+		<img src="files/colorWaves.png" width="80%"/>
 	</p>
 </section>
 
@@ -206,24 +201,24 @@
 		Usage: Generate 3D Flight Plans of previous flights that can be viewed in Google Earth. 
 	</p>
 	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFtoKML.exe">
-		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
+		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFtoKML.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
 		<br/>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r3/IFrecordKMLcmd.py">
-			<img src="https://chauhansai.github.io/Script-Projects/files/file-outline.svg" height="16px"/>
+			<img src="files/file-outline.svg" height="16px"/>
 			Download CMD .py
 		</a>
 	</details>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/IFtoKML.png" width="80%"/>
+		<img src="files/IFtoKML.png" width="80%"/>
 	</p>
 </section>
 
@@ -237,19 +232,19 @@
 		Usage: Using the data given from the API, counting the downloads of a GitHub repository's releases
 	</p>
 	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r1/gitReleaseDownloads.exe">
-		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
+		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r1/git-release-api.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
 	</details>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/gitReleaseAPI.png" width="80%"/>
+		<img src="files/gitReleaseAPI.png" width="80%"/>
 	</p>
 </section>
 
@@ -260,19 +255,19 @@
 		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r4">Random Colors</a></b> is a website that generates and displays random colors to use in any project.
 	</p>
 	<a href="https://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html">
-		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" height="16px"/>
+		<img src="files/earth.svg" height="16px"/>
 		Visit Webpage
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r4/randomColors.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download .zip
 		</a>
 	</details>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/randomColors.png" width="80%"/>
+		<img src="files/randomColors.png" width="80%"/>
 	</p>
 </section>
 
@@ -283,11 +278,11 @@
 		<b>@colorRand</b> is a twitter bot that posts daily random colors through the use of <b><a href="#random-colors">Random Colors</a></b>
 	</p>
 	<a href="https://twitter.com/colorRand">
-		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" height="16px"/>
+		<img src="files/earth.svg" height="16px"/>
 		Visit Twitter
 	</a>
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/colorRand.png" width="80%"/>
+		<img src="files/colorRand.png" width="80%"/>
 	</p>
 </section>
 	
@@ -298,18 +293,18 @@
 		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2">Stripes Generator</a></b> is a website that allows you to create stripes faces for your Apple Watch S3 and older.
 	</p>
 	<a href="https://chauhansai.github.io/Script-Projects/HTML/stripesGenerator/stripesGenerator.html">
-		<img src="https://chauhansai.github.io/Script-Projects/files/earth.svg" height="16px"/>
+		<img src="files/earth.svg" height="16px"/>
 		Visit Webpage
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
 		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r2/stripesGenerator.zip">
-			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
+			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download .zip
 		</a>
 	</details><p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/stripesGenerator.png" width="80%"/>
+		<img src="files/stripesGenerator.png" width="80%"/>
 	</p>
 </section>
 
@@ -322,20 +317,20 @@
 <p align="center">
 	<a href="https://atom.io/">
 		<img src="https://chauhansai.github.io/host/icons/logos/atom.svg" alt="Atom IDE" height="60vh">
-	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
+	</a> <img src="files/vh.svg" height="70vh">
 	<a href="https://jsfiddle.net/">
 		<img src="https://chauhansai.github.io/host/icons/logos/jsfiddle.svg" alt="JSFiddle IDE" height="60vh">
-	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
+	</a> <img src="files/vh.svg" height="70vh">
 	<a href="https://www.jetbrains.com/idea/">
 		<img src="https://chauhansai.github.io/host/icons/logos/IntelliJ_IDEA.svg" alt="IntelliJ IDEA" height="60vh">
-	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
+	</a> <img src="files/vh.svg" height="70vh">
 	<a href="https://www.jetbrains.com/pycharm/">
 		<img src="https://chauhansai.github.io/host/icons/logos/PyCharm.svg" alt="PyCharm IDE" height="60vh">
-	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
+	</a> <img src="files/vh.svg" height="70vh">
 	<a href="https://notepad-plus-plus.org/">
 		<img src="https://chauhansai.github.io/host/icons/logos/notepad++.svg" alt="Notepad++ Editor" height="80vh">
 	</a>
-	</a> <img src="https://chauhansai.github.io/Script-Projects/files/vh.svg" height="70vh">
+	</a> <img src="files/vh.svg" height="70vh">
 	<a href="https://notepad-plus-plus.org/">
 		<img src="https://chauhansai.github.io/host/icons/logos/visualstudiocode.svg" alt="VSCode Editor" height="70vh">
 	</a>

@@ -44,6 +44,8 @@ def create():
         altEntry.delete(0, tk.END)
         startButton['text'] = "Start"
         messageLabel['text'] = "Ready to Start"
+    if recipeDirEntry.get()[:-1] != '\\':
+        recipeDirEntry.insert(tk.END, '\\')
     recipeDirEntry['state'] = 'disabled'
     checkEntry['state'] = 'disabled'
 
