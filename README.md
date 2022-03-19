@@ -55,12 +55,12 @@
 	<h3>Texture Matrix</h3>
 	<b>Python</b>
 	<p>
-		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/r8/">Texture Matrix</a></b> is a Python script that creates a square matrix of textures to showcase for patch notes, blogs, social media, etc. Recomended for Minecraft Bedrock packs to emulate the visuals of Just Enough Items (JEI).
+		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/r8/">Texture Matrix</a></b> is a Python script that creates a square matrix of textures to showcase for patch notes, blogs, social media, etc. Recommended  for Minecraft Bedrock packs to emulate the visuals of Just Enough Items (JEI).
 	</p>
 	<p>
 		Usage: Easily create promotional images to showcase your texture work.
 	</p>
-	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r8/textureMatrix.exe">
+	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r8/textureMatrix.exe">
 		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
@@ -71,7 +71,7 @@
 			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
-	</details>-->
+	</details>
 	<p>
 		<img src="files/textureMatrix.png" width="80%"/>
 	</p>
@@ -86,7 +86,7 @@
 	<p>
 		Usage: Create Crafting GUI images for your Minecrat Bedrock blocks and items.
 	</p>
-	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r7/craftingVisuals.exe">
+	<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r7/craftingVisuals.exe">
 		<img src="files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
@@ -97,7 +97,7 @@
 			<img src="files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
-	</details>-->
+	</details>
 	<p>
 		<img src="files/craftingVisuals.png" width="80%"/>
 	</p>
