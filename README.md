@@ -91,26 +91,21 @@
 	<p>
 		Usage: Create Crafting GUI images for your Minecrat Bedrock blocks and items.
 	</p>
-	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertor.exe">
+	<!--<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r/craftingVisuals.exe">
 		<img src="https://chauhansai.github.io/Script-Projects/files/tray-arrow-down.svg" height="16px"/>
 		Download
 	</a>
 	<details>
 		<summary>Additional Files</summary>
 		<br>
-		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/Texture.Pack.Convertor.zip">
+		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r/craftingVisuals.zip">
 			<img src="https://chauhansai.github.io/Script-Projects/files/zip-box-outline.svg" height="16px"/>
 			Download Source .py
 		</a>
-		<br/>
-		<a href="https://github.com/ChauhanSai/Script-Projects/releases/download/r6/texturePackConvertorCMD.py">
-			<img src="https://chauhansai.github.io/Script-Projects/files/file-outline.svg" height="16px"/>
-			Download CMD .py
-		</a>
-	</details>
+	</details>-->
 	<p>
-		<img src="https://chauhansai.github.io/Script-Projects/files/craftingVisualizer.png" width="80%"/>
-	</p>-->
+		<img src="https://chauhansai.github.io/Script-Projects/files/craftingVisuals.png" width="80%"/>
+	</p>
 </section>
 
 <section>
