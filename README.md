@@ -254,7 +254,7 @@
 	<p>
 		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r4">Random Colors</a></b> is a website that generates and displays random colors to use in any project.
 	</p>
-	<a href="https://chauhansai.github.io/Script-Projects/HTML/randomColors/randomColors.html">
+	<a href="https://chauhansai.github.io/Script-Projects/HTML/randomColors/">
 		<img src="files/earth.svg" height="16px"/>
 		Visit Webpage
 	</a>
@@ -292,7 +292,7 @@
 	<p>
 		<b><a href="https://github.com/ChauhanSai/Script-Projects/releases/tag/r2">Stripes Generator</a></b> is a website that allows you to create stripes faces for your Apple Watch S3 and older.
 	</p>
-	<a href="https://chauhansai.github.io/Script-Projects/HTML/stripesGenerator/stripesGenerator.html">
+	<a href="https://chauhansai.github.io/Script-Projects/HTML/stripesGenerator/">
 		<img src="files/earth.svg" height="16px"/>
 		Visit Webpage
 	</a>
