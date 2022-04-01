@@ -95,3 +95,25 @@ a {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
+
+
+
+.row {
+	display: flex;
+	margin: auto;
+	height: 100%;
+}
+
+.column {
+	padding-left: 10px;
+	flex: 50%;
+}
+
+.pallet {
+	font-size: 3em;
+	margin: 0px 10px;
+}
+
+#colorTransition0 {
+	padding-left: 100px;
+}
