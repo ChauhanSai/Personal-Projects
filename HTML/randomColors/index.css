@@ -112,8 +112,38 @@ a {
 .pallet {
 	font-size: 3em;
 	margin: 0px 10px;
+	position: relative;
+	top: 50%;
 }
 
 #colorTransition0 {
 	padding-left: 100px;
+	-webkit-transition: background-color 750ms ease-out;
+	-moz-transition: background-color 750ms ease-out;
+	-o-transition: background-color 750ms ease-out;
+	transition: background-color 750ms ease-out;
+}
+#colorTransition1 {
+	-webkit-transition: background-color 2s ease-out;
+	-moz-transition: background-color 2s ease-out;
+	-o-transition: background-color 2s ease-out;
+	transition: background-color 2s ease-out;
+}
+#colorTransition2 {
+	-webkit-transition: background-color 3s ease-out;
+	-moz-transition: background-color 3s ease-out;
+	-o-transition: background-color 3s ease-out;
+	transition: background-color 3s ease-out;
+}
+#colorTransition3 {
+	-webkit-transition: background-color 4s ease-out;
+	-moz-transition: background-color 4s ease-out;
+	-o-transition: background-color 4s ease-out;
+	transition: background-color 4s ease-out;
+}
+#colorTransition4 {
+	-webkit-transition: background-color 4s ease-out;
+	-moz-transition: background-color 4s ease-out;
+	-o-transition: background-color 4s ease-out;
+	transition: background-color 4s ease-out;
 }
