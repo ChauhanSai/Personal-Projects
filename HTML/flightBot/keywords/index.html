@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title id="title">Keywords - flightBot</title>
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible" />
+        <!--<link rel="shortcut icon" type="image/png" href="../colorRand_Square.png" />-->
+    </head>
+    <body id="main">
+        <h1 style="margin-left:16px">flightBot</h1>
+        <p>All keywords and commands take piority from the top of the list</p>
+        <article>
+            <h1>Keywords</h1>
+                <h3>IFR</h3>
+                    <p>{callsign} cleared to {destination} via IFR</p>
+                <h3>pushback</h3>
+                    <p>{callsign} pushback approved facing {direction}</p>
+                <h3>startup</h3>
+                    <p>{callsign} startup approved</p>
+                <h3>taxi</h3>
+                    <p>{callsign} taxi {runway}</p>
+                <h3>clearance</h3>
+                    <p>{callsign} cleared to {destination}</p>
+                <h3>holding short</h3>
+                    <p>{callsign} cross runway {runway} {intersection}</p>
+                <h3>passing, altitude</h3>
+                    <p>{callsign} radar contact, /centre</p>
+        </article>
+        <article>
+            <h1>Commands</h1>
+                <h3>/ground [callsign] [departure] [destination]</h3>
+                    <a>global callsign, departure, destination</a>
+                    <p>{departure} ground</p>
+                <h3>/tower [runway]</h3>
+                    <a>global runway</a>
+                    <p>{callsign} runway {runway} cleared for takeoff</p>
+                <h3>/centre </h3>
+                    <a>global runway</a>
+                    <p>{callsign} continue along flight path</p>
+                <h3>/approach [runway]</h3>
+                    <a>global runway</a>
+                    <p>{callsign} runway {runway} cleared to land</p>
+        </article>
+    </body>
+</html>

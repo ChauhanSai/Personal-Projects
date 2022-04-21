@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<!-- View HTML: -->
+<!-- https://chauhansai.github.io/Script-Projects/HTML/flightBot/ -->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title id="title">flightBot</title>
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible" />
+        <!--<link rel="shortcut icon" type="image/png" href="colorRand_Square.png" />-->
+        <script src="index.js"></script>
+        <style>
+            html,body { height:100%; }
+        </style>
+    </head>
+    <body style="height:100%;" id="main">
+        <article>
+            <h1>flightBot</h1>
+            <h3 class="mono"><a>theme</a></h3>
+            <section>
+                <textarea id="textInput">/ground </textarea>
+                <svg id="button" onclick="input()" viewBox="0 0 24 24"><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
+            </section>
+            <p class="mono" id="tooltip" >> /ground [callsign] [departure] [destination]</p>
+        </article>
+
+        <div id="root">
+            <div class="bubble" id="bub1">
+                <p id="tx1s"><a href="">Made by ChauhanSai on GitHub</a></p>
+                <hr align="center"/>
+                <p id="tx1r">beep boop bop</p>
+            </div>
+            <div class="bubble" id="bub2">
+                <p id="tx2s">Send command above ↑</p>
+                <hr align="center"/>
+                <p id="tx2r">'/ground BA2 KJFK EGLL'</p>
+            </div>
+            <div class="bubble" id="bub3">
+                <p id="tx3s"><a href="/keywords" target="_blank">See keywords here</a></p>
+                <hr align="center"/>
+                <p id="tx3r">IFR clearance ... taxi ... altitude</p>
+            </div>
+            <div class="bubble" id="bub4">
+                <p id="tx4s">...</p>
+                <hr align="center"/>
+                <p id="tx4r">...</p>
+            </div>
+            <div class="bubble" id="bub5">
+                <p id="tx5s">...</p>
+                <hr align="center"/>
+                <p id="tx5r">...</p>
+            </div>
+        </div>
+    </body>
+</html>

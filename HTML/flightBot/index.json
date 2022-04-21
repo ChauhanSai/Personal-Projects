@@ -1,0 +1,46 @@
+{
+    "keywords": [
+        "IFR",
+            "{callsign} cleared to {destination} via IFR",
+        
+        "pushback",
+            "{callsign} pushback approved facing {direction}",
+        
+        "startup",
+            "{callsign} startup approved",
+        
+        "taxi",
+            "{callsign} taxi {runway}",
+            
+        "clearance",
+            "{callsign} cleared to {destination}",
+        
+        "holding short",
+            "{callsign} cross runway {runway} {intersection}",
+        
+        "passing, altitude",
+            "{callsign} radar contact, /centre"
+    ],
+    "commands": {
+        "ground":[ 
+            "{departure} ground",
+            "_callsign",
+            "_departure",
+            "_destination"
+        ],
+        
+        "tower": [
+            "{callsign} runway {runway} cleared for takeoff",
+            "_runway"
+        ],
+        
+        "centre": [
+            "{callsign} continue along flight path"
+        ],
+
+        "approach": [
+            "{callsign} runway {runway} cleared to land",
+            "_runway"
+        ]
+    }
+}
