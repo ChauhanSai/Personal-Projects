@@ -1,4 +1,4 @@
-const index = JSON.parse('{ "keywords": [ "IFR", "{callsign} cleared to {destination} via IFR", "pushback", "{callsign} pushback approved facing {direction}", "startup", "{callsign} startup approved", "taxi", "{callsign} taxi {runway}", "clearance", "{callsign} cleared to {destination}", "holding short", "{callsign} cross runway {runway} {intersection}", "passing, altitude", "{callsign} radar contact, /centre" ], "commands": { "ground":[ "{departure} ground", "_callsign", "_departure", "_destination" ], "tower": [ "{callsign} runway {runway} cleared for takeoff", "_runway" ], "centre": [ "{callsign} continue along flight path" ], "approach": [ "{callsign} runway {runway} cleared to land", "_runway" ] } }')
+const index = JSON.parse('{ "keywords": [ "IFR", "{callsign} cleared to {destination} via IFR", "pushback", "{callsign} pushback approved facing {direction}", "startup", "{callsign} startup approved", "taxi", "{callsign} taxi {runway}", "clearance", "{callsign} cleared to {destination}", "holding short", "{callsign} cross runway {runway} {intersection}", "passing, altitude", "{callsign} radar contact, /centre" ], "commands": { "ground":[ "{departure} ground", "_callsign", "_departure", "_destination" ], "tower": [ "", "_runway" ], "centre": [ "{callsign} maintain {altitude}", "_altitude" ], "approach": [ "{callsign} runway {runway} cleared to land", "_runway" ] }, "ext": [ "{callsign} runway {runway} cleared for takeoff", "{callsign} expedite climb", "{callsign} climb and maintain {altitude}", "{callsign} descend and maintain {altitude}" ] }')
 
 var data = [["", ""], ["", ""], ["", ""], ["", ""], ["", ""]]
 
@@ -6,16 +6,18 @@ var callsign = "";
 var destination = "";
 var departure = "";
 var runway = "";
+var altitude = 32000;
 
 var direction = "";
 var intersection = "";
 
-/*console.log(input("/ground BA345 KLAX KDFW"));
-console.log(input("BA123 requesting IFR clearance to KDFW"));
-console.log(input("BA123 requesting pushback facing north"));
-console.log(input("BA123 holding short runway 9L at K"));
-console.log(input("/tower 34L"));
-console.log(input("/centre "));*/
+var takeoffRand = 0;
+var takeoffTime = 0;
+var expediteRand = 0;
+var expediteTime = 0;
+var cruiseRand = 0;
+var cruiseTime = 0;
+
 
 function input(input) {
     input = document.getElementById("textInput").value.replace("\n", " ");
@@ -24,12 +26,20 @@ function input(input) {
         temp = replace(getCommand(input));
     else temp = replace(getKeyword(input));
 
+    add(input, temp);
+}
+
+function add(input, output){
+    if (input == "") 
+        input = "···"
+    if (output == "") 
+        output = "···"
     for (let i = 0; i < data.length; i++) {
         if (data[i][1] == "") {
             data[i][0] = input;
-            data[i][1] = temp;
+            data[i][1] = output;
             console.log(rerender());
-            return temp;
+            return output;
         }
     }
     //else shift
@@ -38,10 +48,9 @@ function input(input) {
         data[i][1] = data[i + 1][1];
     }
     data[data.length - 1][0] = input;
-    data[data.length - 1][1] = temp;
+    data[data.length - 1][1] = output;
     console.log(rerender());
-    return temp;
-
+    return output;
 }
 
 function getKeyword(key) {
@@ -49,14 +58,18 @@ function getKeyword(key) {
         if (key.includes(index.keywords[i])) {
             if (key.includes("pushback") && key.includes("facing "))
                 direction = key.substring(key.indexOf("facing ") + 7)
+
             if (key.includes("taxi") && key.includes("to "))
                 runway = key.substring(key.indexOf("to "))
+
             if (key.includes("holding short") && key.includes("runway ")) {
                 runway = key.substring(key.indexOf("runway ") + 7)
                 runway = runway.substring(0, runway.indexOf(" "))
             }
+
             if (key.includes("holding short") && key.includes("at "))
                 intersection = key.substring(key.indexOf("at "))
+                
             return index.keywords[i + 1];
         }
     return "Say again";
@@ -70,42 +83,102 @@ function getCommand(key) {
     //ground
     if (command == "ground") {
         callsign = param[0];
-        destination = param[1];
-        departure = param[2];
+        departure = param[1];
+        destination = param[2];
         document.getElementById("tooltip").innerHTML = "> /tower [runway]";
         return index.commands.ground[0];
     }
 
     //tower
     if (command == "tower") {
-        runway = param[0];
-        document.getElementById("tooltip").innerHTML = "> /centre ";
+        runway = param.join(" ").replace(/runway/i, "");
+        if(runway.substring(0,1) == " ")
+            runway = runway.substring(1);
+        document.getElementById("tooltip").innerHTML = "> /centre [altitude]";
+        takeoffRand = Math.round(Math.random()*10)+1;
+        takeoffTime = 0;
+        takeoffVal = setInterval(takeoff, 1000);
+        console.log(`Starting takeoffVal at ${takeoffTime} until ${takeoffRand}`)
         return index.commands.tower[0];
     }
 
     //centre
     if (command == "centre" || command == "center") {
+        altitude = parseInt(param[0]);
+        if (!altitude >= 0)
+            altitude = 32000;
         document.getElementById("tooltip").innerHTML = "> /approach [runway]";
+        cruiseRand = Math.round(Math.random() * 3600) + 180;
+        cruiseTime = 0;
+        cruiseVal = setInterval(cruise, 1000);
+        console.log(`Starting cruiseVal at ${cruiseTime} until ${cruiseRand}`)
+        clearInterval(expediteVal);
+        console.log("expediteVal complete")
         return index.commands.centre[0];
     }
 
     //approach
     if (command == "approach") {
-        runway = param[0];
+        runway = param.join(" ").replace(/runway/i, "");
+        if (runway.substring(0, 1) == " ")
+            runway = runway.substring(1);
         document.getElementById("tooltip").innerHTML = "> /ground [callsign] [departure] [destination]";
+        clearInterval(cruiseVal);
+        console.log("cruiseVal complete")
         return index.commands.approach[0];
     }
 
     return "Syntax error";
 }
 
+function takeoff() {
+    takeoffTime++;
+    if(takeoffTime == takeoffRand){
+        add("", replace(index.ext[0]))
+        expediteRand = Math.round(Math.random() * 170);
+        expediteTime = 20;
+        expediteVal = setInterval(expedite, 1000);
+        console.log(`Starting expediteVal at ${expediteTime} until ${expediteRand}`)
+        clearInterval(takeoffVal);
+        console.log("takeoffVal complete")
+    }
+}
+
+function expedite() {
+    expediteTime++;
+    if (expediteTime == expediteRand) {
+        add("", replace(index.ext[1]))
+        clearInterval(expediteVal);
+        console.log("expediteVal complete")
+    }
+}
+
+function cruise() {
+    cruiseTime++;
+    if (cruiseTime == cruiseRand) {
+        let temp = Math.round(Math.random())
+        if(temp == 0) temp = -1;
+        altitude += temp*1000;
+        if(temp < 0)
+            add("", replace(index.ext[3]))
+        else
+            add("", replace(index.ext[2]))
+        cruiseRand = Math.round(Math.random() * 3600);
+        cruiseTime = 360;
+        cruiseVal = setInterval(cruise, 1000);
+        console.log("cruiseVal complete")
+        console.log(`Starting cruiseVal at ${cruiseTime} until ${cruiseRand}`)
+    }
+}
+
 function replace(text) {
-    return text.replace("{callsign}", callsign).replace("{destination}", destination).replace("{departure}", departure).replace("{runway}", runway).replace("{direction}", direction).replace("{intersection}", intersection);
+    return text.replace("{callsign}", callsign).replace("{destination}", destination).replace("{departure}", departure).replace("{runway}", runway).replace("{altitude}", altitude).replace("{direction}", direction).replace("{intersection}", intersection);
 }
 
 function rerender() {
     //RENDER HTML
     document.getElementById("textInput").value = "";
+    document.getElementById("textInput").focus();
     let tx = 1
     for (let i = data.length-1; i >= 0; i--)
         if(data[i][1] != ""){

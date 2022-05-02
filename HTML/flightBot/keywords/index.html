@@ -9,21 +9,31 @@
         <!--<link rel="shortcut icon" type="image/png" href="../colorRand_Square.png" />-->
     </head>
     <body id="main">
-        <h1 style="margin-left:16px">flightBot</h1>
-        <p>All keywords and commands take piority from the top of the list</p>
+        <section>
+            <h1>flightBot</h1>
+            <table>
+                <tr>
+                    <td colspan="2">All keywords and commands take piority from the top of the list</td>
+                </tr>
+                <tr>
+                    <td>[...] required fields</td>
+                    <td>/.../ optional fields</td>
+                </tr>
+            </table>
+        </section>
         <article>
             <h1>Keywords</h1>
                 <h3>IFR</h3>
                     <p>{callsign} cleared to {destination} via IFR</p>
-                <h3>pushback</h3>
+                <h3>pushback /facing [direction]/</h3>
                     <p>{callsign} pushback approved facing {direction}</p>
                 <h3>startup</h3>
                     <p>{callsign} startup approved</p>
-                <h3>taxi</h3>
+                <h3>taxi /to [runway]/</h3>
                     <p>{callsign} taxi {runway}</p>
                 <h3>clearance</h3>
                     <p>{callsign} cleared to {destination}</p>
-                <h3>holding short</h3>
+                <h3>holding short /runway [runway]/ /at [intersection]/</h3>
                     <p>{callsign} cross runway {runway} {intersection}</p>
                 <h3>passing, altitude</h3>
                     <p>{callsign} radar contact, /centre</p>
@@ -35,10 +45,11 @@
                     <p>{departure} ground</p>
                 <h3>/tower [runway]</h3>
                     <a>global runway</a>
-                    <p>{callsign} runway {runway} cleared for takeoff</p>
-                <h3>/centre </h3>
-                    <a>global runway</a>
-                    <p>{callsign} continue along flight path</p>
+                    <b>random takeoff clearance, random climb expedition</b>
+                <h3>/centre [altitude]</h3>
+                    <a>global altitude</a>
+                    <p>{callsign} maintain {altitude}</p>
+                    <b>random climb/descend</b>
                 <h3>/approach [runway]</h3>
                     <a>global runway</a>
                     <p>{callsign} runway {runway} cleared to land</p>

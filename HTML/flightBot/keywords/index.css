@@ -13,6 +13,10 @@ article {
     background-color: #303030;
 }
 
+section{
+    padding-left: 16px;
+}
+
 h1 {
     font-size: 3.5em;
     margin: 15px 0px;
@@ -23,8 +27,17 @@ h3 {
     margin: 10px 0px;
 }
 
+tr {
+
+}
+
 p {
     margin: 16px 16px;
+}
+
+b {
+    margin: 16px 16px;
+    font-family: Consolas, 'Courier New', monospace;
 }
 
 a {

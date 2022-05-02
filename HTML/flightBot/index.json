@@ -30,17 +30,24 @@
         ],
         
         "tower": [
-            "{callsign} runway {runway} cleared for takeoff",
+            "",
             "_runway"
         ],
         
         "centre": [
-            "{callsign} continue along flight path"
+            "{callsign} maintain {altitude}",
+            "_altitude"
         ],
 
         "approach": [
             "{callsign} runway {runway} cleared to land",
             "_runway"
         ]
-    }
+    },
+    "ext": [
+        "{callsign} runway {runway} cleared for takeoff",
+        "{callsign} expedite climb",
+        "{callsign} climb and maintain {altitude}",
+        "{callsign} descend and maintain {altitude}"
+    ]
 }
