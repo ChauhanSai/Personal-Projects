@@ -1,4 +1,5 @@
 const index = JSON.parse('{ "keywords": [ "IFR", "{callsign} cleared to {destination} via IFR", "pushback", "{callsign} pushback approved facing {direction}", "startup", "{callsign} startup approved", "taxi", "{callsign} taxi {runway}", "clearance", "{callsign} cleared to {destination}", "holding short", "{callsign} cross runway {runway} {intersection}", "passing, altitude", "{callsign} radar contact, /centre" ], "commands": { "ground":[ "{departure} ground", "_callsign", "_departure", "_destination" ], "tower": [ "", "_runway" ], "centre": [ "{callsign} maintain {altitude}", "_altitude" ], "approach": [ "{callsign} runway {runway} cleared to land", "_runway" ] }, "ext": [ "{callsign} runway {runway} cleared for takeoff", "{callsign} expedite climb", "{callsign} climb and maintain {altitude}", "{callsign} descend and maintain {altitude}" ] }')
+var debug = 0;
 
 var data = [["", ""], ["", ""], ["", ""], ["", ""], ["", ""]]
 
@@ -187,4 +188,24 @@ function rerender() {
             document.getElementById(tempS).innerHTML = "→ " + data[i][0];
             document.getElementById(tempR).innerHTML = "← " + data[i][1];
         }
+}
+
+function openTheme() {
+    document.getElementById("dropdown").style.display = 'block';
+    debug++;
+    if(debug >= 3){
+        console.log("debug")
+        window.open("https://chauhansai.github.io/Script-Projects/HTML/flightBot/themes", "_self")
+        debug = 0;
+    }
+}
+
+function choice(themeName){
+    if (themeName != null) {
+        document.getElementById("theme").href = "themes/" + themeName + ".css";
+        console.log(themeName);
+    }
+    debug = 0;
+    document.getElementById("dropdown").style.display = 'none';
+
 }

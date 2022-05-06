@@ -8,6 +8,7 @@
         <meta charset="UTF-8">
         <title id="title">flightBot</title>
         <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="themes/default.css" id="theme" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible" />
         <!--<link rel="shortcut icon" type="image/png" href="colorRand_Square.png" />-->
         <script src="index.js"></script>
@@ -17,8 +18,15 @@
     </head>
     <body style="height:100%;" id="main">
         <article>
+            <div id="dropdown" style="display:none">
+                <div id="table">
+                    <div id="choice" style="background-color: #303030;" ><a style="color: #f5f5f5;" onclick="choice('default')">default</a></div> 
+                    <div id="choice" style="background-color: #1e1e1e;" ><a style="color: #007acc;" onclick="choice('vscode')">vscode</a></div> 
+                    <div id="choice" style="background-color: #e4e3e9;" ><a style="color: #2f2a41;" onclick="choice('lavender')">lavender</a></div> 
+                </div>
+            </div>
             <h1>flightBot</h1>
-            <h3 class="mono"><a>theme</a></h3>
+            <h3 class="mono"><a onclick='openTheme()'>theme</a></h3>
             <section>
                 <textarea id="textInput" autofocus>/ground </textarea>
                 <svg id="button" onclick="input()" viewBox="0 0 24 24"><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>

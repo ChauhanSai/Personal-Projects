@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>flightBot</title>
+        <link rel="stylesheet" href="../index.css" />
+        <link rel="stylesheet" href="default.css" id="theme" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible" />
+        <!--<link rel="shortcut icon" type="image/png" href="colorRand_Square.png" />-->
+        <style>
+            html,body { height:100%; }
+        </style>
+    </head>
+    <body style="height:100%;" id="main">
+        <script>
+            //Generate list of themes
+            const themes = ['default.css', 'vscode.css', 'lavender.css']
+            i = 0;
+
+            themeVal = setInterval(theme, 2000)
+
+            function theme(){
+                i++;
+                if(i >= themes.length)
+                    i = 0;
+                document.getElementById("theme").href = themes[i];
+                document.getElementById("title").innerHTML = themes[i].substring(0,themes[i].lastIndexOf("."));
+                console.log(themes[i]);
+            }
+        </script>
+        <article>
+            <h1>flightBot</h1>
+            <h3 class="mono"><a id="title">default</a></h3>
+            <section>
+                <textarea id="textInput" disabled>/ground </textarea>
+                <svg id="button" viewBox="0 0 24 24"><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
+            </section>
+            <p class="mono" id="tooltip">> /ground [callsign] [departure] [destination]</p>
+        </article>
+
+        <div id="root">
+            <div class="bubble">
+                <p><a href="">Made by ChauhanSai on GitHub</a></p>
+                <hr align="center"/>
+                <p>beep boop bop</p>
+            </div>
+            <div class="bubble">
+                <p>Send command above ↑</p>
+                <hr align="center"/>
+                <p>'/ground BA2 KJFK EGLL'</p>
+            </div>
+            <div class="bubble">
+                <p><a href="https://chauhansai.github.io/Script-Projects/HTML/flightBot/keywords" target="_blank">See keywords here</a></p>
+                <hr align="center"/>
+                <p>IFR clearance ... taxi ... altitude</p>
+            </div>
+            <div class="bubble">
+                <p>···</p>
+                <hr align="center"/>
+                <p>···</p>
+            </div>
+            <div class="bubble">
+                <p>···</p>
+                <hr align="center"/>
+                <p>···</p>
+            </div>
+        </div>
+    </body>
+</html>
