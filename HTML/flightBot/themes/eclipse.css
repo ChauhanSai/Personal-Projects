@@ -1,0 +1,27 @@
+body {
+    background: linear-gradient(180deg, #1a0b0c 3%, #0e0506 4%);
+}
+
+article, section, .bubble, textarea#textInput, #dropdown {
+    background-color: #1a0b0c;
+}
+
+.root, select {
+    background-color: #0e0506;
+}
+
+body, textarea#textInput, select {
+    color: #ff3a32;
+}
+
+#button {
+    fill: #ff3a32;
+}
+
+p, a, hr, .mono {
+    color: #bf2c26;
+}
+
+textarea#textInput {
+    border-color: #bf2c26;
+}

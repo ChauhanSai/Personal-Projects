@@ -63,6 +63,14 @@ textarea#textInput {
     box-shadow: 0 10px 16px 0 #00000040, 0 6px 20px 0 #00000040 !important;
 }
 
+select {
+    padding: 3px;
+    margin: 0px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 #table {
     display: flex;
 }

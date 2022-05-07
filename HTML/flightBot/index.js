@@ -198,6 +198,30 @@ function openTheme() {
         window.open("https://chauhansai.github.io/Script-Projects/HTML/flightBot/themes", "_self")
         debug = 0;
     }
+
+    let filters = document.getElementById("filters");
+    let color = document.getElementsByClassName("color");
+    let airln = document.getElementsByClassName("airln");
+    filters.addEventListener("input", function (event) {
+        if (filters.value == "color") {
+            for (let i = 0; i < color.length; i++)
+                color[i].style.display = "block";
+            for (let i = 0; i < airln.length; i++)
+                airln[i].style.display = "none";
+            return;
+        } 
+        if (filters.value == "airln") {
+            for (let i = 0; i < airln.length; i++)
+                airln[i].style.display = "block";
+            for (let i = 0; i < color.length; i++)
+                color[i].style.display = "none";
+            return;
+        }
+        for (let i = 0; i < airln.length; i++) 
+            airln[i].style.display = "block";
+        for (let i = 0; i < color.length; i++)
+            color[i].style.display = "block";
+    }, false);
 }
 
 function choice(themeName){

@@ -1,23 +1,27 @@
 body {
-    background: linear-gradient(180deg, #e4e3e9 3%, #ada6c2 4%);
+    background: linear-gradient(180deg, #786e96 3%, #ada6c2 4%);
 }
 
 article, section, .bubble, textarea#textInput, #dropdown {
-    background-color: #e4e3e9;
+    background-color: #786e96;
 }
 
-.root {
+.root, select {
     background-color: #ada6c2;
 }
 
-body, textarea#textInput {
-    color: #2f2a41;
+body, textarea#textInput, select {
+    color: #e4e3e9;
 }
 
 #button {
-    fill: #2f2a41;
+    fill: #e4e3e9;
 }
 
 p, a, hr, .mono {
-    color: #4e4a5e;
+    color: #d0cfd5;
+}
+
+textarea#textInput {
+    border-color: #d0cfd5;
 }
