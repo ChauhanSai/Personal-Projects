@@ -10,7 +10,7 @@ article, section, .bubble, textarea#textInput, #dropdown {
     background-color: #323437;
 }
 
-body, textarea#textInput, select {
+body, textarea#textInput, select, p, a, .mono {
     color: #e2b714;
 }
 
@@ -18,10 +18,6 @@ body, textarea#textInput, select {
     fill: #e2b714;
 }
 
-p, a, hr, .mono {
-    color: #ba960f;
-}
-
-textarea#textInput {
-    border-color: #ba960f;
+textarea#textInput, hr {
+    border-color: #e2b714;
 }

@@ -1,16 +1,16 @@
 body {
-    background: linear-gradient(180deg, #786e96 3%, #ada6c2 4%);
+    background: linear-gradient(180deg, #ada6c2 3%, #786e96 4%);
 }
 
 article, section, .bubble, textarea#textInput, #dropdown {
-    background-color: #786e96;
-}
-
-.root, select {
     background-color: #ada6c2;
 }
 
-body, textarea#textInput, select {
+.root, select {
+    background-color: #786e96;
+}
+
+body, textarea#textInput, select, p, a, .mono {
     color: #e4e3e9;
 }
 
@@ -18,10 +18,6 @@ body, textarea#textInput, select {
     fill: #e4e3e9;
 }
 
-p, a, hr, .mono {
-    color: #d0cfd5;
-}
-
-textarea#textInput {
-    border-color: #d0cfd5;
+textarea#textInput, hr {
+    border-color: #e4e3e9;
 }

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/#Hidden/#Hidden.iml" filepath="$PROJECT_DIR$/#Hidden/#Hidden.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Blackjack/Blackjack.iml" filepath="$PROJECT_DIR$/Blackjack/Blackjack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Casino Games/Casino Games.iml" filepath="$PROJECT_DIR$/Casino Games/Casino Games.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Color Generator/Color Generator.iml" filepath="$PROJECT_DIR$/Color Generator/Color Generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java.iml" filepath="$PROJECT_DIR$/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iPhone Inheritance/iPhone Inheritance.iml" filepath="$PROJECT_DIR$/iPhone Inheritance/iPhone Inheritance.iml" />
     </modules>
   </component>
 </project>

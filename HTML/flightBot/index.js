@@ -192,6 +192,7 @@ function rerender() {
 
 function openTheme() {
     document.getElementById("dropdown").style.display = 'block';
+    document.getElementById("button").style.display = 'none';
     debug++;
     if(debug >= 3){
         console.log("debug")
@@ -231,5 +232,6 @@ function choice(themeName){
     }
     debug = 0;
     document.getElementById("dropdown").style.display = 'none';
+    document.getElementById("button").style.display = 'unset';
 
 }

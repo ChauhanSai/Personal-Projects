@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e02c5e8-df69-4235-b548-bc4f08ed5928" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Blackjack/Blackjack.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Casino Games/Casino Games.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Color Generator/Color Generator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iPhone Inheritance/iPhone Inheritance.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/themes/aal.css" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/themes/aal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/themes/charm.css" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/themes/charm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/themes/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/themes/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/themes/eclipse.css" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/themes/eclipse.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/themes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/themes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/themes/lavender.css" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/themes/lavender.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/themes/monkey.css" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/themes/monkey.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/flightBot/themes/vscode.css" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML/flightBot/themes/vscode.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack/bin/blackjack/Blackjack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack/src/blackjack/Blackjack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/src/games/Baccarat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/src/games/Blackjack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/src/games/Roulette.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/src/games/Runner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Casino Games/src/games/Slots.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Color Generator/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Color Generator/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Color Generator/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Color Generator/src/generator/ColorGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Color Generator/src/generator/RGBToHex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/bin/Runner/Apps.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/bin/Runner/Device.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/bin/Runner/DrawPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/bin/Runner/IPhone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/bin/Runner/Phone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/bin/Runner/Runner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iPhone Inheritance/src/Runner/Runner.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28tUo6GA6poVC5Pbp8yn51F3fx6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chauh\Desktop\Development\Scripts\Java" />
+      <recent name="C:\Users\chauh\Desktop\Development\Scripts\Java\#Hidden\Leetcode\src" />
+      <recent name="C:\Users\chauh\Desktop\Development\Scripts\Java\Blackjack\src" />
+      <recent name="C:\Users\chauh\Desktop\Development\Scripts\Java\Casino Games\src" />
+      <recent name="C:\Users\chauh\Desktop\Development\Scripts\Java\Color Generator\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="leet11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leet11" />
+      <module name="Leetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.leet11" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e02c5e8-df69-4235-b548-bc4f08ed5928" name="Changes" comment="" />
+      <created>1652035550090</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652035550090</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
