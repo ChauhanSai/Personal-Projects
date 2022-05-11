@@ -106,7 +106,7 @@ function getCommand(key) {
     //centre
     if (command == "centre" || command == "center") {
         altitude = parseInt(param[0]);
-        if (!altitude >= 0)
+        if (altitude < 0)
             altitude = 32000;
         document.getElementById("tooltip").innerHTML = "> /approach [runway]";
         cruiseRand = Math.round(Math.random() * 3600) + 180;
