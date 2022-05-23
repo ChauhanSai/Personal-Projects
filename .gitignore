@@ -8,6 +8,10 @@ files/img0_3840x2160.jpg
 *.zip
 */.metadata/
 
+# Java
+Java/.idea/*
+Java/out/production/*
+
 # Python
 */__pycache__/*
 *.pyc
