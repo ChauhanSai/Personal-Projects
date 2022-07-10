@@ -11,7 +11,7 @@ def loc():
     print()
     state = json.loads(state)['Location']
 
-    altitude = state['AltitudeLight'] / 17.4638
+    altitude = state['Altitude'] / 17.4638
     latitude = state['Latitude']
     longitude = state['Longitude']
 
