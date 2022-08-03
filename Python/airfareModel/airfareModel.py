@@ -364,7 +364,8 @@ mAirports = ["SFO", "LAX", "LAS", "DFW", "YYZ", "JFK", "MAD", "LHR"]
 
 def scrapeData(lowCost, oneWay):
     """
-    :param lowCost: Run low cost carriers
+    Scrapes data of select air routes, gathering prices and plotting data to create a model/function
+    :param lowCost: Run low-cost carriers
     :type lowCost: boolean
     :param oneWay:
     :type oneWay: boolean
@@ -375,10 +376,6 @@ def scrapeData(lowCost, oneWay):
 
     distance = []
     price = []
-
-    distance = [2448.837200871348, 347.342868392869, 3455.7901818151186, 2222.018826170303, 2171.040323510166, 365.7343677770261,
-     1198.233677616394]
-    price = [569, 241, 700, 299, 534, 262, 591]
 
     if lowCost:
         rng = range(2, 4)
@@ -392,27 +389,38 @@ def scrapeData(lowCost, oneWay):
                 p = input(airlines[i] + ": " + hubs[i] + "-" + mAirports[j] + " price $")
                 if p != "":
                     price.append(int(p))
-                    distance.append(calculate_distance(hubs[i], mAirports[j]))
+                    distance.append(calculateDistance(hubs[i], mAirports[j]))
                     print("[" + str(distance[len(distance) - 1]) + ", " + str(price[len(price) - 1]) + "]")
 
-    plt.scatter(distance, price)
+    plt.scatter(distance, price, c='#398d47', marker='.', label='Airfares')
+    plt.xlabel("Distance (mi)")
+    plt.ylabel("Price")
     modelLin = np.poly1d(np.polyfit(distance, price, 1))
+    modelLinStr = str(modelLin).strip()
     modelQuad = np.poly1d(np.polyfit(distance, price, 2))
-
-    print("Distance Data:", distance)
+    modelQuadStr = str(modelQuad).strip().replace("e", " * 10^{ ")[1:].strip().replace("x", "} x^{ 2 }", 1)
+    print(modelLin(min(price)))
+    print(modelQuad(max(price)))
+    print("\nDistance Data:", distance)
     print("Price Data:", price)
-    print("Linear Regression: A =", str(modelLin).strip())
-    print("Quadratic Regression: A =", str(modelQuad).strip().replace("e", " * 10^{ ")[1:].strip().replace("x","} x^{ 2 }",1))
 
-    polyline = np.linspace(1, 60, 50)
-    plt.plot(polyline, modelQuad(polyline))
-    plt.plot(polyline, modelLin(polyline))
+    print("\nLinear Regression: A =", modelLinStr)
+    print("Quadratic Regression: A =", modelQuadStr)
+
+    polyline = np.linspace(0, max(distance), 100)
+    plt.plot(polyline, modelQuad(polyline), c='#c95350', linestyle='-', label='Lin. Reg.')
+    plt.plot(polyline, modelLin(polyline), c='#3874b0', linestyle='-', label='Quad. Reg.')
+    plt.text(max(distance) / 2 + 150, modelLin(max(distance) / 2), 'Lin. ' + modelLinStr, horizontalalignment='left')
+    plt.text(min(distance) + 150, modelQuad(min(distance)), 'Quad. ' + modelQuadStr, horizontalalignment='left')
+    plt.grid(color='#999999', linewidth=0.5)
+    plt.legend()
     plt.show()
 
 
 def getUrl(airline, dep, arr, dateDep, dateArr, oneWay):
     """
-    :param airline: Airline ICAO code
+    Generates the URL for a specific airline, departure and arrival airport, and dates
+    :param airline: Airline ICAO code ("UAL", "ACA", "JBU", "SWA")
     :type airline: basestring
     :param dep: Departure airport IATA code
     :type dep: basestring
@@ -449,9 +457,9 @@ def getUrl(airline, dep, arr, dateDep, dateArr, oneWay):
     return link
 
 
-def calculate_distance(dep, arr):
+def calculateDistance(dep, arr):
     """
-    Calculate the distance (in miles) between point1 and point2
+    Calculate the distance (in miles) between departure and arrival airports
     :param dep: Departure airport IATA code
     :type dep: basestring
     :param arr: Arrival airport IATA code
@@ -476,9 +484,6 @@ def calculate_distance(dep, arr):
     return radius_earth * c / 1.60934  # miles
 
 
-# getUrl("UAL", "JFK", "LHR", "220914", "220924", False)
-# getUrl("ACA", "YYZ", "LAX", "220914", "220924", False)
-# getUrl("JBU", "BOS", "LAX", "220914", "220924", False)
-# getUrl("SWA", "BOS", "LAX", "220914", "220924", False)
-scrapeData(False, True)
-# scrapeData(True, True)
+print("scrapeData(lowCost, oneWay)" + getUrl.__doc__)
+print("getUrl(airline, dep, arr, dateDep, dateArr, oneWay)" + scrapeData.__doc__)
+print("calculateDistance(dep, arr)" + calculateDistance.__doc__)
