@@ -1,0 +1,64 @@
+#foot {
+	color:white; 
+	background-color:#000000; 
+	padding:10px;
+}
+
+body {
+	padding:20px;
+	font-family: Veranda, Helvetica, sans-serif; 
+	color:white; 
+	background-color:#000000;
+}
+
+#noscript {
+	color:red;
+}
+
+header {
+	color:white; 
+	background-color:#303030; 
+	padding:5px;
+	padding-bottom:20px;
+}
+
+article {
+	color:white; 
+	background-color:#303030; 
+	padding:5px;
+	padding-bottom:20px;
+}
+
+#github {
+	height:30px;
+	filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(321deg) brightness(112%) contrast(100%);
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: silver;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: silver;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: silver;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#theme {
+	text-decoration: underline;
+	cursor: pointer;
+}

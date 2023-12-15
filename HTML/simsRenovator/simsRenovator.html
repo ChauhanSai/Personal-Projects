@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Sims Renovator</title>
+		<link rel="stylesheet" href="simsRenovator.css"/>
+		<link rel="shortcut icon" href="icon.png"/>
+	</head>
+	<body align="center">
+		<header id="header">
+			<br/>
+			<img src="logo.png" width="400px"/>
+			<br/><br/>
+			<section>
+				<label for="colorA"> Colors: </label> <input id="colorA" type="text" list="colors" value="none"/> <input id="colorB" type="text" list="colors" value="none"/> 
+				<datalist id="colors">
+					<option value="Black"/>
+					<option value="Blue"/>
+					<option value="Brown"/>
+					<option value="Gray"/>
+					<option value="Green"/>
+					<option value="Orange"/>
+					<option value="Pink"/>
+					<option value="Purple"/>
+					<option value="Red"/>
+					<option value="White"/>
+					<option value="Yellow"/>
+				</datalist>
+				<br/><br/>
+				<label for="activityA">Actvities: </label> <input id="activityA" type="text" list="activities" value="none"/> <input id="activityB" type="text" list="activities" value="none"> 
+				<datalist id="activities">
+					<option value="Acting"/>
+					<option value="Baking"/>
+					<option value="Comedy"/>
+					<option value="Cooking"/>
+					<option value="Fishing"/>
+					<option value="Fitness"/>
+					<option value="Gardening"/>
+					<option value="Guitar"/>
+					<option value="Handiness"/>
+					<option value="Media Production"/>
+					<option value="Mischief"/>
+					<option value="Mixology"/>
+					<option value="Painting"/>
+					<option value="Photography"/>
+					<option value="Piano"/>
+					<option value="Programming"/>
+					<option value="Rocket Science"/>
+					<option value="Video Gaming"/>
+					<option value="Violin"/>
+					<option value="Writing"/>
+				</datalist>
+				<noscript id="noscript"><br/><br/>Uh oh, it looks like your broswer doesn't support JavaScript</noscript>
+			</section>
+		</header>
+		
+		<br/> <br/>
+		
+		<article>
+			<br/>
+			<button type="button" id="button">Generate</button>
+			<br/>
+			<p>Type: <b id="type">N/A</b>; Payment: <b id="payment">N/A</b></p>
+			<script>
+				document.getElementById("button").onclick = function() {generate()};
+				
+				function generate() {
+					var types = ['Room Renovation','Room Addition','Level Renovation','Level Addition']
+					var payments = ['620','625','1,400','435','540','435','600','1,900','800','825','1,445','935']
+					
+					var type = Math.round(Math.random()*(types.length-1))
+					var payment = Math.round(Math.random()*(payments.length-1))
+					
+					document.getElementById("type").innerHTML = types[type];
+					document.getElementById("payment").innerHTML = payments[payment];
+				}
+			</script>
+			<b>Colors:<br/>
+			<img id="color1" src="colors/none.png"/ width="100px"> <img id="color2" src="colors/none.png" width="100px"/>
+			</b>
+			<script>
+				let colorA = document.getElementById("colorA");
+				let color1 = document.getElementById("color1");
+				
+				color1.src = "colors/"+colorA.value+".png";
+				
+				colorA.addEventListener("input", function(event) {
+				  color1.src = "colors/"+colorA.value+".png";
+				}, false);
+			</script>
+			<script>
+				let colorB = document.getElementById("colorB");
+				let color2 = document.getElementById("color2");
+				
+				color2.src = "colors/"+colorB.value+".png";
+				
+				colorB.addEventListener("input", function(event) {
+				  color2.src = "colors/"+colorB.value+".png";
+				}, false);
+			</script>
+			<br/><br/>
+			<b>Activities:<br/>
+			<img id="activity1" src="activities/none.png" width="100px"/> <img id="activity2" src="activities/none.png" width="100px"/>
+			</b>
+			<script>
+				let activityA = document.getElementById("activityA");
+				let activity1 = document.getElementById("activity1");
+				
+				activity1.src = "activities/"+activityA.value+".png";
+				
+				activityA.addEventListener("input", function(event) {
+				  activity1.src = "activities/"+activityA.value+".png";
+				}, false);
+			</script>
+			<script>
+				let activityB = document.getElementById("activityB");
+				let activity2 = document.getElementById("activity2");
+				
+				activity2.src = "activities/"+activityB.value+".png";
+				
+				activityB.addEventListener("input", function(event) {
+				  activity2.src = "activities/"+activityB.value+".png";
+				}, false);
+			</script>
+		</article>
+		<br/>
+		
+		<footer id="foot">
+			<a href="https://github.com/ChauhanSai/Script-Projects/blob/main/HTML/" title="GitHub" target="_blank"><img src="https://simpleicons.org/icons/github.svg" id="github"/></a>
+		</footer>
+	</body>
+</html>
