@@ -9,15 +9,8 @@ from pytz import timezone
 from requests import get
 
 # Authenticate to Twitter
-auth = tweepy.OAuthHandler("###",
-                           "###")
-auth.set_access_token("###",
-                      "###")
 
 # Authenticate to Twitter
-auth = tweepy.OAuthHandler("###", "###")
-auth.set_access_token("###",
-                      "###")
 
 # Create API object
 api = tweepy.API(auth, wait_on_rate_limit=True)

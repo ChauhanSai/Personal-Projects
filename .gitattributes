@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# git config --global filter.gitignore.clean "sed '/#gitignore$/d'"
+# git config --global filter.gitignore.smudge cat
+*.py filter=gitignore
