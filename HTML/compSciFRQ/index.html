@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+
+<!-- View HTML: -->
+<!-- https://csape.github.io/ -->
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>APCS FRQ Practice</title>
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible"/>
+		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+	</head>
+	<body align="center" onload="next()">
+		<article>
+			<a href="https://csape.github.io/"><img src="favicon.png" width="10%"/></a>
+			<header style="font-size:3em; margin:10px 0px" >APCS FRQ Practice</header>
+			<button onclick="random(false)">Start Exam</button>
+			<button onclick="random(true)">Start FRQ</button>
+			<p>
+				Filter from <select id="start">
+				  <option value="-1">1999</option>
+				  <option value="0">2000</option>
+				  <option value="1">2001</option>
+				  <option value="2">2002</option>
+				  <option value="3">2003</option>
+				  <option value="4">2004</option>
+				  <option value="5">2005</option>
+				  <option value="6">2006</option>
+				  <option value="7">2007</option>
+				  <option value="8">2008</option>
+				  <option value="9">2009</option>
+				  <option value="10">2010</option>
+				  <option value="11">2011</option>
+				  <option value="12">2012</option>
+				  <option value="13">2013</option>
+				  <option value="14">2014</option>
+				  <option value="15">2015</option>
+				  <option value="16">2016</option>
+				  <option value="17">2017</option>
+				  <option value="18">2018</option>
+				</select> to <select id="end">
+				  <option value="19">2019</option>
+				  <option value="18">2018</option>
+				  <option value="17">2017</option>
+				  <option value="16">2016</option>
+				  <option value="15">2015</option>
+				  <option value="14">2014</option>
+				  <option value="13">2013</option>
+				  <option value="12">2012</option>
+				  <option value="11">2011</option>
+				  <option value="10">2010</option>
+				  <option value="9">2009</option>
+				  <option value="8">2008</option>
+				  <option value="7">2007</option>
+				  <option value="6">2006</option>
+				  <option value="5">2005</option>
+				  <option value="4">2004</option>
+				  <option value="3">2003</option>
+				  <option value="2">2002</option>
+				  <option value="1">2001</option>
+				  <option value="0">2000</option>
+				</select>
+			</p>
+		</article>
+		<footer>
+			<p>FRQs archived from previous examinations 1999-2019</p>
+			<p>Not affiliated with Advanced Placement® or the College Board</p>
+		</footer>
+		<script>
+			function getParameterByName(name, url = window.location.href) {
+				name = name.replace(/[\[\]]/g, '\\$&');
+				var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+					results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			}
+			
+			function next(){
+				var go = getParameterByName('next');
+				if(go!=null){
+					var frq = getParameterByName('frq');
+					if(frq!=null){
+						random(true);
+					} else {
+						random(false);
+					}
+				}
+			}
+			
+			function random(single){
+				let min = parseInt(document.getElementById("start").value);
+				let difference = parseInt(document.getElementById("end").value) - min + 1;
+				let random = Math.floor(Math.random()*difference)+min;
+				if(random == -1){
+					random = 99;
+				}
+				if(random < 10){
+					random = '0' + random;
+				}
+				if(single){
+					let frq = Math.floor(Math.random()*4)+1;
+					location.href='https://csape.github.io/'+random+'/?frq='+frq;
+				} else {
+					location.href='https://csape.github.io/'+random+'/';
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,136 @@
+body {
+	font-family: "Atkinson Hyperlegible", "Veranda", "Helvetica", sans-serif; 
+	background-color: #1a1a1a;
+	color: white;
+	padding: 0px;
+}
+
+header {
+	font-size: 1.5em;
+	padding: 0px;
+}
+
+h1 {
+	font-size: 1.5em;
+	padding: 0px;
+}
+	
+
+.frq {
+	padding: 0px;
+}
+
+button {
+	font-size: 1.25em;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    margin: 0px 5px;
+    font-family: "Atkinson Hyperlegible", "Veranda", "Helvetica", sans-serif;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	border-radius: 5px;
+}
+
+.counter {
+	width: 69px;
+	border-radius: 5px;
+}
+
+button.counter {
+	border-radius: 0px;
+}
+
+div#countBack {
+	background-color: #303030;
+	width:45%; 
+	height:80px; 
+	position:fixed;
+	border-radius: 0px 15px 15px 0px;
+	margin: 38px 0px;
+}
+
+div {
+	padding: 20px;
+}
+
+
+#left {
+	position:fixed;
+    top:20px;
+}
+
+article {
+	margin: auto;
+	padding: 12% 0px;
+}
+
+
+select {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+    font-family: "Atkinson Hyperlegible", "Veranda", "Helvetica", sans-serif;
+}
+
+.row {
+	padding: 10px;
+	display: flex;
+	margin: auto;
+	height: auto;
+}
+
+.headRow {
+	background-color: #303030;
+	padding: 10px;
+	display: flex;
+	border-radius: 5px;
+}
+
+.column {
+	flex: 50%;
+}
+
+textarea {
+	background-color: #303030;
+	color: white;
+	resize: vertical; 
+	width:100%; 
+	min-height: 200px;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	border-radius: 5px;
+}	
+
+footer {
+	background-color: #303030;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+p {
+    margin-inline-start: 0px;
+    margin-inline-end: 15px;
+}
+
+a {
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  text-decoration: none;
+  color: white;
+}
+
+a#pdfLink {
+  text-decoration: underline;
+}
