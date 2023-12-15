@@ -81,7 +81,7 @@ def gpx(send):
     eleKey = "<ele>"
     for line in file:
         if routeKeyA in line or routeKeyB in line:
-            line = line[line.index("lat=\"")+5:line.index("\">")-2]
+            line = line[line.index("lat=\"")+5:line.index("\">")]
             line = (float(line[:line.index("lon=\"")-2]), float(line[line.index("lon=\"")+5:]))
             route.append(line)
         if eleKey in line:
@@ -116,6 +116,7 @@ def gpx(send):
     m.fit_bounds(m.get_bounds(), padding=(30, 30))
     m.save(fileName[:-4] + ".html")
     print(fileName[:-4] + ".html")
+
 
 def geojson(send):
     file, m, fileName = send
@@ -164,23 +165,40 @@ def geojson(send):
     print(fileName[:-8] + ".html")
 
 
-directory = input("Directory: ")
-if directory == "":
-    fileList = [input("File: ")]
-else:
-    fileList = [f for f in listdir(directory) if isfile(join(directory, f))]
-    for i in range(len(fileList)):
-        fileList[i] = directory + "\\" + fileList[i]
+def run(directory, file):
+    """
+    :param directory: Directory OR Single File
+    :type directory: basestring
+    :param file:
+    :type file: basestring
+    :return:
+    """
+    if directory == "" and file == "":
+        directory = input("Directory: ")
+        if directory == "":
+            fileList = [input("File: ")]
+    elif directory == "":
+        fileList = [file]
 
-for fileName in fileList:
-    if fileName[-4:] == ".kml":
-        kml(start(fileName))
-    elif fileName[-4:] == ".gpx":
-        gpx(start(fileName))
-    elif fileName[-8:] == ".geojson":
-        geojson(start(fileName))
+    if directory != "":
+        fileList = [f for f in listdir(directory) if isfile(join(directory, f))]
+        for i in range(len(fileList)):
+            fileList[i] = directory + "\\" + fileList[i]
 
-if len(fileList) > 1:
-    mm.fit_bounds(mm.get_bounds(), padding=(30, 30))
-    mm.save(directory + "\\" + "openMapped.html")
-    print(directory + "\\" + "openMapped.html")
+    for fileName in fileList:
+        if fileName[-4:] == ".kml":
+            kml(start(fileName))
+        elif fileName[-4:] == ".gpx":
+            gpx(start(fileName))
+        elif fileName[-8:] == ".geojson":
+            geojson(start(fileName))
+
+    if len(fileList) > 1:
+        mm.fit_bounds(mm.get_bounds(), padding=(30, 30))
+        mm.save(directory + "\\" + "openMapped.html")
+        print(directory + "\\" + "openMapped.html")
+
+
+if __name__ == '__main__':
+    run("", "")
+

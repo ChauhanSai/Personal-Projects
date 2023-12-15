@@ -135,7 +135,7 @@ def gpx(send):
     eleKey = "<ele>"
     for line in file:
         if routeKeyA in line or routeKeyB in line:
-            line = line[line.index("lat=\"") + 5:line.index("\">") - 2]
+            line = line[line.index("lat=\"") + 5:line.index("\">")]
             line = (float(line[:line.index("lon=\"") - 2]), float(line[line.index("lon=\"") + 5:]))
             route.append(line)
         if eleKey in line:
