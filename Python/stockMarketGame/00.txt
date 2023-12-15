@@ -1,0 +1,2 @@
+['REGN', 'AEP', 'DXCM', 'BIIB', 'XEL', 'ZS']
+REGN Call Option

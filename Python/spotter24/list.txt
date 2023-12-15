@@ -1,0 +1,788 @@
+2:00 PM	4B553
+Carlsbad (CNM)
+Boutique Air	PL2
+Estimated dep. 2:00 PM
+2:00 PM	AA1548
+Los Angeles (LAX)
+American Airlines	A21N (N436AN)
+Estimated dep. 2:16 PM
+2:00 PM	NK1016
+Cancun (CUN)
+Spirit Airlines	A20N (N928NK)
+Estimated dep. 2:00 PM
+2:02 PM	AM2689
+Mexico City (MEX)
+Aeromexico	E190 (XA-MAC)
+Estimated dep. 2:12 PM
+2:03 PM	AA2223
+Chicago (ORD)
+American Airlines	B738 (N306PB)
+Estimated dep. 2:03 PM
+2:05 PM	AA2623
+Charlotte (CLT)
+American Airlines	A321 (N199UW)
+Estimated dep. 2:21 PM
+2:05 PM	AA3546
+Gulfport (GPT)
+American Eagle	E75L (N221NN)
+Estimated dep. 2:23 PM
+2:10 PM	JL8011
+Tokyo (NRT)
+Japan Airlines	B788
+Estimated dep. 2:32 PM
+2:18 PM	UA6081
+Houston (IAH)
+United Express	E75L (N87306)
+Estimated dep. 2:18 PM
+2:25 PM	AA584
+Tucson (TUS)
+American Airlines	A321 (N160AN)
+Estimated dep. 2:25 PM
+2:25 PM	AA1474
+Houston (IAH)
+American Airlines	A321 (N158AN)
+Estimated dep. 2:25 PM
+2:25 PM	AA1505
+Indianapolis (IND)
+American Airlines	B738 (N980AN)
+Estimated dep. 2:25 PM
+2:25 PM	AA1785
+New Orleans (MSY)
+American Airlines	A21N (N432AN)
+Estimated dep. 2:41 PM
+2:25 PM	AA2171
+Norfolk (ORF)
+American Airlines	B738 (N931AN)
+Estimated dep. 2:41 PM
+2:25 PM	AA2659
+Santa Ana (SNA)
+American Airlines	B738 (N343PN)
+Estimated dep. 2:25 PM
+2:25 PM	AA5845
+Dayton (DAY)
+American Airlines	CRJ9
+Estimated dep. 2:25 PM
+2:25 PM	NK360
+Las Vegas (LAS)
+Spirit Airlines	A20N (N905NK)
+Estimated dep. 2:25 PM
+2:26 PM	DL1389
+Salt Lake City (SLC)
+Delta Air Lines	BCS1 (N101DU)
+Estimated dep. 2:47 PM
+2:28 PM	AA842
+Grand Rapids (GRR)
+American Airlines	A319 (N824AW)
+Estimated dep. 2:44 PM
+2:29 PM	AA1324
+San Jose del Cabo (SJD)
+American Airlines	A321 (N189UW)
+Estimated dep. 2:29 PM
+2:30 PM	AA1213
+Baltimore (BWI)
+American Airlines	B738 (N931NN)
+Estimated dep. 2:30 PM
+2:30 PM	AA1961
+San Antonio (SAT)
+American Airlines	A321 (N556UW)
+Estimated dep. 2:30 PM
+2:32 PM	UA222
+Chicago (ORD)
+United Airlines	A319 (N838UA)
+Estimated dep. 2:47 PM
+2:34 PM	AA3207
+Houston (HOU)
+American Eagle	CRJ7 (N762SK)
+Estimated dep. 2:34 PM
+2:35 PM	AA2747
+San Diego (SAN)
+American Airlines	A321 (N132AN)
+Estimated dep. 2:35 PM
+2:35 PM	AA4237
+Bentonville (XNA)
+American Eagle	E75L (N203NN)
+Estimated dep. 2:53 PM
+2:35 PM	NK628
+Los Angeles (LAX)
+Spirit Airlines	A20N (N948NK)
+Estimated dep. 2:48 PM
+2:36 PM	AA3767
+Springfield (SGF)
+American Eagle	E75L (N256NN)
+Estimated dep. 2:36 PM
+2:39 PM	AA1864
+Richmond (RIC)
+American Airlines	B738 (N826NN)
+Estimated dep. 2:39 PM
+2:40 PM	AA1507
+Cancun (CUN)
+American Airlines	A321 (N147AA)
+Estimated dep. 2:56 PM
+2:40 PM	AA2797
+Midland (MAF)
+American Airlines	A319 (N827AW)
+Estimated dep. 2:40 PM
+2:40 PM	AA4175
+Little Rock (LIT)
+American Eagle	E75L (N279MQ)
+Estimated dep. 2:40 PM
+2:44 PM	AA5833
+Lubbock (LBB)
+American Airlines	CRJ9
+Estimated dep. 2:48 PM
+2:45 PM	AA991
+New York (JFK)
+American Airlines	B738 (N989AN)
+Estimated dep. 3:01 PM
+2:45 PM	AA2640
+West Palm Beach (PBI)
+American Airlines	B738 (N995NN)
+Estimated dep. 3:01 PM
+2:45 PM	AA5827
+Tulsa (TUL)
+American Airlines	CRJ9
+Estimated dep. 3:09 PM
+2:45 PM	DL1528
+Minneapolis (MSP)
+Delta Air Lines	A319 (N338NB)
+Estimated dep. 2:45 PM
+2:46 PM	AA1523
+Las Vegas (LAS)
+American Airlines	A321 (N148AN)
+Estimated dep. 2:46 PM
+2:46 PM	AA3932
+Grand Junction (GJT)
+American Eagle	E75L (N302RN)
+Estimated dep. 3:04 PM
+2:48 PM	AA1832
+Denver (DEN)
+American Airlines	A321 (N542UW)
+Estimated dep. 3:04 PM
+2:49 PM	AA1673
+Monterrey (MTY)
+American Airlines	A320 (N124US)
+Estimated dep. 3:05 PM
+2:50 PM	AA1888
+Raleigh-Durham (RDU)
+American Airlines	B738 (N948AN)
+Estimated dep. 2:50 PM
+2:50 PM	AA3502
+Abilene (ABI)
+American Eagle	E145 (N618AE)
+Estimated dep. 3:10 PM
+2:50 PM	AA3965
+Waco (ACT)
+American Eagle	E145 (N619AE)
+Estimated dep. 3:10 PM
+2:50 PM	AA4918
+Manhattan (MHK)
+American Eagle	CRJ7 (N758SK)
+Estimated dep. 2:50 PM
+2:50 PM	AA4966
+Shreveport (SHV)
+American Eagle	CRJ7 (N709EV)
+Estimated dep. 2:50 PM
+2:50 PM	AA5014
+Killeen (GRK)
+American Eagle	CRJ7 (N710SK)
+Estimated dep. 2:50 PM
+2:50 PM	AA5846
+Amarillo (AMA)
+American Airlines	CRJ9
+Estimated dep. 3:14 PM
+2:54 PM	AA2244
+Nashville (BNA)
+American Airlines (Stand up to Cancer Livery)	A321 (N162AA)
+Estimated dep. 2:54 PM
+2:55 PM	AA1643
+Miami (MIA)
+American Airlines	A321 (N155NN)
+Estimated dep. 3:11 PM
+2:56 PM	AA1869
+Fort Lauderdale (FLL)
+American Airlines	A321 (N164NN)
+Estimated dep. 2:56 PM
+2:57 PM	AA2716
+New York (LGA)
+American Airlines	B738 (N956NN)
+Estimated dep. 2:57 PM
+2:59 PM	AA5807
+Huntsville (HSV)
+American Airlines	CRJ9
+Estimated dep. 3:23 PM
+3:00 PM	AA1678
+Austin (AUS)
+American Airlines	A319 (N826AW)
+Estimated dep. 3:00 PM
+3:00 PM	AA2490
+Orlando (MCO)
+American Airlines	A321 (N136AN)
+Estimated dep. 3:16 PM
+3:00 PM	AA2736
+Fort Myers (RSW)
+American Airlines	B738 (N851NN)
+Estimated dep. 3:16 PM
+3:00 PM	AA2969
+Phoenix (PHX)
+American Airlines	A321 (N587UW)
+Estimated dep. 3:16 PM
+3:00 PM
+Kenosha (ENW)
+-	H25B
+Estimated dep. 3:00 PM
+3:01 PM	AA941
+Albuquerque (ABQ)
+American Airlines	B738 (N929AN)
+Estimated dep. 3:17 PM
+3:03 PM	AA3275
+Durango (DRO)
+American Eagle	CRJ7 (N710EV)
+Estimated dep. 3:03 PM
+3:05 PM	AS725
+Seattle (SEA)
+Alaska Airlines	B738 (N549AS)
+Estimated dep. 3:23 PM
+3:07 PM	AA1817
+Madison (MSN)
+American Airlines	A320 (N110UW)
+Estimated dep. 3:23 PM
+3:10 PM	AA1368
+El Paso (ELP)
+American Airlines	A321 (N908AA)
+Estimated dep. 3:26 PM
+3:11 PM	DL1273
+Atlanta (ATL)
+Delta Air Lines	A321 (N321DH)
+Estimated dep. 3:13 PM
+3:13 PM	AA5880
+Sioux Falls (FSD)
+Mesa Airlines	CRJ9 (N248LR)
+Estimated dep. 3:13 PM
+3:18 PM	AA2999
+Washington (DCA)
+American Airlines	B738 (N881NN)
+Estimated dep. 3:34 PM
+3:20 PM	AA3133
+Colorado Springs (COS)
+American Eagle	CRJ7 (N765SK)
+Estimated dep. 3:20 PM
+3:21 PM	AA20
+London (LHR)
+American Airlines	B77W (N723AN)
+Estimated dep. 3:37 PM
+3:25 PM	B61214
+Boston (BOS)
+JetBlue Airways	A320 (N505JB)
+Estimated dep. 3:25 PM
+3:26 PM	AA2857
+Kansas City (MCI)
+American Airlines	B738 (N937AN)
+Estimated dep. 3:26 PM
+3:28 PM	AA2858
+St. Louis (STL)
+American Airlines	B738 (N923AN)
+Estimated dep. 3:44 PM
+3:30 PM	DL1650
+Detroit (DTW)
+Delta Air Lines	A320 (N352NW)
+Estimated dep. 3:30 PM
+3:35 PM	AA422
+Philadelphia (PHL)
+American Airlines	A321 (N167US)
+Estimated dep. 3:51 PM
+3:35 PM	AA2613
+McAllen (MFE)
+American Airlines	B738 (N859NN)
+Estimated dep. 3:51 PM
+3:38 PM	AA898
+Tampa (TPA)
+American Airlines	B738 (N958NN)
+Estimated dep. 3:54 PM
+3:40 PM	AA849
+Boston (BOS)
+American Airlines	A321 (N127AA)
+Estimated dep. 3:56 PM
+3:41 PM	AA713
+Cedar Rapids (CID)
+American Airlines	A319 (N816AW)
+Estimated dep. 3:57 PM
+3:47 PM	AA2744
+Jacksonville (JAX)
+American Airlines	B738 (N872NN)
+Estimated dep. 4:03 PM
+3:50 PM	AA2047
+Las Vegas (LAS)
+American Airlines	B738 (N933NN)
+Estimated dep. 4:06 PM
+3:50 PM	AA4157
+Jackson (JAN)
+American Eagle	E75L (N233NN)
+Estimated dep. 4:08 PM
+3:51 PM	AA446
+San Francisco (SFO)
+American Airlines	A321 (N193UW)
+Estimated dep. 4:07 PM
+3:55 PM	AF159
+Paris (CDG)
+Air France	B772
+Estimated dep. 4:08 PM
+3:56 PM	AA1733
+Milwaukee (MKE)
+American Airlines	B738 (N970AN)
+Estimated dep. 4:12 PM
+2:00 PM	AA1339
+Cincinnati (CVG)
+American Airlines	B738 (N929AN)
+Scheduled
+2:00 PM	AA2762
+New York (LGA)
+American Airlines	B738 (N851NN)
+Scheduled
+2:00 PM	AA5786
+Louisville (SDF)
+American Eagle	CRJ9 (N920FJ)
+Scheduled
+2:00 PM	AS726
+Seattle (SEA)
+Alaska Airlines	B738 (N549AS)
+Scheduled
+2:01 PM	DL1273
+Atlanta (ATL)
+Delta Air Lines	A321 (N321DH)
+Scheduled
+2:10 PM	AA1251
+Los Angeles (LAX)
+American Airlines	A321 (N127AA)
+Scheduled
+2:10 PM	DL1041
+Los Angeles (LAX)
+Delta Air Lines	A320 (N348NW)
+Scheduled
+2:12 PM	AA2593
+Minneapolis (MSP)
+American Airlines	B738 (N881NN)
+Scheduled
+2:15 PM	AA1263
+Silao (BJX)
+American Airlines	A319 (N816AW)
+Scheduled
+2:18 PM	AA4108
+Springfield (SGF)
+American Eagle	E75L (N233NN)
+Scheduled
+2:18 PM	AA4993
+Memphis (MEM)
+American Eagle	CRJ7 (N765SK)
+Scheduled
+2:18 PM	AA5787
+El Paso (ELP)
+American Airlines	CRJ9
+Scheduled
+2:20 PM	AA51
+London (LHR)
+American Airlines	B77W (N718AN)
+Scheduled
+2:20 PM	BR698
+Anchorage (ANC)
+EVA Air	B77L
+Scheduled
+2:23 PM	AA1601
+Cancun (CUN)
+American Airlines	B738 (N958NN)
+Scheduled
+2:26 PM	AA1061
+Jacksonville (JAX)
+American Airlines	B738 (N923AN)
+Scheduled
+2:27 PM	AA2986
+San Francisco (SFO)
+American Airlines	A321 (N167US)
+Scheduled
+2:28 PM	AA2786
+Kansas City (MCI)
+American Airlines	B738 (N937AN)
+Scheduled
+2:28 PM	B6215
+Boston (BOS)
+JetBlue Airways	A320 (N505JB)
+Scheduled
+2:28 PM	DL1650
+Detroit (DTW)
+Delta Air Lines	A320 (N352NW)
+Scheduled
+2:34 PM	AA3281
+Fort Wayne (FWA)
+American Airlines	CRJ7
+Scheduled
+2:35 PM	AA598
+Phoenix (PHX)
+American Airlines	A321 (N193UW)
+Scheduled
+2:35 PM	AA1463
+Chicago (ORD)
+American Airlines	B738 (N964AN)
+Scheduled
+2:35 PM	LH438
+Frankfurt (FRA)
+Lufthansa (Star Alliance Livery)	A343 (D-AIGP)
+Scheduled
+2:46 PM	AA2939
+McAllen (MFE)
+American Airlines	B738 (N872NN)
+Scheduled
+2:46 PM	AA71
+Frankfurt (FRA)
+American Airlines	B789 (N829AN)
+Scheduled
+2:47 PM	AA1143
+Los Angeles (LAX)
+American Airlines	B738 (N802NN)
+Scheduled
+2:50 PM	AA1362
+St. Louis (STL)
+American Airlines	B738 (N933NN)
+Scheduled
+2:50 PM	AA4895
+Aspen (ASE)
+American Eagle	CRJ7 (N776SK)
+Scheduled
+2:50 PM	VB684
+Monterrey (MTY)
+VivaAerobus	A320
+Scheduled
+2:51 PM	AA1174
+Guadalajara (GDL)
+American Airlines	B738 (N971AN)
+Scheduled
+2:51 PM	AA1850
+Monterrey (MTY)
+American Airlines	A319 (N765US)
+Scheduled
+2:56 PM	AA2353
+Tampa (TPA)
+American Airlines	B738 (N970AN)
+Scheduled
+2:57 PM	AA60
+Tokyo (NRT)
+American Airlines	B789 (N825AA)
+Scheduled
+2:58 PM	AA2562
+Philadelphia (PHL)
+American Airlines	A321 (N913US)
+Scheduled
+3:00 PM	AA2603
+New Orleans (MSY)
+American Airlines	A321 (N992AU)
+Scheduled
+3:00 PM	CI5254
+Atlanta (ATL)
+China Airlines	B744
+Scheduled
+3:00 PM	NK917
+New York (LGA)
+Spirit Airlines	A321 (N683NK)
+Scheduled
+3:03 PM	AA3285
+Columbia (COU)
+SkyWest Airlines	CRJ7 (N741EV)
+Scheduled
+3:03 PM	AA49
+Paris (CDG)
+American Airlines	B788 (N802AN)
+Scheduled
+3:05 PM	NK972
+Phoenix (PHX)
+Spirit Airlines	A320 (N692NK)
+Scheduled
+3:07 PM	AA1304
+San Jose del Cabo (SJD)
+American Airlines	A321 (N557UW)
+Scheduled
+3:08 PM	AA4939
+Wichita Falls (SPS)
+American Eagle	CRJ7 (N716EV)
+Scheduled
+3:08 PM	AA353
+Puerto Vallarta (PVR)
+American Airlines	B738 (N927NN)
+Scheduled
+3:09 PM	AA1068
+Cancun (CUN)
+American Airlines	B788 (N810AN)
+Scheduled
+3:10 PM	AA2467
+Des Moines (DSM)
+American Airlines	A319 (N772XF)
+Scheduled
+3:10 PM	AY19
+Helsinki (HEL)
+Finnair	A359 (OH-LWM)
+Scheduled
+3:11 PM	AA5749
+Grand Junction (GJT)
+American Airlines	CRJ9
+Scheduled
+3:12 PM	AA5819
+Jackson (JAN)
+American Airlines	CRJ9
+Scheduled
+3:12 PM	AA4936
+Chihuahua (CUU)
+American Eagle	CRJ7 (N702SK)
+Scheduled
+3:13 PM	DL925
+New York (LGA)
+Delta Air Lines	BCS1 (N120DU)
+Scheduled
+3:14 PM	UA1928
+Washington (IAD)
+United Airlines	B737 (N25705)
+Scheduled
+3:19 PM	AC8977
+Toronto (YYZ)
+Air Canada Express	E75S (C-FEKJ)
+Scheduled
+3:20 PM	F9502
+Denver (DEN)
+Frontier (Grizwald the Grizzly Bear Livery)	A320 (N211FR)
+Scheduled
+3:20 PM	AA9782
+Boston (BOS)
+American Airlines	A319 (N802AW)
+Scheduled
+3:22 PM	AA2667
+Pittsburgh (PIT)
+American Airlines	A320 (N650AW)
+Scheduled
+3:23 PM	AA390
+Mexico City (MEX)
+American Airlines	B738 (N929NN)
+Scheduled
+3:25 PM	BA193
+London (LHR)
+British Airways	A388
+Scheduled
+3:28 PM	AA2665
+San Francisco (SFO)
+American Airlines	A321 (N126AN)
+Scheduled
+3:33 PM	AA825
+Charlotte (CLT)
+American Airlines	A321 (N156UW)
+Scheduled
+3:34 PM	AA1435
+New York (LGA)
+American Airlines	B738 (N993NN)
+Scheduled
+3:35 PM	AA1672
+Orlando (MCO)
+American Airlines	A321 (N931AM)
+Scheduled
+3:35 PM	AA3150
+Flagstaff (FLG)
+American Eagle	CRJ7 (N630SK)
+Scheduled
+3:35 PM	AA3409
+Mobile (MOB)
+American Eagle	E75L (N204NN)
+Scheduled
+3:35 PM	CI5255
+Atlanta (ATL)
+China Airlines	B744
+Scheduled
+3:35 PM	QR729
+Doha (DOH)
+Qatar Airways	A35K (A7-ANJ)
+Scheduled
+3:37 PM	AA1670
+Albuquerque (ABQ)
+American Airlines	B738 (N316PF)
+Scheduled
+3:38 PM	NK361
+Las Vegas (LAS)
+Spirit Airlines	A20N (N941NK)
+Scheduled
+3:39 PM	AA2846
+Salt Lake City (SLC)
+American Airlines	A321 (N534UW)
+Scheduled
+3:40 PM	AA1279
+Columbus (CMH)
+American Airlines	A320 (N680AW)
+Scheduled
+3:40 PM	AA5769
+Huntsville (HSV)
+American Airlines	CRJ9
+Scheduled
+3:41 PM	AA4139
+Chattanooga (CHA)
+American Eagle	E75L (N237NN)
+Scheduled
+3:41 PM	AA1260
+Cleveland (CLE)
+American Airlines	B738 (N996NN)
+Scheduled
+3:41 PM	AA2683
+Raleigh-Durham (RDU)
+American Airlines	B738 (N827NN)
+Scheduled
+3:43 PM	AA2946
+Omaha (OMA)
+American Airlines	B738 (N927AN)
+Scheduled
+3:43 PM	AA4043
+Lexington (LEX)
+American Eagle	E75L (N223NN)
+Scheduled
+3:43 PM	AA2374
+Detroit (DTW)
+American Airlines	B738 (N877NN)
+Scheduled
+3:44 PM	AA1005
+Los Angeles (LAX)
+American Airlines	A21N (N405AN)
+Scheduled
+3:44 PM	AA1584
+Las Vegas (LAS)
+American Airlines	A321 (N157AA)
+Scheduled
+3:44 PM	AA4915
+Stillwater (SWO)
+American Eagle	CRJ7 (N774SK)
+Scheduled
+3:45 PM	AA2743
+San Diego (SAN)
+American Airlines	A321 (N991AU)
+Scheduled
+3:45 PM	AA3124
+Fort Smith (FSM)
+American Eagle	CRJ7 (N753SK)
+Scheduled
+3:45 PM	AA3396
+Cedar Rapids (CID)
+American Eagle	E75L (N252NN)
+Scheduled
+3:46 PM	AA1993
+Toronto (YYZ)
+American Airlines	A319 (N753US)
+Scheduled
+3:46 PM	AA3766
+Madison (MSN)
+American Eagle	E75L (N276NN)
+Scheduled
+3:46 PM	Y4892
+Guadalajara (GDL)
+Volaris	A320 (XA-VLF)
+Scheduled
+3:47 PM	AA1735
+Milwaukee (MKE)
+American Airlines	A319 (N829AW)
+Scheduled
+3:48 PM	AA5733
+Little Rock (LIT)
+American Airlines	CRJ9
+Scheduled
+3:49 PM	AA868
+Oklahoma City (OKC)
+American Airlines	A321 (N121AN)
+Scheduled
+3:49 PM	AA2114
+Santa Ana (SNA)
+American Airlines	B738 (N946NN)
+Scheduled
+3:50 PM	AA1676
+Washington (DCA)
+American Airlines	B738 (N960AN)
+Scheduled
+3:50 PM	AA3411
+Rapid City (RAP)
+American Eagle	E75L (N247NN)
+Scheduled
+3:50 PM	AA1932
+San Luis Potosi (SLP)
+American Airlines	A319 (N771XF)
+Scheduled
+3:50 PM	AA2673
+Palm Springs (PSP)
+American Airlines	B738 (N805NN)
+Scheduled
+3:52 PM	AA3537
+Dayton (DAY)
+American Eagle	E75L (N293NN)
+Scheduled
+3:53 PM	AA980
+Atlanta (ATL)
+American Airlines	A321 (N545UW)
+Scheduled
+3:53 PM	AA2579
+Denver (DEN)
+American Airlines	A321 (N153AN)
+Scheduled
+3:53 PM	NK868
+Los Angeles (LAX)
+Spirit Airlines	A320 (N646NK)
+Scheduled
+3:54 PM	AA1189
+Nashville (BNA)
+American Airlines	A321 (N930AU)
+Scheduled
+3:54 PM	AA1429
+Fort Lauderdale (FLL)
+American Airlines	B738 (N834NN)
+Scheduled
+3:54 PM	AA2444
+Houston (IAH)
+American Airlines	A321 (N163AA)
+Scheduled
+3:54 PM	AA2598
+Eagle (EGE)
+American Airlines	A319 (N9021H)
+Scheduled
+3:55 PM	AA665
+Montrose (MTJ)
+American Airlines	A319 (N804AW)
+Scheduled
+3:55 PM	AA1716
+Durango (DGO)
+American Airlines	A319 (N9004F)
+Scheduled
+3:55 PM	AA1753
+Miami (MIA)
+American Airlines	A321 (N579UW)
+Scheduled
+3:55 PM	AA1820
+Ontario (ONT)
+American Airlines	A321 (N988AL)
+Scheduled
+3:55 PM	AA1967
+San Antonio (SAT)
+American Airlines	A21N (N437AN)
+Scheduled
+3:55 PM	AA2297
+Boston (BOS)
+American Airlines	B738 (N855NN)
+Scheduled
+3:55 PM	AA2927
+Tucson (TUS)
+American Airlines	A321 (N910AU)
+Scheduled
+3:55 PM	AA3163
+Corpus Christi (CRP)
+American Eagle	CRJ7 (N765SK)
+Scheduled
+3:55 PM	AA3829
+Bentonville (XNA)
+American Eagle	E75L (N263NN)
+Scheduled
+3:55 PM	AA4165
+Baton Rouge (BTR)
+American Eagle	E75L (N210NN)
+Scheduled
+3:55 PM	AA5771
+Louisville (SDF)
+American Airlines	CRJ9
+Scheduled
+3:57 PM	AA5808
+Wichita (ICT)
+American Airlines	CRJ9
+Scheduled

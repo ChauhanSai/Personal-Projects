@@ -1,0 +1,11 @@
+<div id="choice" class="color" style="background-color: #0a1928;" ><a style="color: #4fcdb9;" onclick="choice('astral')">astral</a></div> 
+<div id="choice" class="color" style="background-color: #f37f83;" ><a style="color: #fcfcf8;" onclick="choice('berry')">berry</a></div> 
+<div id="choice" class="color" style="background-color: #1b3238;" ><a style="color: #6bde3b;" onclick="choice('charm')">charm</a></div> 
+<div id="choice" class="color" style="background-color: #0e0506;" ><a style="color: #ff3a32;" onclick="choice('eclipse')">eclipse</a></div> 
+<div id="choice" class="color" style="background-color: #786e96;" ><a style="color: #e4e3e9;" onclick="choice('lavender')">lavender</a></div> 
+<div id="choice" class="color" style="background-color: #323437;" ><a style="color: #e2b714;" onclick="choice('monkey')">monkey</a></div> 
+<div id="choice" class="color" style="background-color: #1e1e1e;" ><a style="color: #007acc;" onclick="choice('vscode')">vscode</a></div> 
+<div id="choice" class="airln" style="background-color: #dfe4e8;" ><a style="color: #eb2023;" onclick="choice('aal')">aal</a></div> 
+<div id="choice" class="airln" style="background-color: #c8dee1;" ><a style="color: #b9082c;" onclick="choice('aca')">aca</a></div> 
+<div id="choice" class="airln" style="background-color: #003268;" ><a style="color: #df0e39;" onclick="choice('dal')">dal</a></div> 
+<div id="choice" class="airln" style="background-color: #b4d2ee;" ><a style="color: #152c40;" onclick="choice('jbu')">jbu</a></div> 
