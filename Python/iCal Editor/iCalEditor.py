@@ -117,7 +117,7 @@ def createEventDay(file, date, summary, description, location, repeat):
 
 def canvas(url, newName):
     code = 0
-    fileName = "C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\#Hidden\\iCal Editor\\"
+    fileName = "C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\iCal Editor\\"
     fileName += url[url.rindex('/') + 1:]
     r = requests.get(url, allow_redirects=True)
     open(fileName, 'wb').write(r.content)
@@ -262,11 +262,11 @@ def drop(file, path):
 
 
 if __name__ == '__main__':
-    start('C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\#Hidden\\iCal Editor\\canvas.ics') 
-    loadJson('C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\#Hidden\\iCal Editor\\canvas.ics')
-    end('C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\#Hidden\\iCal Editor\\canvas.ics')
-    drop('C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\#Hidden\\iCal Editor\\canvas.ics',
+    start('C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\iCal Editor\\canvas.ics') 
+    loadJson('C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\iCal Editor\\canvas.ics')
+    end('C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\iCal Editor\\canvas.ics')
+    drop('C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\iCal Editor\\canvas.ics',
          '/canvas.ics')  
     # commit('Update canvas.ics',
-    #        'C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\#Hidden\\iCal Editor\\canvas.ics',
+    #        'C:\\Users\\chauh\\Desktop\\Development\\Scripts\\Python\\iCal Editor\\canvas.ics',
     #        '/calendar/canvas.ics')  
