@@ -1,3 +1,14 @@
+# MacOS
+*.DS_Store
+
+# JetBrains
+.idea/
+
+
+# Visual Studio Code
+.vscode/
+
+
 */#Hidden/*
 files/img0_3840x2160.jpg
 
