@@ -35,7 +35,3 @@ Python/*/dist/*
 Python/stockMarketGame/*.csv
 Python/stockMarketGame/*.html
 Python/stockMarketGame/*.png
-
-# WIP Projects
-Python/textureMatrix/*/*
-Python/craftingVisuals/*/*
