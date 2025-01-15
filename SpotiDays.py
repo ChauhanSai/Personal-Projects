@@ -1,8 +1,11 @@
+from tracemalloc import Traceback
+
 from dotenv import load_dotenv
-from datetime import datetime, timedelta, date, time
+from datetime import datetime, timedelta, timezone
 import requests
 import os
 from json import loads
+import random
 
 # Load the .env file
 load_dotenv()
@@ -32,53 +35,128 @@ spotifyHeaders = {
 
 dataExistingTracks = []
 dataRecentTracks = {}
+dataTrackQueue = []
 
 userPlaylistHistory = loads(requests.get(
     'https://api.spotify.com/v1/users/' + SPOTIFY_CLIENT_USERNAME + '/playlists',
     headers=spotifyHeaders).text)
 
 # Find Playlist
+playlistFound = False
 for item in userPlaylistHistory['items']:
     if item['description'] == SPOTIFY_CLIENT_SECRET:
         dataTrackId = item['id']
         dataYear = item['name'][item['name'].find("202"):item['name'].find("202") + 4]
         print("Found Year", dataYear)
+        playlistFound = True
 
         print(item['tracks']['total'], "tracks added")
 
         # Get Existing Tracks
-        trackHistory = loads(requests.get(
-            item['tracks']['href'],
-            headers=spotifyHeaders).text)
-        for track in trackHistory['items']:
-            dataExistingTracks.append(track['track']['name'])
+        trackHistoryUrl = item['tracks']['href'] + '?limit=100'
+        trackHistory = loads(requests.get(trackHistoryUrl, headers=spotifyHeaders).text)
+
+        while True:
+            # print(trackHistory)
+            for track in trackHistory['items']:
+                dataExistingTracks.append(track['track']['name'].lower())
+            if trackHistory['next']:
+                trackHistoryUrl = trackHistory['next']
+                trackHistory = loads(requests.get(trackHistoryUrl, headers=spotifyHeaders).text)
+            else:
+                break
 
         # Calculate Start Date
-        dateStart = datetime.strptime(dataYear, "%Y") + timedelta(days=item['tracks']['total'])
+        dateStart = datetime.strptime(dataYear, "%Y") + timedelta(days=item['tracks']['total'] + 1)
         dateEnd = datetime.strptime(dataYear + "1231", "%Y%m%d") + timedelta(days=1)
+        if dateEnd > datetime.now():
+            dateEnd = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
         print("Starting from", dateStart.strftime("%B %-d, %Y"))
+        print("Until", dateEnd.strftime("%B %-d, %Y"))
 
-        print(dataExistingTracks)
+        # print(dataExistingTracks)
         break
 
-userListeningHistoryCount = 1
-userListeningHistoryUrl = f'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user={LASTFM_USERNAME}&api_key={LASTFM_API_KEY}&format=json&limit=200&from={str(int(dateStart.timestamp()))}&to={str(int(dateEnd.timestamp()))}&page='
-userListeningHistory = loads(requests.get(userListeningHistoryUrl + str(userListeningHistoryCount)).text)
+if not playlistFound:
+    print("\nError\n\tYear not found, please make a playlist")
+    print("\n\tSecret: " + SPOTIFY_CLIENT_SECRET)
 
-while len(userListeningHistory['recenttracks']['track']) > 0:
-    print(userListeningHistoryUrl + str(userListeningHistoryCount))
-    for track in userListeningHistory['recenttracks']['track']:
-        print(track['date']['#text'])
-        print(track['name'])
-        if not track['name'] in dataExistingTracks:
+try:
+    retry = False
+    dateCurrent = dateStart
+    while dateCurrent < dateEnd:
+        userListeningHistoryPage = 1
+        userListeningHistoryUrl = f'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user={LASTFM_USERNAME}&api_key={LASTFM_API_KEY}&format=json&limit=200&from={str(int(dateCurrent.astimezone(timezone.utc).timestamp()))}&to={str(int((dateCurrent + timedelta(days = 1)).astimezone(timezone.utc).timestamp()))}&page='
+        userListeningHistory = loads(requests.get(userListeningHistoryUrl + str(userListeningHistoryPage)).text)
+
+        if len(userListeningHistory['recenttracks']['track']) == 0 or retry:
+            i = 1
+            while len(userListeningHistory['recenttracks']['track']) == 0 or retry:
+                retry = False
+                userListeningHistoryUrl = f'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user={LASTFM_USERNAME}&api_key={LASTFM_API_KEY}&format=json&limit=200&from={str(int((dateCurrent + timedelta(days = i)).astimezone(timezone.utc).timestamp()))}&to={str(int((dateCurrent + timedelta(days = 1 + i)).astimezone(timezone.utc).timestamp()))}&page='
+                userListeningHistory = loads(requests.get(userListeningHistoryUrl + str(userListeningHistoryPage)).text)
+                i += 1
+            print(dateCurrent + timedelta(days = i - 1))
+
+        while len(userListeningHistory['recenttracks']['track']) > 0:
+            # print(userListeningHistoryUrl + str(userListeningHistoryPage))
+            for track in userListeningHistory['recenttracks']['track']:
+                # print(track['date']['#text'])
+                # print(track['name'])
+                if not track['name'].lower() in dataExistingTracks:
+                    try:
+                        dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")][track['name']] = dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")].get(track['name']) + 1
+                    except TypeError:
+                        dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")][track['name']] = 1
+                    except KeyError:
+                        dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")] = {}
+                        dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")][track['name']] = 1
+            userListeningHistoryPage += 1
+            userListeningHistory = loads(requests.get(userListeningHistoryUrl + str(userListeningHistoryPage)).text)
+
+        if len(dataRecentTracks) == 0:
+            retry = True
+            continue
+
+        print("Top tracks on", dateCurrent.strftime("%B %-d, %Y"))
+        dataRecentTrackMax = max(list(dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")].values()))
+        dataPossibleTracks = []
+        i = 1
+        for track in dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")]:
+            if dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")][track] == dataRecentTrackMax:
+                dataPossibleTracks.append(track)
+                print(str(i) + ":", track)
+                i += 1
+
+        if len(dataPossibleTracks) > 1:
+            selection = input("What track should I add? ")
+            if "track_queue" in selection: # Debug option
+                print(dataTrackQueue)
+                selection = input("What track should I add? ")
+            elif "existing_tracks" in selection: # Debug option
+                print(dataExistingTracks)
+                selection = input("What track should I add? ")
             try:
-                dataRecentTracks[track['date']['#text'][:11]][track['name']] = dataRecentTracks[track['date']['#text'][:11]].get(track['name']) + 1
-            except TypeError:
-                dataRecentTracks[track['date']['#text'][:11]][track['name']] = 1
-            except KeyError:
-                dataRecentTracks[track['date']['#text'][:11]] = {}
-                dataRecentTracks[track['date']['#text'][:11]][track['name']] = 1
-    userListeningHistoryCount += 1
-    userListeningHistory = loads(requests.get(userListeningHistoryUrl + str(userListeningHistoryCount)).text)
+                dataTrackQueue.append(dataPossibleTracks[int(selection) - 1])
+            except ValueError:
+                dataTrackQueue.append(random.choice(dataPossibleTracks))
+                print(dataTrackQueue[len(dataTrackQueue) - 1])
+        else:
+            dataTrackQueue.append(dataPossibleTracks[0])
+        dataExistingTracks.append((dataTrackQueue[len(dataTrackQueue) - 1]).lower())
+        print()
 
-print(dataRecentTracks)
+        dateCurrent = dateCurrent + timedelta(days=1)
+        dataRecentTracks = {}
+except:
+    print("\nError\n\t", dateCurrent.strftime("%B %-d, %Y"))
+    print(userListeningHistory)
+    print(dataTrackQueue)
+    print()
+
+if len(dataTrackQueue) > 0:
+    print("Tracks to add: ")
+    for track in dataTrackQueue:
+        print(track)
+
+print(dataYear, "complete")
