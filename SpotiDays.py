@@ -6,6 +6,7 @@ import requests
 import os
 from json import loads
 import random
+from sys import exit
 
 # Load the .env file
 load_dotenv()
@@ -43,6 +44,7 @@ userPlaylistHistory = loads(requests.get(
 
 # Find Playlist
 playlistFound = False
+status = 0
 for item in userPlaylistHistory['items']:
     if item['description'] == SPOTIFY_CLIENT_SECRET:
         dataTrackId = item['id']
@@ -70,7 +72,7 @@ for item in userPlaylistHistory['items']:
         dateStart = datetime.strptime(dataYear, "%Y") + timedelta(days=item['tracks']['total'] + 1)
         dateEnd = datetime.strptime(dataYear + "1231", "%Y%m%d") + timedelta(days=1)
         if dateEnd > datetime.now():
-            dateEnd = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
+            dateEnd = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
         print("Starting from", dateStart.strftime("%B %-d, %Y"))
         print("Until", dateEnd.strftime("%B %-d, %Y"))
 
@@ -80,6 +82,7 @@ for item in userPlaylistHistory['items']:
 if not playlistFound:
     print("\nError\n\tYear not found, please make a playlist")
     print("\n\tSecret: " + SPOTIFY_CLIENT_SECRET)
+    exit(30)
 
 try:
     retry = False
@@ -153,6 +156,7 @@ except:
     print(userListeningHistory)
     print(dataTrackQueue)
     print()
+    status = 50
 
 if len(dataTrackQueue) > 0:
     print("Tracks to add: ")
@@ -160,3 +164,4 @@ if len(dataTrackQueue) > 0:
         print(track)
 
 print(dataYear, "complete")
+exit(status)
