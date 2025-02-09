@@ -1,10 +1,6 @@
 # MacOS
 *.DS_Store
 
-# JetBrains
-.idea/
-
-
 # Visual Studio Code
 .vscode/
 
@@ -23,7 +19,6 @@ files/img0_3840x2160.jpg
 HTML/flightBot/flightBotThemes/themes
 
 # Java
-Java/.idea/*
 Java/out/production/*
 
 # Python
