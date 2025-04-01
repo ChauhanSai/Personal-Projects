@@ -34,10 +34,13 @@ for column in ['Gender']:
 
 # Separate features and target
 X = data.drop('Level', axis=1)
-y = data['Level']
 
-# Encode target variable
-y = LabelEncoder().fit_transform(y)
+# Encode target variable with custom mapping
+level_mapping = {'Low': 0, 'Medium': 1, 'High': 2}  # Updated mapping to start from 0
+y = data['Level'].map(level_mapping)
+
+# Print the mapping for reference
+print("Level Mapping:", level_mapping)
 
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -61,7 +64,7 @@ def create_transformer_model(input_dim):
     x = layers.Flatten()(attention_output)
     x = layers.LayerNormalization()(x)  # Normalize after attention
     x = layers.Dense(DENSE_LAYER_2_UNITS, activation='relu')(x)
-    outputs = layers.Dense(1, activation='sigmoid')(x)
+    outputs = layers.Dense(3, activation='softmax')(x)  # Updated to softmax for multi-class classification
     model = Model(inputs, outputs)
     return model
 
@@ -70,7 +73,7 @@ input_dim = X_train.shape[1]
 model = create_transformer_model(input_dim)
 
 # Compile the model
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])  # Updated loss for multi-class classification
 
 # Train the model
 history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=EPOCHS, batch_size=BATCH_SIZE)
@@ -80,14 +83,16 @@ loss, accuracy = model.evaluate(X_test, y_test)
 print(f"Test Accuracy: {accuracy:.2f}")
 
 # Generate predictions
-y_pred = (model.predict(X_test) > 0.5).astype("int32")
+y_pred = model.predict(X_test)
+y_pred = np.argmax(y_pred, axis=1)  # No need to add 1, as labels are already in the range [0, 2]
 
 # Classification report and confusion matrix
 print("Classification Report:")
-print(classification_report(y_test, y_pred, zero_division=0))  # Handle undefined metrics
+print(classification_report(y_test, y_pred, target_names=['Low', 'Medium', 'High'], zero_division=0))
 
 print("Confusion Matrix:")
-print(confusion_matrix(y_test, y_pred))
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
 
 # Plot confusion matrix
 def plot_confusion_matrix(cm, class_names):
@@ -99,6 +104,5 @@ def plot_confusion_matrix(cm, class_names):
     plt.show()
 
 # Generate and plot confusion matrix
-cm = confusion_matrix(y_test, y_pred)
-class_names = ['Class 0', 'Class 1']  # Replace with actual class names if available
+class_names = ['Low', 'Medium', 'High']  # Updated class names
 plot_confusion_matrix(cm, class_names)
