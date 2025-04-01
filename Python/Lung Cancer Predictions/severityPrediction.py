@@ -8,6 +8,7 @@ from tensorflow.keras.models import Model
 from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
+import joblib  # For saving the scaler
 
 # Global variables for model configuration
 NUM_HEADS = 4  # Number of attention heads
@@ -50,6 +51,9 @@ scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
+# Save the fitted scaler
+joblib.dump(scaler, 'model/severityScaler.pkl')
+
 # Transformer model
 def create_transformer_model(input_dim):
     inputs = layers.Input(shape=(input_dim,))
@@ -77,6 +81,9 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 
 # Train the model
 history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=EPOCHS, batch_size=BATCH_SIZE)
+
+# Save the model
+model.save('model/severityModel.h5')
 
 # Evaluate the model
 loss, accuracy = model.evaluate(X_test, y_test)
