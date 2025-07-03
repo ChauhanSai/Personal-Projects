@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
     kml.write('\n\t<Placemark id="02bdda12">\n\t\t<name>flight</name>\n\t\t<description>')
 
-    airplane = ifc.get_state_by_name('aircraft/0/livery')
+    airplane = ifc.get_state_by_name('aircraft/0/name')
     kml.write('Aircraft: ')
     kml.write(airplane)
 
