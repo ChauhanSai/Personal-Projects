@@ -7,7 +7,12 @@ import tkinter as tk
 from datetime import datetime
 
 import pytz
-from IFConnectOld import *
+import ifcclient
+
+print("Listening for Infinite Flight broadcasts")
+devices = ifcclient.IFCClient.discover_devices(duration=0)
+ifc = ifcclient.IFCClient.connect(devices[0], version=2)  # Version is 2 by default
+print("Connected to Infinite Flight")
 
 # Set-up the window
 window = tk.Tk()
@@ -57,14 +62,10 @@ arrAirportLabel = tk.Label(master=arrAirportFrame, text="Arrival ICAO", width=15
 arrAirportLabel.pack(side=tk.RIGHT)
 
 
-def loc():
-    state = send_command("airplane.getstate", [], await_response=True)
-    print()
-    state = json.loads(state)['Location']
-
-    altitude = state['Altitude'] / 17.4638
-    latitude = state['Latitude']
-    longitude = state['Longitude']
+def loc(ifc):
+    altitude = ifc.get_state_by_name('aircraft/0/altitude_msl')
+    latitude = ifc.get_state_by_name('aircraft/0/latitude')
+    longitude = ifc.get_state_by_name('aircraft/0/longitude')
 
     return [altitude, latitude, longitude]
 
@@ -113,18 +114,17 @@ def record():
     airport1 = depAirportEntry.get()
     kml.write('\n\t<Placemark id="b639b753">\n\t\t<name>')
     kml.write(airport1)
-    kml.write('</name>\n\t\t<Point>\n\t\t\t<coordinates>')
-    airport1Loc = loc()
-    kml.write(str(airport1Loc[2]))  ##Longitude
+    kml.write('</name>\n\t\t<Point>\n\t\t\t<altitudeMode>clampToGround</altitudeMode>\n\t\t\t<coordinates>')
+    airport1Loc = loc(ifc)
+    kml.write(str(airport1Loc[2]))  # Longitude
     kml.write(',')
-    kml.write(str(airport1Loc[1]))  ##Latitude
+    kml.write(str(airport1Loc[1]))  # Latitude
     kml.write(',0')
     kml.write('</coordinates>\n\t\t</Point>\n\t</Placemark>')
 
     kml.write('\n\t<Placemark id="02bdda12">\n\t\t<name>flight</name>\n\t\t<description>')
 
-    airplane = send_command("airplane.getinfo", [], await_response=True)
-    airplane = json.loads(airplane)['Name']
+    airplane = ifc.get_state_by_name('aircraft/0/name')
     kml.write('Aircraft: ')
     kml.write(airplane)
     aircraftLabel['text'] += airplane
@@ -143,7 +143,7 @@ def record():
         kml.write(datetime.now(tz).strftime("%H:%M:%S"))
         kml.write('Z</when>')
 
-        temp = loc()
+        temp = loc(ifc)
         coords = str(round(temp[2], 5))
         coords += ', '
         coords += str(round(temp[1], 5))
@@ -152,11 +152,11 @@ def record():
         posLabel['text'] = 'Coords: '
         posLabel['text'] += coords
         kml.write('\n\t\t\t<gx:coord>')
-        kml.write(str(temp[2]))
+        kml.write(str(temp[2]))  # Longitude
         kml.write(' ')
-        kml.write(str(temp[1]))
+        kml.write(str(temp[1]))  # Latitude
         kml.write(' ')
-        kml.write(str(temp[0] / 3.281))
+        kml.write(str(temp[0] / 3.281))  # Altitude, convert feet to meter
         kml.write('</gx:coord>')
         window.update()
         time.sleep(interval - ((time.time() - timeStart) % interval))
@@ -171,11 +171,11 @@ def stop():
     airport2 = arrAirportEntry.get()
     kml.write('\n\t<Placemark id="58adb2d1">\n\t\t<name>')
     kml.write(airport2)
-    kml.write('</name>\n\t\t<Point>\n\t\t\t<coordinates>')
-    airport2Loc = loc()
-    kml.write(str(airport2Loc[2]))  ##Longitude
+    kml.write('</name>\n\t\t<Point>\n\t\t\t<altitudeMode>clampToGround</altitudeMode>\n\t\t\t<coordinates>')
+    airport2Loc = loc(ifc)
+    kml.write(str(airport2Loc[2]))  # Longitude
     kml.write(',')
-    kml.write(str(airport2Loc[1]))  ##Latitude
+    kml.write(str(airport2Loc[1]))  # Latitude
     kml.write(',0')
     kml.write('</coordinates>\n\t\t</Point>\n\t</Placemark>')
 

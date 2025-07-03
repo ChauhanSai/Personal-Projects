@@ -3,22 +3,29 @@ from datetime import datetime
 
 import keyboard
 import pytz
-from IFConnectOld import *
+import ifcclient
 
+DEBUG = True
 
-def loc():
-    state = send_command("airplane.getstate", [], await_response=True)
-    print()
-    state = json.loads(state)['Location']
+def loc(ifc):
+    altitude = ifc.get_state_by_name('aircraft/0/altitude_msl')
+    latitude = ifc.get_state_by_name('aircraft/0/latitude')
+    longitude = ifc.get_state_by_name('aircraft/0/longitude')
 
-    altitude = state['Altitude'] / 17.4638
-    latitude = state['Latitude']
-    longitude = state['Longitude']
+    if DEBUG:
+        print('Altitude:', altitude, ', Latitude:', latitude, ', Longitude:', longitude)
 
     return [altitude, latitude, longitude]
 
-
 if __name__ == '__main__':
+    print("Listening for Infinite Flight broadcasts")
+    devices = ifcclient.IFCClient.discover_devices(duration=0)
+    ifc = ifcclient.IFCClient.connect(devices[0], version=2)  # Version is 2 by default
+    print("Connected to Infinite Flight")
+
+    if DEBUG:
+        manifest = ifc.dump_manifest()
+
     breakLetter = " "
     dateStart = datetime.now().strftime("%m/%d/%y")
     fileTime = datetime.now().strftime("%y%m%d %H.%M.%Sz")
@@ -29,8 +36,11 @@ if __name__ == '__main__':
     kml.write(dateStart)
     kml.write('</name>')
 
-    timeBreak = ''
-    timeBreak = float(input('How often do you want to send/receive data(seconds): '))
+    try:
+        timeBreak = float(input('How often do you want to send/receive data(seconds): '))
+    except ValueError:
+        print('Invalid input, defaulting to 1 second')
+        timeBreak = 1.0
     if timeBreak <= 0.0:
         timeBreak = 1.0
 
@@ -40,18 +50,17 @@ if __name__ == '__main__':
     print('Press "', breakLetter, '" to end flight')
     kml.write('\n\t<Placemark id="b639b753">\n\t\t<name>')
     kml.write(airport1)
-    kml.write('</name>\n\t\t<Point>\n\t\t\t<coordinates>')
-    airport1Loc = loc()
-    kml.write(str(airport1Loc[2]))  ##Longitude
+    kml.write('</name>\n\t\t<Point>\n\t\t\t<altitudeMode>clampToGround</altitudeMode>\n\t\t\t<coordinates>')
+    airport1Loc = loc(ifc)
+    kml.write(str(airport1Loc[2]))  # Longitude
     kml.write(',')
-    kml.write(str(airport1Loc[1]))  ##Latitude
+    kml.write(str(airport1Loc[1]))  # Latitude
     kml.write(',0')
     kml.write('</coordinates>\n\t\t</Point>\n\t</Placemark>')
 
     kml.write('\n\t<Placemark id="02bdda12">\n\t\t<name>flight</name>\n\t\t<description>')
 
-    airplane = send_command("airplane.getinfo", [], await_response=True)
-    airplane = json.loads(airplane)['Name']
+    airplane = ifc.get_state_by_name('aircraft/0/livery')
     kml.write('Aircraft: ')
     kml.write(airplane)
 
@@ -63,50 +72,42 @@ if __name__ == '__main__':
     tz = pytz.timezone('UTC')
 
     while True:
-        if keyboard.is_pressed(breakLetter): break
-        kml.write('\n\t\t\t<when>')
-        if keyboard.is_pressed(breakLetter): break
-        kml.write(datetime.now().strftime("%Y-%m-%d"))
-        if keyboard.is_pressed(breakLetter): break
-        kml.write('T')
-        if keyboard.is_pressed(breakLetter): break
-        kml.write(datetime.now(tz).strftime("%H:%M:%S"))
-        if keyboard.is_pressed(breakLetter): break
-        kml.write('Z</when>')
-        if keyboard.is_pressed(breakLetter): break
+        try:
+            if keyboard.is_pressed(breakLetter):
+                break
 
-        temp = loc()
-        if keyboard.is_pressed(breakLetter): break
-        kml.write('\n\t\t\t<gx:coord>')
-        if keyboard.is_pressed(breakLetter): break
-        kml.write(str(temp[2]))
-        if keyboard.is_pressed(breakLetter): break
-        kml.write(' ')
-        if keyboard.is_pressed(breakLetter): break
-        kml.write(str(temp[1]))
-        if keyboard.is_pressed(breakLetter): break
-        kml.write(' ')
-        if keyboard.is_pressed(breakLetter): break
-        kml.write(str(temp[0] / 3.281))
-        if keyboard.is_pressed(breakLetter): break
-        kml.write('</gx:coord>')
-        if keyboard.is_pressed(breakLetter): break
-        print('Press "', breakLetter, '" to end flight')
-        if keyboard.is_pressed(breakLetter): break
-        time.sleep(timeBreak - ((time.time() - timeStart) % timeBreak))
-        if keyboard.is_pressed(breakLetter): break
+            kml.write('\n\t\t\t<when>')
+            kml.write(datetime.now().strftime("%Y-%m-%d"))
+            kml.write('T')
+            kml.write(datetime.now(tz).strftime("%H:%M:%S"))
+            kml.write('Z</when>')
 
-    ##Run when finished
+            temp = loc(ifc)
+            kml.write('\n\t\t\t<gx:coord>')
+            kml.write(str(temp[2])) # Longitude
+            kml.write(' ')
+            kml.write(str(temp[1])) # Latitude
+            kml.write(' ')
+            kml.write(str(temp[0] / 3.281)) # Altitude, convert feet to meter
+            kml.write('</gx:coord>')
+
+            print(f"Press '{breakLetter}' to end flight")
+            time.sleep(timeBreak - ((time.time() - timeStart) % timeBreak))
+        except KeyboardInterrupt:
+            print('\nFlight recording interrupted by user.')
+            break
+
+    # Run when finished
     kml.write('\n\t\t</gx:Track>\n\t</Placemark>')
     airport2 = input('\n\nInbound Airport(Enter when parked): ')
     airport2 = airport2.replace(breakLetter, "")
     kml.write('\n\t<Placemark id="58adb2d1">\n\t\t<name>')
     kml.write(airport2)
-    kml.write('</name>\n\t\t<Point>\n\t\t\t<coordinates>')
-    airport2Loc = loc()
-    kml.write(str(airport2Loc[2]))  ##Longitude
+    kml.write('</name>\n\t\t<Point>\n\t\t\t<altitudeMode>clampToGround</altitudeMode>\n\t\t\t<coordinates>')
+    airport2Loc = loc(ifc)
+    kml.write(str(airport2Loc[2]))  # Longitude
     kml.write(',')
-    kml.write(str(airport2Loc[1]))  ##Latitude
+    kml.write(str(airport2Loc[1]))  # Latitude
     kml.write(',0')
     kml.write('</coordinates>\n\t\t</Point>\n\t</Placemark>')
 
@@ -119,4 +120,4 @@ if __name__ == '__main__':
     kml.write('\n</Document>\n</kml>')
     kml.close()
 
-    print('\n\n', fileName, ' sucessfully recorded')
+    print('\n\n', fileName, ' successfully recorded')
