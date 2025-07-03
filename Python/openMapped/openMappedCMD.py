@@ -4,7 +4,7 @@ import folium
 from os import listdir
 from os.path import isfile, join
 
-mm = folium.Map(zoom_start=15, tiles="Stamen Terrain")
+mm = folium.Map(zoom_start=15, tiles="Stamen Terrain", attr="Map tiles by Stamen Design, CC BY 3.0 — Map data © OpenStreetMap contributors")
 folium.TileLayer(
     tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     attr='Esri', name='Esri Satellite', overlay=False, control=True).add_to(mm)
@@ -14,7 +14,7 @@ def start(fileName):
     data = open(fileName, "r")
     file = data.readlines()
     data.close()
-    m = folium.Map(zoom_start=15, tiles="Stamen Terrain")
+    m = folium.Map(zoom_start=15, tiles="Stamen Terrain", attr="Map tiles by Stamen Design, CC BY 3.0 — Map data © OpenStreetMap contributors")
     folium.TileLayer(
         tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
         attr='Esri', name='Esri Satellite', overlay=False, control=True).add_to(m)
@@ -174,7 +174,7 @@ def run(directory, file):
     :return:
     """
     if directory == "" and file == "":
-        directory = input("Directory: ")
+        directory = input("Directory (absolute): ")
         if directory == "":
             fileList = [input("File: ")]
     elif directory == "":
@@ -183,7 +183,7 @@ def run(directory, file):
     if directory != "":
         fileList = [f for f in listdir(directory) if isfile(join(directory, f))]
         for i in range(len(fileList)):
-            fileList[i] = directory + "\\" + fileList[i]
+            fileList[i] = join(directory, fileList[i])
 
     for fileName in fileList:
         if fileName[-4:] == ".kml":
@@ -195,8 +195,8 @@ def run(directory, file):
 
     if len(fileList) > 1:
         mm.fit_bounds(mm.get_bounds(), padding=(30, 30))
-        mm.save(directory + "\\" + "openMapped.html")
-        print(directory + "\\" + "openMapped.html")
+        mm.save(join(directory, "openMapped.html"))
+        print(join(directory, "openMapped.html"))
 
 
 if __name__ == '__main__':
