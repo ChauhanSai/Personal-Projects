@@ -57,7 +57,7 @@ def kml(send):
         names.append("Start")
         names.append("End")
     elif len(names) != len(points):
-        names = range(len(points))
+        names = range(1, len(points) + 1)
     if len(points) != 0:
         folium.Marker(location=points[0], popup=names[0], icon=folium.Icon(icon='circle', prefix='fa')).add_to(m)
         folium.Marker(location=points[0], popup=names[0], icon=folium.Icon(icon='circle', prefix='fa')).add_to(mm)
