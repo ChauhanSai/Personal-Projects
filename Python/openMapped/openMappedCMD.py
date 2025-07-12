@@ -30,24 +30,39 @@ def kml(send):
     nameKey = "<name>"
     pointKey = "<coordinates>"
     routeKey = "<gx:coord>"
+    i = 0
     for line in file:
         if nameKey in line:
+            if i > 0:
+                names.pop()
             line = line.strip()[len(nameKey):-len(nameKey) - 1]
-            if len(line) == 4:
-                names.append(line)
+            names.append(line)
+            i = 1
         if pointKey in line:
             line = line.strip()[len(pointKey):-len(pointKey) - 1 - 2].split(",")
             points.append([float(line[1]), float(line[0])])
+            i = 0
         if routeKey in line:
             line = line.strip()[len(routeKey):-len(routeKey) - 1].split(" ")
             routeZ.append(float(line.pop(2)) * 3.28125)
             line = (float(line[1]), float(line[0]))
             route.append(line)
-
-    folium.Marker(location=points[0], popup=names[0], icon=folium.Icon(icon='circle', prefix='fa')).add_to(m)
-    folium.Marker(location=points[0], popup=names[0], icon=folium.Icon(icon='circle', prefix='fa')).add_to(mm)
-    folium.Marker(location=points[1], popup=names[1], icon=folium.Icon(icon='circle', prefix='fa')).add_to(m)
-    folium.Marker(location=points[1], popup=names[1], icon=folium.Icon(icon='circle', prefix='fa')).add_to(mm)
+        if i > 0:
+            i += 1
+            if i > 4:
+                i = 0
+                names.pop()
+                continue
+    if len(names) == 0 and len(points) == 2:
+        names.append("Start")
+        names.append("End")
+    elif len(names) != len(points):
+        names = range(len(points))
+    if len(points) != 0:
+        folium.Marker(location=points[0], popup=names[0], icon=folium.Icon(icon='circle', prefix='fa')).add_to(m)
+        folium.Marker(location=points[0], popup=names[0], icon=folium.Icon(icon='circle', prefix='fa')).add_to(mm)
+        folium.Marker(location=points[1], popup=names[1], icon=folium.Icon(icon='circle', prefix='fa')).add_to(m)
+        folium.Marker(location=points[1], popup=names[1], icon=folium.Icon(icon='circle', prefix='fa')).add_to(mm)
     folium.PolyLine(route, color='white', weight=6, opacity=1).add_to(m)
     folium.PolyLine(route, color='white', weight=6, opacity=1).add_to(mm)
 
