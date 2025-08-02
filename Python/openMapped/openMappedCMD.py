@@ -44,7 +44,7 @@ def kml(send):
             i = 0
         if routeKey in line:
             line = line.strip()[len(routeKey):-len(routeKey) - 1].split(" ")
-            routeZ.append(float(line.pop(2)) * 3.28125)
+            routeZ.append(float(line.pop(2))) # altitude in meters
             line = (float(line[1]), float(line[0]))
             route.append(line)
         if i > 0:
@@ -67,20 +67,49 @@ def kml(send):
     folium.PolyLine(route, color='white', weight=6, opacity=1).add_to(mm)
 
     # CALCULATE COLORS
-    base = max(routeZ[0], routeZ[len(routeZ) - 1])
+    ground_level = max(routeZ[0], routeZ[len(routeZ) - 1])
     for i in range(len(routeZ)):
-        routeZ[i] -= base
-    color = ["#f9ec60", "#72f960", "#60f9a4", "#70f8e0", "#4bd7e4", "#4bb0e4", "#4242db", "#854be4", "#e249d2",
-             "#fd2727"]
-    height = [200, 1500, 5000, 8000, 12000, 15000, 20000, 35000, 40000, 43000]
-    for j in range(len(color)):
-        arr = []
+        routeZ[i] -= ground_level # normalize altitude to simulate barometric pressure
+    colors = [('#FFE062', 100),
+        ('#FFEA00', 200),
+        ('#F0FF00', 300),
+        ('#CCFF00', 400),
+        ('#42FF00', 600),
+        ('#1EFF00', 800),
+        ('#00FF0C', 1000),
+        ('#00FF36', 1200),
+        ('#00FF72', 1500),
+        ('#00FF9C', 2000),
+        ('#00FFD2', 2500),
+        ('#00FFE4', 3000),
+        ('#00EAFF', 3500),
+        ('#00C0FF', 4000),
+        ('#00A8FF', 4500),
+        ('#0096FF', 5000),
+        ('#0078FF', 5500),
+        ('#0054FF', 6000),
+        ('#0030FF', 6500),
+        ('#001EFF', 7000),
+        ('#0000FF', 7500),
+        ('#1200FF', 8000),
+        ('#2400FF', 8500),
+        ('#3600FF', 9000),
+        ('#4E00FF', 9500),
+        ('#6000FF', 10000),
+        ('#7800FF', 10500),
+        ('#9600FF', 11000),
+        ('#AE00FF', 11500),
+        ('#D800FF', 12000),
+        ('#FF00E4', 12500),
+        ('#FF0000', 13000)] # trail colors based on altitude in meters
+    for j in range(len(colors)):
+        cropped_route = []
         for i in range(len(routeZ)):
-            if routeZ[i] > height[j]:
-                arr.append(route[i])
-        if len(arr) > 0:
-            folium.PolyLine(arr, color=color[j], weight=6, opacity=1).add_to(m)
-            folium.PolyLine(arr, color=color[j], weight=6, opacity=1).add_to(mm)
+            if routeZ[i] > colors[j][1]:
+                cropped_route.append(route[i])
+        if len(cropped_route) > 0:
+            folium.PolyLine(cropped_route, color=colors[j][0], weight=6, opacity=1).add_to(m)
+            folium.PolyLine(cropped_route, color=colors[j][0], weight=6, opacity=1).add_to(mm)
     m.fit_bounds(m.get_bounds(), padding=(30, 30))
     m.save(fileName[:-4] + ".html")
     print(fileName[:-4] + ".html")
