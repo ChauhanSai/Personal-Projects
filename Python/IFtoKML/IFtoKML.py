@@ -4,7 +4,7 @@ import base64
 import os
 import time
 import tkinter as tk
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import pytz
 import ifcclient
@@ -66,8 +66,10 @@ def loc(ifc):
     altitude = ifc.get_state_by_name('aircraft/0/altitude_msl')
     latitude = ifc.get_state_by_name('aircraft/0/latitude')
     longitude = ifc.get_state_by_name('aircraft/0/longitude')
+    dt = datetime(1601, 1, 1) + timedelta(
+        microseconds=ifc.get_state_by_name('simulator/time_utc') // 10) # Windows ticks start from 1601-01-01 00:00:00 UTC
 
-    return [altitude, latitude, longitude]
+    return [altitude, latitude, longitude, dt]
 
 
 def record():
@@ -137,13 +139,13 @@ def record():
     tz = pytz.timezone('UTC')
 
     while code == 454:
+        temp = loc(ifc)
         kml.write('\n\t\t\t<when>')
-        kml.write(datetime.now().strftime("%Y-%m-%d"))
+        kml.write(temp[3].strftime("%Y-%m-%d")) # Time
         kml.write('T')
-        kml.write(datetime.now(tz).strftime("%H:%M:%S"))
+        kml.write(temp[3].strftime("%H:%M:%S"))
         kml.write('Z</when>')
 
-        temp = loc(ifc)
         coords = str(round(temp[2], 5))
         coords += ', '
         coords += str(round(temp[1], 5))
