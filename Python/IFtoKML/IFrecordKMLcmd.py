@@ -6,7 +6,7 @@ import pytz
 import ifcclient
 
 DEBUG = True
-REPLAY = True
+REPLAY = False
 
 def loc(ifc):
     altitude = ifc.get_state_by_name('aircraft/0/altitude_msl')
