@@ -10,14 +10,19 @@ import re
 # Load the .env file
 load_dotenv()
 # Retrieve the API keys
+def get_env(key: str) -> str:
+    value = os.getenv(key)
+    if value is None:
+        raise ImportError(f"Missing environment variable {key}")
+    return value
+
 keys = {
-    "SPOTIFY_CLIENT_USERNAME": os.getenv("SPOTIFY_CLIENT_USERNAME"),
-    "SPOTIFY_CLIENT_ID": os.getenv("SPOTIFY_CLIENT_ID"),
-    "SPOTIFY_CLIENT_SECRET": os.getenv("SPOTIFY_CLIENT_SECRET"),
-    "LASTFM_USERNAME": os.getenv("LASTFM_USERNAME"),
-    "LASTFM_API_KEY": os.getenv("LASTFM_API_KEY"),
+    "SPOTIFY_CLIENT_USERNAME": get_env("SPOTIFY_CLIENT_USERNAME"),
+    "SPOTIFY_CLIENT_ID": get_env("SPOTIFY_CLIENT_ID"),
+    "SPOTIFY_CLIENT_SECRET": get_env("SPOTIFY_CLIENT_SECRET"),
+    "LASTFM_USERNAME": get_env("LASTFM_USERNAME"),
+    "LASTFM_API_KEY": get_env("LASTFM_API_KEY"),
 }
-print("Searching for Secret", keys["SPOTIFY_CLIENT_SECRET"])
 
 def accessToken():
     # Get Access Token
@@ -141,11 +146,12 @@ def main():
     print(playlist_year, "complete")
     exit(status)
 
-def getPlaylist(spotify_headers):
+def getPlaylist(spotify_headers: dict) -> tuple:
     user_playlists = loads(requests.get(
         'https://api.spotify.com/v1/users/' + keys["SPOTIFY_CLIENT_USERNAME"] + '/playlists',
         headers=spotify_headers).text)
 
+    print("Searching for Secret", keys["SPOTIFY_CLIENT_SECRET"])
     # Find Playlist
     playlist = None
     for p in user_playlists['items']:
@@ -167,7 +173,7 @@ def getPlaylist(spotify_headers):
 
         return playlist_id, playlist_year, playlist_length, playlist_tracks_url
 
-def getExisingTracks(playlist_tracks_url, spotify_headers):
+def getExisingTracks(playlist_tracks_url: str, spotify_headers: dict) -> str:
     data_existing_tracks = []
     # Get Existing Tracks
     playlist_tracks = loads(requests.get(playlist_tracks_url + '?limit=100', headers=spotify_headers).text)
