@@ -19,6 +19,9 @@ class Track:
     def __str__(self) -> str:
         return f"({self.title}, {self.artist}, {self.spotify_track_id})"
 
+    def __repr__(self) -> str:
+        return str(self)
+
     def __eq__(self, other) -> bool:
         if isinstance(other, Track):
             return self.title.lower() == other.title.lower()
@@ -64,11 +67,12 @@ def accessToken():
     }
     return spotify_headers
 
-def curate():
+def curate() -> list[Track]:
     spotify_headers = accessToken()
 
     playlist_id, playlist_year, playlist_length, playlist_tracks_url = getPlaylist(spotify_headers)
     data_existing_tracks = getExisingTracks(spotify_headers, playlist_tracks_url)
+    # print(data_existing_tracks)
 
     # Calculate Start Date
     date_start = datetime.strptime(playlist_year, "%Y") + timedelta(days=playlist_length)
@@ -88,12 +92,9 @@ def curate():
 
         date_current = date_current + timedelta(days=1)
 
-    if len(data_track_queue) > 0:
-        print("Tracks to add: ")
-        for track in data_track_queue:
-            print(track)
-
     print(playlist_year, "complete")
+
+    return data_track_queue
 
 def getPlaylist(spotify_headers: dict) -> tuple:
     user_playlists = loads(requests.get(
@@ -224,4 +225,9 @@ def getSpotifyTrackId(spotify_headers: dict, track_title: str, artist: str = Non
         return ""
 
 if __name__ == '__main__':
-    curate()
+    data_track_queue = curate()
+
+    if len(data_track_queue) > 0:
+        print("Tracks to add: ")
+        for track in data_track_queue:
+            print(track)
