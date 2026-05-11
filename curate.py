@@ -42,7 +42,7 @@ def accessToken():
     }
     return spotify_headers
 
-def main():
+def curate():
     spotify_headers = accessToken()
 
     playlist_id, playlist_year, playlist_length, playlist_tracks_url = getPlaylist(spotify_headers)
@@ -188,4 +188,4 @@ def getTrackFrequency(date: datetime, spotify_headers: dict, existing_tracks: li
     return data_track_frequency
 
 if __name__ == '__main__':
-    main()
+    curate()
