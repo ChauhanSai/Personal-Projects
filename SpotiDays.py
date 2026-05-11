@@ -49,102 +49,29 @@ def main():
     data_existing_tracks = getExisingTracks(playlist_tracks_url, spotify_headers)
 
     # Calculate Start Date
-    dateStart = datetime.strptime(playlist_year, "%Y") + timedelta(days=playlist_length + 1)
-    dateEnd = datetime.strptime(playlist_year + "1231", "%Y%m%d") + timedelta(days=1)
-    if dateEnd > datetime.now():
-        dateEnd = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-    print("Starting from", dateStart.strftime("%B %-d, %Y"))
-    print("Until", dateEnd.strftime("%B %-d, %Y"))
+    date_start = datetime.strptime(playlist_year, "%Y") + timedelta(days=playlist_length + 1)
+    date_end = datetime.strptime(playlist_year + "1231", "%Y%m%d") + timedelta(days=1)
+    if date_end > datetime.now():
+        date_end = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    print("\nStarting from", date_start.strftime("%B %-d, %Y"))
+    print("Until", date_end.strftime("%B %-d, %Y"), "\n")
 
-    dataRecentTracks = {}
-    dataTrackQueue = []
+    data_track_queue = []
 
-    status = 0
-    try:
-        retry = False
-        dateCurrent = dateStart
-        while dateCurrent < dateEnd:
-            userListeningHistoryPage = 1
-            userListeningHistoryUrl = f'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user={keys["LASTFM_USERNAME"]}&api_key={keys["LASTFM_API_KEY"]}&format=json&limit=200&from={str(int(dateCurrent.astimezone(timezone.utc).timestamp()))}&to={str(int((dateCurrent + timedelta(days=1)).astimezone(timezone.utc).timestamp()))}&page='
-            userListeningHistory = loads(requests.get(userListeningHistoryUrl + str(userListeningHistoryPage)).text)
+    date_current = date_start
+    while date_current < date_end:
+        track_selected = getMostPlayedTrack(date_current, spotify_headers, data_existing_tracks + data_track_queue)
+        data_existing_tracks.append(track_selected.lower())
+        data_track_queue.append(track_selected)
 
-            if len(userListeningHistory['recenttracks']['track']) == 0 or retry:
-                i = 1
-                while len(userListeningHistory['recenttracks']['track']) == 0 or retry:
-                    retry = False
-                    userListeningHistoryUrl = f'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user={keys["LASTFM_USERNAME"]}&api_key={keys["LASTFM_API_KEY"]}&format=json&limit=200&from={str(int((dateCurrent + timedelta(days=i)).astimezone(timezone.utc).timestamp()))}&to={str(int((dateCurrent + timedelta(days=1 + i)).astimezone(timezone.utc).timestamp()))}&page='
-                    userListeningHistory = loads(
-                        requests.get(userListeningHistoryUrl + str(userListeningHistoryPage)).text)
-                    i += 1
-                print(dateCurrent + timedelta(days=i - 1))
+        date_current = date_current + timedelta(days=1)
 
-            while len(userListeningHistory['recenttracks']['track']) > 0:
-                # print(userListeningHistoryUrl + str(userListeningHistoryPage))
-                for track in userListeningHistory['recenttracks']['track']:
-                    # print(track['date']['#text'])
-                    # print(track['name'])
-                    if not track['name'].lower() in data_existing_tracks:
-                        try:
-                            dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")][track['name']] = dataRecentTracks[
-                                                                                                      dateCurrent.strftime(
-                                                                                                          "%B %-d, %Y")].get(
-                                track['name']) + 1
-                        except TypeError:
-                            dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")][track['name']] = 1
-                        except KeyError:
-                            dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")] = {}
-                            dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")][track['name']] = 1
-                userListeningHistoryPage += 1
-                userListeningHistory = loads(requests.get(userListeningHistoryUrl + str(userListeningHistoryPage)).text)
-
-            if len(dataRecentTracks) == 0:
-                retry = True
-                continue
-
-            print("Top tracks on", dateCurrent.strftime("%B %-d, %Y"))
-            dataRecentTrackMax = max(list(dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")].values()))
-            dataPossibleTracks = []
-            i = 1
-            for track in dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")]:
-                if dataRecentTracks[dateCurrent.strftime("%B %-d, %Y")][track] == dataRecentTrackMax:
-                    dataPossibleTracks.append(track)
-                    print(str(i) + ":", track)
-                    i += 1
-
-            if len(dataPossibleTracks) > 1:
-                selection = input("What track should I add? ")
-                if "track_queue" in selection:  # Debug option
-                    print(dataTrackQueue)
-                    selection = input("What track should I add? ")
-                elif "existing_tracks" in selection:  # Debug option
-                    print(data_existing_tracks)
-                    selection = input("What track should I add? ")
-                try:
-                    dataTrackQueue.append(dataPossibleTracks[int(selection) - 1])
-                except ValueError:
-                    dataTrackQueue.append(random.choice(dataPossibleTracks))
-                    print(dataTrackQueue[len(dataTrackQueue) - 1])
-            else:
-                dataTrackQueue.append(dataPossibleTracks[0])
-            data_existing_tracks.append((dataTrackQueue[len(dataTrackQueue) - 1]).lower())
-            print()
-
-            dateCurrent = dateCurrent + timedelta(days=1)
-            dataRecentTracks = {}
-    except:
-        print("\nError\n\t", dateCurrent.strftime("%B %-d, %Y"))
-        print(userListeningHistory)
-        print(dataTrackQueue)
-        print()
-        status = 50
-
-    if len(dataTrackQueue) > 0:
+    if len(data_track_queue) > 0:
         print("Tracks to add: ")
-        for track in dataTrackQueue:
+        for track in data_track_queue:
             print(track)
 
     print(playlist_year, "complete")
-    exit(status)
 
 def getPlaylist(spotify_headers: dict) -> tuple:
     user_playlists = loads(requests.get(
@@ -173,7 +100,7 @@ def getPlaylist(spotify_headers: dict) -> tuple:
 
         return playlist_id, playlist_year, playlist_length, playlist_tracks_url
 
-def getExisingTracks(playlist_tracks_url: str, spotify_headers: dict) -> str:
+def getExisingTracks(playlist_tracks_url: str, spotify_headers: dict) -> list[str]:
     data_existing_tracks = []
     # Get Existing Tracks
     playlist_tracks = loads(requests.get(playlist_tracks_url + '?limit=100', headers=spotify_headers).text)
@@ -191,6 +118,74 @@ def getExisingTracks(playlist_tracks_url: str, spotify_headers: dict) -> str:
     # print(data_existing_tracks)
     return data_existing_tracks
 
+def getMostPlayedTrack(date: datetime, spotify_headers: dict, existing_tracks: list[str] = None) -> str:
+    data_possible_tracks = getTrackFrequency(date, spotify_headers, existing_tracks)
+    print("Top tracks for", date.strftime("%B %-d, %Y"))
+
+    i = 1
+    for t in data_possible_tracks:
+        print(str(i) + ":", t)
+        i += 1
+
+    selection = input("What track should I add? ")
+    try:
+        track = list(data_possible_tracks.keys())[int(selection) - 1]
+    except ValueError:
+        track = random.choice(list(data_possible_tracks.keys()))
+        print(track)
+
+    print()
+    return track
+
+def getTrackFrequency(date: datetime, spotify_headers: dict, existing_tracks: list[str] = None, recur: bool = False) -> dict[str, int]:
+    if date >  datetime.now():
+        return {}
+
+    data_track_frequency = {}
+
+    p = 1
+    while True:
+        data_recent_tracks = loads(requests.get('http://ws.audioscrobbler.com/2.0/', params={
+            'method': 'user.getrecenttracks',
+            'user': keys["LASTFM_USERNAME"],
+            'api_key': keys["LASTFM_API_KEY"],
+            'format': 'json',
+            'limit': 200,
+            'from': str(int(date.astimezone(timezone.utc).timestamp())),
+            'to': str(int((date + timedelta(days=1)).astimezone(timezone.utc).timestamp())),
+            'page': p
+        }).text)
+        # print(data_recent_tracks)
+
+        for t in data_recent_tracks['recenttracks']['track']:
+            # print(t)
+            # print(t['name'])
+            if not (t['name'].lower() in existing_tracks):
+                try:
+                    data_track_frequency[t['name']] = data_track_frequency[t['name']] + 1
+                except TypeError:
+                    data_track_frequency[t['name']] = 1
+                except KeyError:
+                    data_track_frequency[t['name']] = 1
+                # print(data_track_frequency[t['name']])
+
+        if int(data_recent_tracks['recenttracks']['@attr']['totalPages']) == p:
+            break
+        else:
+            p += 1
+    # print(data_track_frequency)
+
+    if (not recur) and data_track_frequency == {}:
+        d = 1
+        while data_track_frequency == {}:
+            # print("Trying", (date - timedelta(days=d)).strftime("%B %-d, %Y"))
+            data_track_frequency = getTrackFrequency(date - timedelta(days=d), spotify_headers, existing_tracks, True)
+            if data_track_frequency == {}:
+                # print("Trying", (date + timedelta(days=d)).strftime("%B %-d, %Y"))
+                data_track_frequency = getTrackFrequency(date + timedelta(days=d), spotify_headers, existing_tracks, True)
+            d += 1
+
+    return data_track_frequency
+
 if __name__ == '__main__':
     main()
-
