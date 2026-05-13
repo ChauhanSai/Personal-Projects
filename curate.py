@@ -33,6 +33,8 @@ class Track:
     def __hash__(self) -> int:
         return hash(self.title.lower())
 
+SORT_BY_ARTIST_FREQUENCY = True
+
 # Load the .env file
 load_dotenv()
 # Retrieve the API keys
@@ -182,6 +184,9 @@ def getMostPlayedTrack(spotify_headers: dict, date: datetime, existing_tracks: l
     track_frequency = getTrackFrequency(spotify_headers, date, existing_tracks)
     data_possible_tracks = [track for track, freq in track_frequency.items() if freq == max(track_frequency.values())]
 
+    if SORT_BY_ARTIST_FREQUENCY: # If configured
+        data_possible_tracks = sortArtistFrequency(data_possible_tracks)
+
     print("Top tracks for", date.strftime("%B %-d, %Y"))
 
     i = 1
@@ -250,6 +255,36 @@ def getTrackFrequency(spotify_headers: dict, date: datetime, existing_tracks: li
 
     return data_track_frequency
 
+def sortArtistFrequency(tracks: list[Track]) -> list[Track]:
+    # Count how many times each artist appears
+    artist_counts = {}
+    for track in tracks:
+        artist_counts[track.artist] = artist_counts.get(track.artist, 0) + 1
+
+    # Separate tracks into artists appearing multiple times vs. single appearance
+    multi_artist_tracks = {}  # artist: list of tracks in order
+    single_artist_tracks = []
+
+    for track in tracks:
+        if artist_counts[track.artist] > 1:
+            if track.artist not in multi_artist_tracks:
+                multi_artist_tracks[track.artist] = []
+            multi_artist_tracks[track.artist].append(track)
+        else:
+            single_artist_tracks.append(track)
+
+    # Sort artists by frequency (descending)
+    sorted_artists = sorted(multi_artist_tracks.keys(), key=lambda artist: artist_counts[artist], reverse=True)
+
+    # Multi-appearance artists first (sorted by frequency), then single-appearance artists
+    tracks_sorted = []
+    for artist in sorted_artists:
+        tracks_sorted.extend(multi_artist_tracks[artist])
+    tracks_sorted.extend(single_artist_tracks)
+    # print(tracks_sorted)
+
+    return tracks_sorted
+
 def getSpotifyTrackId(spotify_headers: dict, track_title: str, artist: str = None) -> str:
     tracks = loads(requests.get('https://api.spotify.com/v1/search', headers=spotify_headers, params={
         'q': f'track:{track_title} artist:{artist}',
@@ -300,6 +335,7 @@ if __name__ == '__main__':
         print("Tracks to add: ")
         for track in data_track_queue:
             print(track)
+        print()
 
         status = addTracksToPlaylist(refresh_token, playlist_id, data_track_queue)
         if status['status'] == 200:
