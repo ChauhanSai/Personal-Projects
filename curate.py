@@ -100,7 +100,7 @@ def accessToken():
     }
     return spotify_headers
 
-def curate(refresh_token: str = None) -> list[Track]:
+def curate(refresh_token: str = None) -> tuple:
     if refresh_token:
         spotify_headers = refreshToken(refresh_token)
     else:
@@ -128,9 +128,9 @@ def curate(refresh_token: str = None) -> list[Track]:
 
         date_current = date_current + timedelta(days=1)
 
-    print(playlist_year, "complete")
+    print(playlist_year, "curated")
 
-    return data_track_queue
+    return playlist_id, data_track_queue
 
 def getPlaylist(spotify_headers: dict) -> tuple:
     user_playlists = loads(requests.get(
@@ -189,12 +189,15 @@ def getMostPlayedTrack(spotify_headers: dict, date: datetime, existing_tracks: l
         print(str(i) + ":", t.title + ", " + t.artist)
         i += 1
 
-    selection = input("What track should I add? ")
-    try:
-        track = data_possible_tracks[int(selection) - 1]
-    except ValueError:
-        track = random.choice(data_possible_tracks)
-        print(track)
+    if len(data_possible_tracks) == 1:
+        track = data_possible_tracks[0]
+    else:
+        selection = input("What track should I add? ")
+        try:
+            track = data_possible_tracks[int(selection) - 1]
+        except ValueError:
+            track = random.choice(data_possible_tracks)
+            print(track)
 
     print()
     return track
@@ -260,6 +263,29 @@ def getSpotifyTrackId(spotify_headers: dict, track_title: str, artist: str = Non
     except KeyError:
         return ""
 
+def addTracksToPlaylist(refresh_token: str, playlist_id: str, tracks: list[Track]):
+    if not refresh_token:
+        return {"status": 400, "error": "Unauthorized - OAuth must be provided"}
+
+    spotify_headers = refreshToken(refresh_token)
+
+    uris = []
+
+    for t in tracks:
+        # Pull only track_id and prepend "spotify:track:"
+        track_id = t.spotify_track_id
+        if track_id:
+            uris.append("spotify:track:" + track_id)
+
+    add_items = loads(requests.post(f"https://api.spotify.com/v1/playlists/{playlist_id}/items", headers=spotify_headers, json={
+        "uris": uris}).text)
+
+    if add_items['snapshot_id']:
+        return {"status": 200}
+    else:
+        return {add_items['status'], add_items['message']}
+
+
 if __name__ == '__main__':
     load_dotenv("auth.env", override=True)
     refresh_token = os.getenv("REFRESH_TOKEN")
@@ -268,9 +294,17 @@ if __name__ == '__main__':
         requests.get("http://127.0.0.1:8080/authorize")
         exit()
 
-    data_track_queue = curate(refresh_token)
+    playlist_id, data_track_queue = curate(refresh_token)
 
     if len(data_track_queue) > 0:
         print("Tracks to add: ")
         for track in data_track_queue:
             print(track)
+
+        status = addTracksToPlaylist(refresh_token, playlist_id, data_track_queue)
+        if status['status'] == 200:
+            print("Tracks sucessfully added to playlist")
+        else:
+            print(status)
+
+    exit()
