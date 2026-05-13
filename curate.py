@@ -5,6 +5,7 @@ import os
 from json import loads
 import random
 import re
+import base64
 
 class Track:
     title: str
@@ -49,6 +50,38 @@ keys = {
     "LASTFM_API_KEY": get_env("LASTFM_API_KEY"),
 }
 
+def refreshToken(refresh_token):
+    load_dotenv()
+    client_id = os.getenv("SPOTIFY_CLIENT_ID")
+    client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
+
+    auth_header = base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()
+    exchange = requests.post("https://accounts.spotify.com/api/token", data={
+        "refresh_token": refresh_token,
+        "grant_type": "refresh_token"
+    }, headers={
+        "Authorization": f"Basic {auth_header}",
+        "Content-Type": "application/x-www-form-urlencoded"
+    })
+
+    if exchange.status_code != 200:
+        return {"status": 401, "error": "Authorization failed"}
+
+    token = exchange.json()
+    access_token = token["access_token"]
+    # Spotify doesn't always return a new refresh_token
+    new_refresh_token = token.get("refresh_token", refresh_token)
+
+    env = open("auth.env", "w")
+    env.write(f"ACCESS_TOKEN={access_token}\n")
+    env.write(f"REFRESH_TOKEN={new_refresh_token}\n")
+    env.close()
+
+    spotify_headers = {
+        "Authorization": token['token_type'] + " " + token['access_token']
+    }
+    return spotify_headers
+
 def accessToken():
     # Get Access Token
     token_headers = {
@@ -67,8 +100,11 @@ def accessToken():
     }
     return spotify_headers
 
-def curate() -> list[Track]:
-    spotify_headers = accessToken()
+def curate(refresh_token: str = None) -> list[Track]:
+    if refresh_token:
+        spotify_headers = refreshToken(refresh_token)
+    else:
+        spotify_headers = accessToken()
 
     playlist_id, playlist_year, playlist_length, playlist_tracks_url = getPlaylist(spotify_headers)
     data_existing_tracks = getExisingTracks(spotify_headers, playlist_tracks_url)
@@ -225,7 +261,14 @@ def getSpotifyTrackId(spotify_headers: dict, track_title: str, artist: str = Non
         return ""
 
 if __name__ == '__main__':
-    data_track_queue = curate()
+    load_dotenv("auth.env", override=True)
+    refresh_token = os.getenv("REFRESH_TOKEN")
+
+    if refresh_token is None:
+        requests.get("http://127.0.0.1:8080/authorize")
+        exit()
+
+    data_track_queue = curate(refresh_token)
 
     if len(data_track_queue) > 0:
         print("Tracks to add: ")
