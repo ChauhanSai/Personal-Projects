@@ -237,7 +237,7 @@ def getTrackFrequency(spotify_headers: dict, date: datetime, existing_tracks: li
                 data_track_frequency[track] = data_track_frequency.get(track, 0) + 1
                 # print(data_track_frequency[t['name']])
 
-        if int(data_recent_tracks['recenttracks']['@attr']['totalPages']) == p:
+        if int(data_recent_tracks['recenttracks']['@attr']['totalPages']) == 0 or int(data_recent_tracks['recenttracks']['@attr']['totalPages']) == p:
             break
         else:
             p += 1
