@@ -1,12 +1,14 @@
 # MacOS
 *.DS_Store
 
+# Environment variables
+*.env
+
 # JetBrains
 .idea/
 
 # Visual Studio Code
 .vscode/
-
 
 */#Hidden/*
 files/img0_3840x2160.jpg
@@ -15,7 +17,6 @@ files/img0_3840x2160.jpg
 *.lnk
 *.url
 *.exe
-*.zip
 */.metadata/
 
 # HTML
@@ -33,3 +34,6 @@ Python/*/dist/*
 Python/stockMarketGame/*.csv
 Python/stockMarketGame/*.html
 Python/stockMarketGame/*.png
+
+# C++
+cmake-build-debug/
