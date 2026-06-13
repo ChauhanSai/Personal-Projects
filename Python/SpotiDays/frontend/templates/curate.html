@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotiDays - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="flashlight"></div>
+    
+
+
+    <div class="dashboard-container">
+        <!-- Date Card 1: Expanded -->
+        <div class="date-group expanded">
+            <div class="glass-card date-card">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div class="date-info">
+                            <h2>Monday, 7/12</h2>
+                            <p>5 songs extracted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="track-list">
+                <div class="track-item glass-card" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <img src="https://via.placeholder.com/50/222/d4ff00?text=1" alt="Art" class="track-art">
+                    <div class="track-details">
+                        <h4 class="track-title">Neon Nights Deep Mix</h4>
+                        <p class="track-artist">DJ Citrine Echo</p>
+                    </div>
+                    <button class="track-add">+</button>
+                </div>
+                
+                <div class="track-item glass-card" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <img src="https://via.placeholder.com/50/222/d4ff00?text=2" alt="Art" class="track-art">
+                    <div class="track-details">
+                        <h4 class="track-title">Avocado Groove</h4>
+                        <p class="track-artist">The Wet Textures</p>
+                    </div>
+                    <button class="track-add">+</button>
+                </div>
+
+                <div class="track-item glass-card" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <img src="https://via.placeholder.com/50/222/d4ff00?text=3" alt="Art" class="track-art">
+                    <div class="track-details">
+                        <h4 class="track-title">Wireframe Memory</h4>
+                        <p class="track-artist">System Error</p>
+                    </div>
+                    <button class="track-add">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date Card 2: Loading -->
+        <div class="date-group">
+            <div class="glass-card date-card">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div class="date-info">
+                            <h2>Tuesday, 7/13</h2>
+                            <p>Analyzing nightly activity...</p>
+                        </div>
+                        <div class="loading-text">
+                            <div class="loading-spinner"></div>
+                            LOADING HISTORY...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Date Card 3: Normal -->
+        <div class="date-group">
+            <div class="glass-card date-card">
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div class="date-info">
+                            <h2>Wednesday, 7/14</h2>
+                            <p>8 tracks spotted</p>
+                        </div>
+                        <div style="color: var(--text-muted); font-size: 1.5rem;">›</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spotted Sidebar -->
+    <div id="spotted-sidebar" class="sidebar">
+        <!-- Disco Corner for the Sidebar top left -->
+        <div style="position: absolute; top: -20px; left: -20px; width: 60px; height: 60px; border-radius: 50%; background: repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(0,0,0,0.3) 5px, rgba(0,0,0,0.3) 6px), repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(0,0,0,0.3) 5px, rgba(0,0,0,0.3) 6px), radial-gradient(circle at center, #ffffff 0%, var(--accent-color) 40%, transparent 80%); opacity: 0.8; mix-blend-mode: screen; filter: blur(2px); z-index: 0; pointer-events: none;"></div>
+
+        <div class="sidebar-header">
+            <h2 class="sidebar-title" style="margin:0; text-transform: uppercase; font-style: italic;">Spotted</h2>
+            <button id="close-sidebar" class="sidebar-close">×</button>
+        </div>
+        <div class="sidebar-content">
+            <p style="color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; margin-top: 0;">Queue</p>
+            
+            <div class="track-item" style="padding: 10px 0;">
+                <img src="https://via.placeholder.com/40/222/d4ff00?text=M" alt="Art" class="track-art" style="width: 40px; height: 40px;">
+                <div class="track-details">
+                    <h4 class="track-title" style="font-size: 1rem;">Midnight Chrome</h4>
+                    <p class="track-artist" style="font-size: 0.8rem;">The Glasshearts</p>
+                </div>
+                <div style="color: var(--text-muted); cursor: pointer;">✕</div>
+            </div>
+            
+            <!-- More mock items could go here -->
+        </div>
+        <div class="sidebar-footer">
+            <button class="btn btn-primary btn-full">Confirm Selection</button>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="/" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">↪ Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
