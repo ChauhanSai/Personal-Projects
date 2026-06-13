@@ -18,7 +18,9 @@
     <div class="dashboard-container">
         <!-- Date Card 1: Expanded -->
         <div class="date-group expanded">
-            <div class="glass-card date-card">
+            <div class="discomorphic-panel date-card">
+                <div class="sparkle" style="top: -10px; left: -10px;"></div>
+                <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
                 <div style="width: 100%;">
                     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                         <div class="date-info">
@@ -30,7 +32,9 @@
             </div>
             
             <div class="track-list">
-                <div class="track-item glass-card" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                <div class="track-item discomorphic-panel" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <div class="sparkle" style="top: -10px; left: -10px;"></div>
+                    <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
                     <img src="https://via.placeholder.com/50/222/d4ff00?text=1" alt="Art" class="track-art">
                     <div class="track-details">
                         <h4 class="track-title">Neon Nights Deep Mix</h4>
@@ -39,7 +43,9 @@
                     <button class="track-add">+</button>
                 </div>
                 
-                <div class="track-item glass-card" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                <div class="track-item discomorphic-panel" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <div class="sparkle" style="top: -10px; left: -10px;"></div>
+                    <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
                     <img src="https://via.placeholder.com/50/222/d4ff00?text=2" alt="Art" class="track-art">
                     <div class="track-details">
                         <h4 class="track-title">Avocado Groove</h4>
@@ -48,7 +54,9 @@
                     <button class="track-add">+</button>
                 </div>
 
-                <div class="track-item glass-card" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                <div class="track-item discomorphic-panel" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <div class="sparkle" style="top: -10px; left: -10px;"></div>
+                    <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
                     <img src="https://via.placeholder.com/50/222/d4ff00?text=3" alt="Art" class="track-art">
                     <div class="track-details">
                         <h4 class="track-title">Wireframe Memory</h4>
@@ -61,7 +69,9 @@
 
         <!-- Date Card 2: Loading -->
         <div class="date-group">
-            <div class="glass-card date-card">
+            <div class="discomorphic-panel date-card">
+                <div class="sparkle" style="top: -10px; left: -10px;"></div>
+                <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
                 <div style="width: 100%;">
                     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                         <div class="date-info">
@@ -79,7 +89,9 @@
         
         <!-- Date Card 3: Normal -->
         <div class="date-group">
-            <div class="glass-card date-card">
+            <div class="discomorphic-panel date-card">
+                <div class="sparkle" style="top: -10px; left: -10px;"></div>
+                <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
                 <div style="width: 100%;">
                     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                         <div class="date-info">
@@ -122,6 +134,12 @@
                 <a href="/" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">↪ Logout</a>
             </div>
         </div>
+    </div>
+
+    <!-- Floating Color Picker Widget -->
+    <div class="theme-picker-widget">
+        <label for="theme-color-picker">Branding Base</label>
+        <input type="color" id="theme-color-picker" value="#050508">
     </div>
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>

@@ -60,4 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('spotted-sidebar').classList.add('open');
         });
     }
+
+    // Dynamic Theme Color Picker
+    const themeColorPicker = document.getElementById('theme-color-picker');
+    if (themeColorPicker) {
+        themeColorPicker.addEventListener('input', (e) => {
+            document.documentElement.style.setProperty('--bg-base-color', e.target.value);
+        });
+    }
 });
