@@ -225,7 +225,15 @@ def getTrackFrequency(spotify_headers: dict, date: datetime, existing_tracks: li
             'to': str(int((date + timedelta(days=1)).astimezone(timezone.utc).timestamp())),
             'page': p
         }).text)
+        # print(date.astimezone(timezone.utc).strftime("%B %-d, %Y"))
         # print(data_recent_tracks)
+
+        try:
+            data_recent_tracks.get('message')
+            if data_recent_tracks['error'] == 8:
+                break
+        except KeyError:
+            pass
 
         for t in data_recent_tracks['recenttracks']['track']:
             # print(t)
