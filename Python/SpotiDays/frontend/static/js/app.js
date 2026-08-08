@@ -94,5 +94,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Playlist Popover Toggle Interaction
+    const playlistBtn = document.getElementById('playlist-btn');
+    const playlistPopover = document.getElementById('playlist-popover');
+
+    if (playlistBtn && playlistPopover) {
+        playlistBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Avoid triggering document click handler immediately
+            playlistPopover.classList.toggle('open');
+        });
+
+        // Click outside popover to close it
+        document.addEventListener('click', (e) => {
+            if (!playlistPopover.contains(e.target) && !playlistBtn.contains(e.target)) {
+                playlistPopover.classList.remove('open');
+            }
+        });
+
+        // Close on Escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                playlistPopover.classList.remove('open');
+            }
+        });
+    }
 
 });

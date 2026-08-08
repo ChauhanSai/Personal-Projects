@@ -11,8 +11,48 @@
     
 
 
-    <div style="position: fixed; top: 30px; left: 40px; z-index: 1000;">
+    <div class="top-bar-left">
         <a href="/" class="nav-logo">SPOTIDAYS</a>
+        <div class="profile-btn" id="profile-btn" title="View Profile">
+            <img src="https://picsum.photos/80/80?random=99" alt="User Avatar">
+        </div>
+        <div class="playlist-btn-container">
+            <button class="playlist-btn" id="playlist-btn" aria-label="Mock Playlist">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h11v2H4zm14.5-2.5v-6H22v-2h-5.5v5.5c-.45-.31-.98-.5-1.5-.5-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3z"/>
+                </svg>
+            </button>
+            <div class="playlist-popover discomorphic-panel" id="playlist-popover">
+                <div class="popover-arrow"></div>
+                <div class="popover-content">
+                    <h3 class="popover-title">Nostalgic Neon Capsule</h3>
+                    <p class="popover-desc">A collection of retro-futuristic vibes and avocado grooves curated for deep nights.</p>
+                    <div class="popover-tracks">
+                        <div class="popover-track-item">
+                            <img src="https://picsum.photos/100/100?random=20" alt="Art" class="popover-track-art">
+                            <div class="popover-track-details">
+                                <h4 class="popover-track-title">Neon Nights Deep Mix</h4>
+                                <p class="popover-track-artist">DJ Citrine Echo</p>
+                            </div>
+                        </div>
+                        <div class="popover-track-item">
+                            <img src="https://picsum.photos/100/100?random=21" alt="Art" class="popover-track-art">
+                            <div class="popover-track-details">
+                                <h4 class="popover-track-title">Avocado Groove</h4>
+                                <p class="popover-track-artist">The Wet Textures</p>
+                            </div>
+                        </div>
+                        <div class="popover-track-item">
+                            <img src="https://picsum.photos/100/100?random=22" alt="Art" class="popover-track-art">
+                            <div class="popover-track-details">
+                                <h4 class="popover-track-title">Midnight Chrome</h4>
+                                <p class="popover-track-artist">The Glasshearts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="dashboard-container">
@@ -35,7 +75,7 @@
                 <div class="track-item discomorphic-panel" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
                     <div class="sparkle" style="top: -10px; left: -10px;"></div>
                     <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
-                    <img src="https://via.placeholder.com/50/222/d4ff00?text=1" alt="Art" class="track-art">
+                    <img src="https://picsum.photos/100/100?random=10" alt="Art" class="track-art">
                     <div class="track-details">
                         <h4 class="track-title">Neon Nights Deep Mix</h4>
                         <p class="track-artist">DJ Citrine Echo</p>
@@ -46,7 +86,7 @@
                 <div class="track-item discomorphic-panel" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
                     <div class="sparkle" style="top: -10px; left: -10px;"></div>
                     <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
-                    <img src="https://via.placeholder.com/50/222/d4ff00?text=2" alt="Art" class="track-art">
+                    <img src="https://picsum.photos/100/100?random=11" alt="Art" class="track-art">
                     <div class="track-details">
                         <h4 class="track-title">Avocado Groove</h4>
                         <p class="track-artist">The Wet Textures</p>
@@ -57,7 +97,7 @@
                 <div class="track-item discomorphic-panel" style="padding: 10px 20px; border-radius: 12px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">
                     <div class="sparkle" style="top: -10px; left: -10px;"></div>
                     <div class="sparkle" style="bottom: -10px; right: -10px; top: auto; left: auto;"></div>
-                    <img src="https://via.placeholder.com/50/222/d4ff00?text=3" alt="Art" class="track-art">
+                    <img src="https://picsum.photos/100/100?random=12" alt="Art" class="track-art">
                     <div class="track-details">
                         <h4 class="track-title">Wireframe Memory</h4>
                         <p class="track-artist">System Error</p>
@@ -117,7 +157,7 @@
             <p style="color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; margin-top: 0;">Queue</p>
             
             <div class="track-item" style="padding: 10px 0;">
-                <img src="https://via.placeholder.com/40/222/d4ff00?text=M" alt="Art" class="track-art" style="width: 40px; height: 40px;">
+                <img src="https://picsum.photos/100/100?random=13" alt="Art" class="track-art" style="width: 40px; height: 40px;">
                 <div class="track-details">
                     <h4 class="track-title" style="font-size: 1rem;">Midnight Chrome</h4>
                     <p class="track-artist" style="font-size: 0.8rem;">The Glasshearts</p>
